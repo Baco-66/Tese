@@ -1,0 +1,95 @@
+%!TEX root = ../template.tex
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% chapter1.tex
+%% NOVA thesis document file
+%%
+%% Chapter with introduciton
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\typeout{NT FILE chapter1.tex}%
+
+\chapter{Introduction}
+\label{cha:introduction}
+
+% explain the chapter
+This chapter is an introduction to this paper, where the context, motivation, objectives and methodology of this thesis is explained.
+
+\section{Contextualization} % (fold)
+\label{sec:contex}
+
+% The internet is very good
+The internet is considered to be one of the most revolutionary inventions in the history of humanity, and it´s widespread adoption has brought about countless benefits and has forever changed the way we live and communicate. 
+% The internet is very static and need to grow for portable scenarios
+Despite its many strengths, the way internet works today  shows some limitations in the face of an increasingly mobile world. With the wide spread adoption of automobiles, it was noticed that connecting these vehicles to each other over the internet could offer some major benefits to road security and could bring quality of life improvements to drivers. However, due to its static nature, the internet cant handle moving communications, and therefore is not ready for this transformation.
+% SDN is cool
+Software defined networks is a new technology that centralizes control of a network in a single device, promising more control over the network and greater flexibility. To address the limitations of the internet and to facilitate further growth, researchers have turned to this new and exciting field. SDN offer a promising solution to many of the challenges faced by the current internet landscape.
+% SDN can help solve the problems of the internet
+Therefore, a lot of recent studies have applied SDNs to vehicular networks in order to create better solutions for the future.
+
+% section contex (end)
+
+\section{Motivation} % (fold)
+\label{sec:motivation}
+
+%Assim sendo, existem muitas aplicações e casos de estudo sobre SDNs em redes veiculares. Porem, a sua maioria utiliza simuladores para testar o seu funcionamento, pelo que se nota a necessidade da existência de dispositivos OBUs cite{hardware} cite{rasberypi} para realizar testes mais fidedignos. 
+
+In recent years, there has been a growing interest in the application of SDN technology in vehicular networks, with a large number of projects in SDVNs being created. Even doe these projects aim to be used in the real world, the large majority of them is restricted to simulation-based testing which reduces the veracity of the results. Therefore, this highlights a pressing need for the availability of real hardware testing platforms, in order to achieve more accurate and reliable results in such a critically important area. The development of a real hardware testing platform for SDVN projects will allow for a more comprehensive evaluation of the technology, which is a step further for this technology to become accepted and used.
+
+% section motivation (end)
+
+\section{Objectives} % (fold)
+\label{sec:objectives}
+
+Our main goal in this thesis is to design and assemble a hardware device similar to an OBU, utilizing open-source software where possible. This device must be SND compatible, so its routing tables must be configurable by a local or remote SDN controller. To meet these requirements, the device will run an open-source V2X protocol stack on a Linux-based OS.
+
+%Neste trabalho pretende-se dotar um dispositivo OBU real, a correr uma imagem Linux com pilha protocolar V2X open-source, de capacidades SDN. #@# O objetivo é que o referido OBU (a ser fornecido) possa ser configurado por um controlador SDN externo usando um protocolo standard e também open-source, como por exemplo o OpenFlow. Para tal será necessário preparar e configurar devidamente a imagem do software do OBU com suporte SDN, que possa ser testada num cenário real simples (a definir).
+%Adicionalmente será estudada uma nova versão de um OBU com especificação de hardware e de software com vista a novos testes futuros.
+
+%No final desta dissertação espera-se conseguir um dispositivo OBU real com capacidade de comunicação multi-tecnologia (nomeadamente LTE/4G/5G, Wifi, IEEE 802.11p) e suporte SDN. Adicionalmente, o dispositivo deverá ser testado num cenário experimental de modo a obter resultados reais.
+
+
+% objective is to build an obu
+
+% what is an obu (ja devo dizer isto na descrição das VANETs e SDNVs)
+
+% what are the theoretical objectives it has to achieve 
+    % cheap
+    % SND compatible
+    % open-source
+    %
+
+% what are its requirements
+    % communication is multi-technology compatible
+    %
+
+% objectives divided in two phases: 
+    % program the softawre of a SDVN OBU,
+    % upgrade SDVN OBU software
+    %
+
+
+% section objectives (end)
+
+\section{Methodology} % (fold)
+\label{sec:methodology}
+
+
+% Numa fase inicial, será feita uma exploração sobre o software necessário para o funcionamento de um OBU controlado por um controlador ryu. Posteriormente, será projetado e construido um novo dispositivo OBU com hardware moderno. Por fim, será testado performance e vulnerabilidades de segurança.
+
+Initially, an investigation will be done to find the software required for the implementation of an OBU controlled by a free controller. Subsequently, a new OBU device will be designed and assembled, using modern hardware. Finally, performance and security vulnerabilities will both be tested.
+
+% section methodology (end)
+
+%\section{Main contributions} % (fold) 
+%\label{sec:main_contributions}
+
+% section main_contributions (end)
+
+\section{Document structure} % (fold)
+\label{sec:document_structure}
+
+Chapter 2 is divided into three main sections. Section 2.1. aims to provide a broad context about vehicular networks, in order to understand the main challenges in this field. In section 2.2., a very detailed overview of SDN is made, with a large emphasis on the data and control plane, to show the power and potential of this technology. Section 2.3. serves to address what are the advantages and shortcomings of using SDN in a vehicular context. 
+In Chapter 3, a state of play is made, where the plan to achieve the goals of this thesis is highlighted. 
+
+% section document_structure (end)
+

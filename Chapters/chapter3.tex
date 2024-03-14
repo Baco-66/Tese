@@ -1,0 +1,135 @@
+%!TEX root = ../template.tex
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% chapter3.tex
+%% NOVA thesis document file
+%%
+%% Chapter with a short laext tutorial and examples
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{State of Play}
+\label{cha:state_of_play}
+
+
+The plan for this thesis is displayed in the following steps:
+
+\begin{enumerate}
+    \item State-of-the-art study
+    \begin{enumerate}
+        \item In-depth research on SDNs 
+        \item In-depth research on VANETs
+        \item Investigation into the use of SDNs in vehicular networks
+    \end{enumerate}
+    \item Familiarization with operating systems 
+    \begin{enumerate}
+        \item Collection of existing operating systems that are relevant for the problem at hand 
+        Linux
+        Openwrt
+    \end{enumerate}
+    \item Testing the chosen operating system on real hardware
+    \begin{enumerate}
+        \item Installing the OS on a device
+        \item Testing the basic operation of an SDN controller in a simple topology
+    \end{enumerate}
+    \item Study and familiarization with v2x protocol stacks
+    \begin{enumerate}
+        \item Collection of existing protocol stacks compatible with the chosen operating systems
+        OvS
+    \end{enumerate}
+    \item Testing the chosen protocol stack on real hardware
+    \begin{enumerate}
+        \item Installing the chosen software in a small device
+        \item Testing the software with a simple SDN controller (scenario 1)
+    \end{enumerate}
+    \item Planning and assembly of an OBU device
+    \begin{enumerate}
+        \item Analysis and study of the solution's resource consumption 
+        \item Choice of hardware capable of supporting the solution
+        \item Assembling the device and testing its operation
+    \end{enumerate}
+    \item Solution feasibility study
+    \begin{enumerate}
+        \item Researching security vulnerabilities related to device communication with the controller
+        \item Study of the efficiency and scalability of the solution
+    \end{enumerate}
+    \item Writing of the dissertation
+\end{enumerate}
+
+Currently the state-of-the art is being developed, with the SDN overview being almost finished.
+
+%Things to test:
+% If switch software works
+% If remote controller works
+% If i can use wireless conection with SDN
+% If i can get P4 in the device
+
+A few testing scenarios have also been devised in order to create a gradual complexity increase. 
+
+\begin{enumerate}
+    \item Scenario 1:  
+    Entities:
+    \begin{enumerate}
+        \item 2 PCs
+        \item 1 switch
+    \end{enumerate}
+    Establish communication between two PCs with cable over an SDN switch being controlled from the switch itself.
+    The controller will program a simple L2 switch. 
+    The switch will use OvSwitch.
+    \item Scenario 2: 
+    Entities:
+    \begin{enumerate}
+        \item 2 PCs
+        \item 1 switch
+        \item 1 controller
+    \end{enumerate}
+    Establish communication between two PCs with cable over an SDN switch being controlled from a remote controller.
+    The controller will program a simple L2 switch. 
+    \item Scenario 3:  
+    Entities:
+    \begin{enumerate}
+        \item 2 PCs
+        \item 1 switch
+        \item 1 controller
+    \end{enumerate}
+    Establish wireless communication between two PCs over an SDN switch being controlled from a remote controller.
+    The controller will program a simple L2 switch. 
+\end{enumerate}
+
+% estou a meio do estado da arte
+
+
+% \subsection{Inserting Figures Wrapped with text} % (fold)
+% \label{ssec:inserting_images_wrapped_with_text}
+% 
+% You should only use this feature is \emph{really} necessary. This means, you have a very small image, that will look lonely just with text above and below.
+% 
+% In this case, you must use the \verb!wrapfiure! package.  To use \verb!wrapfig!, you must first add this to the preamble:
+% 
+% \begin{wrapfigure}{l}{2.5cm}
+%   \centering
+%     \includegraphics[width=2cm]{snowman-vectorial}
+%   \caption{A snow-man}
+% \end{wrapfigure}	
+% 
+% \noindent\verb!\usepackage{wrapfig}!\\
+% This then gives you access to:\\
+% \verb!\begin{wrapfigure}[lineheight]{alignment}{width}!\\
+% Alignment can normally be either ``l'' for left, or ``r'' for right. Lowercase ``l'' or ``r'' forces the figure to start precisely where specified (and may cause it to run over page breaks), while capital ``L'' or ``R'' allows the figure to float. If you defined your document as twosided, the alignment can also be ``i'' for inside or ``o'' for outside, as well as ``I'' or ``O''. The width is obviously the width of the figure. The example above was introduced with:
+% \lstset{language=TeX, morekeywords={\begin,\includegraphics,\caption}, caption=Wrapfig Example, label=lst:latex_example}
+% \begin{lstlisting}
+% 	\begin{wrapfigure}{l}{2.5cm}
+% 	  \centering
+% 	    \includegraphics[width=2cm]{snowman-vectorial}
+% 	  \caption{A snow-man}
+% 	\end{wrapfigure}	
+% \end{lstlisting}
+
+
+%\begin{algorithmic}
+%\If {$i\geq maxval$}
+%    \State $i\gets 0$
+%\Else
+%    \If {$i+k\leq maxval$}
+%        \State $i\gets i+k$
+%    \EndIf
+%\EndIf
+%\end{algorithmic}
+

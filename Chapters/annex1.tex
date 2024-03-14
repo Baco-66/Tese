@@ -1,0 +1,51 @@
+%!TEX root = ../template.tex
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% annex.tex
+%% NOVA thesis document file
+%%
+%% Chapter with example of appendix with a short dummy text
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\typeout{NT FILE annex1.tex}%
+
+\chapter{Bundles of services}
+\label{ann:Bundles_services}
+
+\begin{table}[]
+\begin{tabular}{|l|l|l|}
+\hline
+\rowcolor[HTML]{3166FF} 
+\multicolumn{1}{|c|}{\cellcolor[HTML]{3166FF}{\color[HTML]{FFFFFF} \textbf{Service bundle}}} &
+  \multicolumn{1}{c|}{\cellcolor[HTML]{3166FF}{\color[HTML]{FFFFFF} \textbf{C-ITS Services}}} &
+  \multicolumn{1}{c|}{\cellcolor[HTML]{3166FF}{\color[HTML]{FFFFFF} \textbf{Rationale}}} \\ \hline
+\begin{tabular}[c]{@{}l@{}}Bundle 1 \\ Day 1, V2V, ITS-G5\end{tabular} &
+  \begin{tabular}[c]{@{}l@{}}• Emergency brake light \\ • Emergency vehicle approaching \\ • Slow or stationary vehicle(s) \\ • Traffic jam ahead warning \\ • Hazardous location notification\end{tabular} &
+  \begin{tabular}[c]{@{}l@{}}• Day 1 safety-based V2V services \\ based on ITS-G5 communication, \\ likely to be deployed to vehicles \\ supported by US legislation\end{tabular} \\ \hline
+\begin{tabular}[c]{@{}l@{}}Bundle 2 \\ Day 1, V2I, mainly \\ applicable to motorways\end{tabular} &
+  \begin{tabular}[c]{@{}l@{}}• In-vehicle signage \\ • In-vehicle speed limits \\ • Probe vehicle data \\ • Shockwave damping\\ • Road works warning \\ • Weather conditions\end{tabular} &
+  \begin{tabular}[c]{@{}l@{}}• Day 1 V2I, services that deliver \\ most benefit to motorways. Some \\ services listed here may also be \\ applicable to other road types\end{tabular} \\ \hline
+\begin{tabular}[c]{@{}l@{}}Bundle 3 \\ Day 1, V2I, mainly \\ applicable to urban areas\end{tabular} &
+  \begin{tabular}[c]{@{}l@{}}• Green Light Optimal Speed Advisory \\ (GLOSA) / Time To Green (TTG) \\ • Signal violation/Intersection safety \\ • Traffic signal priority request by \\ designated vehicles\end{tabular} &
+  \begin{tabular}[c]{@{}l@{}}• Day 1 V2I, services expected to \\ only be applicable in urban areas. \\ Therefore, these services are in a \\ separate bundle to those in \\ Bundle 2\end{tabular} \\ \hline
+\begin{tabular}[c]{@{}l@{}}Bundle 4 \\ Day 1.5, V2I, \\ Parking Information\end{tabular} &
+  \begin{tabular}[c]{@{}l@{}}• Off street parking information \\ • On street parking management and\\  information \\ • Park \& Ride information \\ • Information on AFV fuelling \& \\ charging stations\end{tabular} &
+  \begin{tabular}[c]{@{}l@{}}• C-ITS services intended to provide \\ information regarding parking \\ (and refuelling) to drivers\end{tabular} \\ \hline
+\begin{tabular}[c]{@{}l@{}}Bundle 5 \\ Day 1.5, V2I, Traffic \\ and other information\end{tabular} &
+  • Traffic information and smart routing &
+  \begin{tabular}[c]{@{}l@{}}• C-ITS services intended to provide \\ traffic information to drivers\end{tabular} \\ \hline
+\begin{tabular}[c]{@{}l@{}}Bundle 6 \\ Day 1.5, Freight \\ specific services\end{tabular} &
+  \begin{tabular}[c]{@{}l@{}}• Loading zone management \\ • Zone access control management\end{tabular} &
+  • Zone management services \\ \hline
+\begin{tabular}[c]{@{}l@{}}Bundle 7 \\ Day 1.5, V2X (mainly \\ applicable to urban areas), \\ likely to be ITS-G5\end{tabular} &
+  \begin{tabular}[c]{@{}l@{}}• Vulnerable road user protection \\ (pedestrians and cyclists)\end{tabular} &
+  \begin{tabular}[c]{@{}l@{}}• V2X service expected to be post \\ day 1. Communication method is \\ likely to be ITS-G5. Main benefits \\ are likely to be seen in urban areas.\end{tabular} \\ \hline
+\begin{tabular}[c]{@{}l@{}}Bundle 8 \\ Day 1.5, V2V, likely to \\ be ITS-G5\end{tabular} &
+  \begin{tabular}[c]{@{}l@{}}• Cooperative collision risk warning \\ • Motorcycle approaching indication\end{tabular} &
+  \begin{tabular}[c]{@{}l@{}}• Post day 1 V2V services that are \\ likely to be based on ITSG5. As for \\ Day 1 services, V2V and V2I \\ services are in separate service \\ bundles.\end{tabular} \\ \hline
+\begin{tabular}[c]{@{}l@{}}Bundle 9 \\ Day 1.5, V2I\end{tabular} &
+  • Wrong way driving &
+  \begin{tabular}[c]{@{}l@{}}• Post day 1 V2I service. As for \\ Day 1 services, V2V and V2I \\ services are in separate service\\  bundles.\end{tabular} \\ \hline
+\end{tabular}
+    \caption{C-ITS service bundles for scenario building\cite{asselin-miller_study_2016}}
+    \label{tab:VANET_application}
+\end{table}
