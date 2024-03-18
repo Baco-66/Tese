@@ -222,7 +222,7 @@ The \gls{c2c} focuses on the \gls{vanet} space and divides it into three areas: 
 % In-vehicle domain
 The first represents the network inside a vehicle, composed of an \gls{obu} and the multitude of \glspl{au} connected to it. It encompasses all communications between the different \glspl{au} and the \gls{obu}.
 % Ad hoc domain
-The ad hoc domain involves all ad hoc communications between different \glspl{obu} and between vehicles’ \glspl{obu} with \glspl{rsu}.
+The ad hoc domain involves all ad hoc communications between different \glspl{obu} and between vehicles' \glspl{obu} with \glspl{rsu}.
 % Infrastructure domain
 The remaining components of the Internet that don't directly affect it, but help provide connectivity to vehicles, are included in the Infrastructure domain.
 
@@ -308,7 +308,7 @@ The \gls{ieee} 802.11 family of standards, an Access layer technology, was consi
 
 Despite these significant advantages, the existing \gls{ieee} 802.11 standards were not able to meet all the requirements imposed by the unique characteristics of \glspl{vanet}, necessitating the creation of a new variant that would be better suited for such scenarios. Thus, 802.11p was created as an adaptation of the existing 802.11 standards. Given its American origin and contribution to the development of \gls{v2x} communication technologies, it is important to mention that \gls{ieee} 802.11p was conceived in the context of \gls{wave}\cite{jiang_ieee_2008}. The EU, while initially open to many different access technologies, eventually converged on a \gls{ieee} 802.11p based solution dubbed ITS-G5.
 
-\gls{ieee}’s main motivation behind the development of \gls{ieee} 802.11p was to enable effective communication capable of handling the rapidly changing environments of \glspl{vanet}\cite{jiang_ieee_2008}, while making the minimum necessary changes to the \gls{ieee} 802.11 \gls{phy} layer. Modifying the \gls{mac} layer is akin to a software update, while a \gls{phy} level amendment would require the design of an entirely new wireless airlink technology\cite{jiang_ieee_2008}, which would be expensive and time consuming. 
+\gls{ieee}'s main motivation behind the development of \gls{ieee} 802.11p was to enable effective communication capable of handling the rapidly changing environments of \glspl{vanet}\cite{jiang_ieee_2008}, while making the minimum necessary changes to the \gls{ieee} 802.11 \gls{phy} layer. Modifying the \gls{mac} layer is akin to a software update, while a \gls{phy} level amendment would require the design of an entirely new wireless airlink technology\cite{jiang_ieee_2008}, which would be expensive and time consuming. 
 
 With this in mind, the \gls{ieee} began work on a variant of the 802.11 standard that would be feasible for \gls{v2x}, capable of operating at speeds up to 200 km/h and ranges up to 1 km\cite{jakubiak_state_2008}. Experimental work began with the full deck of 802.11 technologies\cite{toor_vehicle_2008}, but soon narrowed down to \gls{ieee} 802.11a because it operates at 5 GHz, which is closest to 5.9 GHz, the desired frequency for \gls{its} operations in the US. This made it easier to configure devices to operate at the desired frequency\cite{jiang_ieee_2008}.
 
@@ -394,7 +394,7 @@ These benefits, along with the renewed support from the industry created from \g
 
 In order to work as a wireless access technology capable of serving all \gls{vanet} test cases, this technology needed to ditch the necessity of using infrastructure and become ad hoc. Therefore, Release 14 established a new mode of communication, called direct communication.\cite{weber_c-v2x_2019} This resulted in LTE and 5G supporting two relevant interfaces for communication in \glspl{vanet}, the Uu interface and the PC5 interface.
 
-The Uu interface is used for long range communication with cellular infrastructure in the commercial cellular spectrum. It uses existing LTE’s large coverage to provide vehicles with all kinds of services\cite{weber_c-v2x_2019}.
+The Uu interface is used for long range communication with cellular infrastructure in the commercial cellular spectrum. It uses existing LTE's large coverage to provide vehicles with all kinds of services\cite{weber_c-v2x_2019}.
 
 The direct communication mode, also referred to as “Mode 4”, utilizes the short range PC5 interface in the \gls{its} 5.9GHz band and allows for direct exchange of information between vehicles without passing through a cell tower.
 
@@ -516,15 +516,16 @@ With this motivation in mind, researchers have laid out several security require
 	\item Confidentiality: a security requirement for any type of network, and \gls{vanet} is no different. Some messages contain important information and therefore should only be accessible to the sender and receiver to prevent eavesdropping.
 	\item Availability: one of the most important concerns in \glspl{vanet}, this requirement seeks to ensure the availability of the wireless channel, as a message that is delayed by seconds becomes useless.
 	\item Access control: this property creates different levels of access for different entities. Access control bars users from accessing any information or sending message types they are not allowed to. Distinguishing multiple levels of access allows for a higher degree of network control and is essential to stop known bad actors from exploiting network dynamics.
-	\item Privacy: Privacy is the ability of users to hide their personal information from the rest of network users. Implementing mechanisms to protect the privacy of all drivers is a top priority to ensure driver privacy, with the main goal to provide location privacy. Anonymity is the process of hiding one’s identity, which is extremely important to achieve privacy.
+	\item Privacy: Privacy is the ability of users to hide their personal information from the rest of network users. Implementing mechanisms to protect the privacy of all drivers is a top priority to ensure driver privacy, with the main goal to provide location privacy. Anonymity is the process of hiding one's identity, which is extremely important to achieve privacy.
 	\item Data verification: this property is essential to avoid false messaging as it allows all messages to be tested by their time relevance. This is necessary to avoid replay attacks in the network.
 	\item Physical Security: as vehicles are a widely spread technology that will be distributed indiscriminately, it is important to implement hardware security in order to avoid tampering and compromising of the vehicle.
 \end{enumerate}
-Authentication and privacy are desirable properties of \glspl{vanet} but ensuring anonymity while enforcing network liability in \glspl{vanet} is a contradictory property in securing vehicular networks. This comes from the necessity to protect drivers’ privacy while being able to track down attackers. \cite{jiang_ieee_2008} \cite{malhi_security_2020}
+Authentication and privacy are desirable properties of \glspl{vanet} but ensuring anonymity while enforcing network liability in \glspl{vanet} is a contradictory property in securing vehicular networks. This comes from the necessity to protect drivers' privacy while being able to track down attackers. \cite{jiang_ieee_2008} \cite{malhi_security_2020}
 Another important consideration to take is that security measures can create performance problems, as they add overhead time in communications and can significantly degrade message quality. \cite{toor_vehicle_2008}
 	% ETSI security entity
-\gls{etsi} has taken these security concerns into consideration and has incorporated security requirements into its architecture\ref{fig:security_entity}. These considerations were taken on a layer by layer approach, resulting in security services being implemented at every layer and between multiple layers, which necessitated the creation of a dedicated entity for security. The \gls{etsi} \gls{its} host architecture envisions a Security Entity, which is responsible for providing security services, as seen on figure 25. The security entity can also be considered as a specific part of the management entity.
+%\gls{etsi} has taken these security concerns into consideration and has incorporated security requirements into its architecture\ref{fig:security_entity}. These considerations were taken on a layer by layer approach, resulting in security services being implemented at every layer and between multiple layers, which necessitated the creation of a dedicated entity for security. The \gls{etsi} \gls{its} host architecture envisions a Security Entity, which is responsible for providing security services, as seen on figure 25. The security entity can also be considered as a specific part of the management entity.
 \cite{etsi_intelligent_2010-1}
+
 
 \begin{figure}[htbp]
     \centering
