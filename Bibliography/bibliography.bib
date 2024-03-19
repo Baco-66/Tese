@@ -72,7 +72,7 @@
 	title = {A Survey of {VANET} Technologies},
 	abstract = {Recent advancement in wireless communication technologies and automobiles have enabled the evolution of Intelligent Transport System ({ITS}) which addresses various vehicular traffic issues like traffic congestion, information dissemination, accident etc. Vehicular Ad-hoc Network ({VANET}) a distinctive class of Mobile ad-hoc Network ({MANET}) is an integral component of {ITS} in which moving vehicles are connected and communicate wirelessly. Wireless communication technologies play a vital role in supporting both Vehicle to Vehicle (V2V) and Vehicle to Infrastructure (V2I) communication in {VANET}. This paper surveys some of the key vehicular wireless access technology standards such as 802.11p, P1609 protocols, Cellular System, {CALM}, {MBWA}, {WiMAX}, Microwave, Bluetooth and {ZigBee} which served as a base for supporting both Safety and Non Safety applications. It also analyses and compares the wireless standards using various parameters such as bandwidth, ease of use, upfront cost, maintenance, accessibility, signal coverage, signal interference and security. Finally, it discusses some of the issues associated with the interoperability among those protocols.},
 	author = {Anwer, M Shahid and Guy, Chris},
-	journaltitle = {Journal of Emerging Trends in Computing and Information Sciences}
+	journaltitle = {Journal of Emerging Trends in Computing and Information Sciences},
 	date = {2014},
 	langid = {english},
 	file = {Anwer e Guy - 2014 - A Survey of VANET Technologies.pdf:C\:\\Users\\Utilizador\\Zotero\\storage\\659DZ9CB\\Anwer e Guy - 2014 - A Survey of VANET Technologies.pdf:application/pdf},
@@ -880,4 +880,168 @@ Fala um pouco de tudo
 	keywords = {SDN, P4, Programmable data planes},
 	pages = {103561},
 	file = {ScienceDirect Snapshot:C\:\\Users\\Utilizador\\Zotero\\storage\\MSRKM27P\\S1084804522002028.html:text/html;Submitted Version:C\:\\Users\\Utilizador\\Zotero\\storage\\SR8ZS35D\\Hauser et al. - 2023 - A survey on data plane programming with P4 Fundam.pdf:application/pdf},
+}
+
+@article{alowa_scalable_2020,
+	title = {Scalable {Reliable} {Controller} {Placement} in {Software} {Defined} {Networking}},
+	url = {https://core.ac.uk/reader/355870830},
+	abstract = {Software Defined Networking (SDN) is a new networking paradigm that facilitates a centralized system of computer networks by decoupling the control and data plane from each other, where a controller maintains the management of a global view of the network. SDN architectures can provide programmatic interfaces in communication networks that significantly simplify network management. Hence, the controllability and manageability of a network can be improved. On the one hand, the placement of controllers can significantly impact network performance in terms of controller responsiveness. On the other hand, SDN offers the ability to have controllers distributed over the network to solve the single point of failure problem at the control plane, increasing scalability and flexibility. However, there are some inevitable problems for such networks, especially for controller-related problems. For instance, scalability, reliability, and controller availability are some of the hottest aspects of SDN. More precisely, failure of the controllers themselves may lead to the impact of these aspects and the collapse of the network performance.
+
+Despite the issues mentioned above, the controller placement challenges must be appropriately addressed to take advantage of the SDN. The connections between the controller (control plane) and the switches (data plane) in SDN are established by either an in-band or an out-of-band control mechanism. New challenges still arise regardin  the connection availability and provide more protection for the connection between the data and control planes. A disconnection between the two planes could result in performance degradation. Although the SDN offers the advantage of an environment of multiple distributed controllers, yet the intercommunication factor between these controllers is still a key challenge. This thesis investigates the issues mentioned above and organizes them into four stages. 
+
+First, dealing with the controller placement problem as the most crucial concern in SDN, via exploiting the independent dominating set approach to ensure a distribution of controllers with lowest response times. We propose a new node degree-based algorithm named High Degree with Independent Dominating Set (HDIDS) for the controller placement problem in the SDN networks. HDIDS is composed of two phases to deal with controller placement: (1) determining candidate controller instances by selecting those nodes with the highest degree; and (2) partitioning the network into
+
+multiple domains, one controller per domain. 
+
+To further improve network performance, reliability, and survivability, one solution is to deploy backup controllers to satisfy the quality of service requirements. In this regard, as a second step, we enhance the controller placement approach by designing a reliable and survivable controller placement strategy. This strategy relies on the efficient deployment of backup controllers by constructing virtual backup domains set(s) to ensure the durability and resilience of network control management. The approach design is called a Survivable Backup Controller Placement approach.  
+
+Furthermore, to achieve reliable control traffic between data and control planes in an in-band control network, as a third stage, we design and implement an In-band Control Protection Module that finds a set of ideal paths for the control channel under the failure conditions. The proposed protection mechanism protects as much control traffic as possible. 
+
+Finally, we present a practical approach for the controller placement problem in software defined networks aiming to minimize the inter-controller communication delay time and the delay time between controller and switches. The principal concept employed in this approach is the Connected Dominating Set. Further, we present an algorithm using the Minimum Connected Dominating Set, which minimizes the delay time between the distributed SDN controllers},
+	urldate = {2024-03-19},
+	author = {Alowa, Abdunasser},
+	month = sep,
+	year = {2020},
+	file = {Full Text PDF:C\:\\Users\\Utilizador\\Zotero\\storage\\JCKU7K5W\\Object - Scalable ReliableControllerPlacementinSoftwareDefi.pdf:application/pdf},
+}
+
+% sdvn
+
+
+@article{nkenyereye_software-defined_2019,
+	title = {Software-{Defined} {Network}-{Based} {Vehicular} {Networks}: {A} {Position} {Paper} on {Their} {Modeling} and {Implementation}},
+	volume = {19},
+	copyright = {http://creativecommons.org/licenses/by/3.0/},
+	issn = {1424-8220},
+	shorttitle = {Software-{Defined} {Network}-{Based} {Vehicular} {Networks}},
+	url = {https://www.mdpi.com/1424-8220/19/17/3788},
+	doi = {10.3390/s19173788},
+	abstract = {There is a strong devotion in the automotive industry to be part of a wider progression towards the Fifth Generation (5G) era. In-vehicle integration costs between cellular and vehicle-to-vehicle networks using Dedicated Short Range Communication could be avoided by adopting Cellular Vehicle-to-Everything (C-V2X) technology with the possibility to re-use the existing mobile network infrastructure. More and more, with the emergence of Software Defined Networks, the flexibility and the programmability of the network have not only impacted the design of new vehicular network architectures but also the implementation of V2X services in future intelligent transportation systems. In this paper, we define the concepts that help evaluate software-defined-based vehicular network systems in the literature based on their modeling and implementation schemes. We first overview the current studies available in the literature on C-V2X technology in support of V2X applications. We then present the different architectures and their underlying system models for LTE-V2X communications. We later describe the key ideas of software-defined networks and their concepts for V2X services. Lastly, we provide a comparative analysis of existing SDN-based vehicular network system grouped according to their modeling and simulation concepts. We provide a discussion and highlight vehicular ad-hoc networks’ challenges handled by SDN-based vehicular networks.},
+	language = {en},
+	number = {17},
+	urldate = {2022-10-10},
+	journal = {Sensors},
+	author = {Nkenyereye, Lionel and Nkenyereye, Lewis and Islam, S. M. Riazul and Choi, Yoon-Ho and Bilal, Muhammad and Jang, Jong-Wook},
+	month = jan,
+	year = {2019},
+	note = {Number: 17
+Publisher: Multidisciplinary Digital Publishing Institute},
+	keywords = {modeling and implementation, software defined network, software-defined vehicular network, vehicle-to-everything (V2X)},
+	pages = {3788},
+	file = {Full Text PDF:C\:\\Users\\Utilizador\\Zotero\\storage\\H9VVKHJG\\Nkenyereye et al. - 2019 - Software-Defined Network-Based Vehicular Networks.pdf:application/pdf;Snapshot:C\:\\Users\\Utilizador\\Zotero\\storage\\486L3N86\\htm.html:text/html},
+}
+
+@article{cardona_software-defined_2020,
+	title = {Software-{Defined} {Vehicular} {Networking}: {Opportunities} and {Challenges}},
+	volume = {8},
+	issn = {2169-3536},
+	shorttitle = {Software-{Defined} {Vehicular} {Networking}},
+	doi = {10.1109/ACCESS.2020.3042717},
+	abstract = {Over the last ten years, Vehicular Ad Hoc Networks (VANETs) have received significant attention from the academic and industrial communities alike. VANETs are a particular type of mobile ad hoc network originally designed for the purpose of facilitating the creation of spontaneous wireless networks between different vehicles, but since their inception the scope of VANETs has been extended to other types of road users such as cyclists and pedestrians. Due to the volatility of the wireless medium, VANETs face several challenges, especially when applications with a diverse set of requirements must be supported. Among the various techniques used to address such challenges, one of the most recent is Software-Defined Networking (SDN), which, by clearly separating the data plane from the control plane, allows the implementation of traditional network control and management tasks on top of a logically centralized controller. In this work, we perform a systematic review of SDN techniques tailored to the VANET domain. More specifically, we first review the literature on VANETs and SDN from an architectural and communications requirement perspective, then we report on the most recent standardization efforts, and finally, we highlight the open research areas and the most important challenges in this domain.},
+	journal = {IEEE Access},
+	author = {Cardona, Nelson and Coronado, Estefanía and Latré, Steven and Riggio, Roberto and Marquez-Barja, Johann M.},
+	year = {2020},
+	note = {Conference Name: IEEE Access},
+	keywords = {Computer architecture, Vehicular ad hoc networks, Wireless fidelity, VANET, Wireless communication, 5G mobile communication, Intelligent transport systems (ITS), Protocols, software-defined networking (SDN), software-defined vehicular networking (SDVN), Standards, Vehicle To Everything (V2X)},
+	pages = {219971--219995},
+	file = {IEEE Xplore Abstract Record:C\:\\Users\\Utilizador\\Zotero\\storage\\B2TAF6DQ\\9281047.html:text/html;IEEE Xplore Full Text PDF:C\:\\Users\\Utilizador\\Zotero\\storage\\BI93BUUA\\Cardona et al. - 2020 - Software-Defined Vehicular Networking Opportuniti.pdf:application/pdf},
+}
+
+@article{bhatia_software_2019,
+	title = {Software defined vehicular networks: {A} comprehensive review},
+	volume = {32},
+	issn = {1099-1131},
+	shorttitle = {Software defined vehicular networks},
+	url = {https://onlinelibrary.wiley.com/doi/abs/10.1002/dac.4005},
+	doi = {10.1002/dac.4005},
+	abstract = {The recent breakthroughs in the automobile industries and telecommunication technologies along with the exceptional multimodal mobility services brought focus on intelligent transportation system (ITS), of which vehicular ad hoc networks (VANETs) gain much more attention. The distinctive features of software-defined networking (SDN) leverages the vehicular networks by its state of the centralized art having a comprehensive view of the network. Its potential to bring the flexibility, programmability and other extensive advancements to vehicular networks has set the stage for a novel networking paradigm termed as software-defined vehicular networks (SDVNs). Many researchers have demonstrated the SDN-based VANETs with the various configuration of the SDN components in VANET architecture. However, a compilation of the work on the SDN-based VANET system as a whole, incorporating its architecture, use-cases, and opportunities, is still inadequate. We start with the summary of the recent studies that exist on the SDVNs, followed by the comprehensive explanation of its components. Next, we present the taxonomy of SDVN based on the architecture modes, protocols, access technologies, and opportunities with trending technologies. Finally, we highlight the challenges, open research issues, and future research directions.},
+	language = {en},
+	number = {12},
+	urldate = {2022-10-11},
+	journal = {International Journal of Communication Systems},
+	author = {Bhatia, Jitendra and Modi, Yash and Tanwar, Sudeep and Bhavsar, Madhuri},
+	year = {2019},
+	note = {\_eprint: https://onlinelibrary.wiley.com/doi/pdf/10.1002/dac.4005},
+	pages = {e4005},
+	file = {Full Text PDF:C\:\\Users\\Utilizador\\Zotero\\storage\\WWS5VZNG\\Bhatia et al. - 2019 - Software defined vehicular networks A comprehensi.pdf:application/pdf;Snapshot:C\:\\Users\\Utilizador\\Zotero\\storage\\D5J7BZRA\\dac.html:text/html},
+}
+
+@inproceedings{toufga_openflow_2018,
+	title = {{OpenFlow} based {Topology} {Discovery} {Service} in {Software} {Defined} {Vehicular} {Networks}: limitations and future approaches},
+	shorttitle = {{OpenFlow} based {Topology} {Discovery} {Service} in {Software} {Defined} {Vehicular} {Networks}},
+	doi = {10.1109/VNC.2018.8628349},
+	abstract = {This paper presents our ongoing work towards the definition of an effective topology discovery service for SDN based hybrid vehicular networks. The main contributions of this paper are threefold: (1) an analysis of the main limitations of the “de facto” topology discovery service when applied to vehicular networks; (2) a quantitative assessment of its traffic overhead and the required computing resources at the controller to show the scalability issues that it raises; and (3) an insight into our design principles for an effective topology discovery service for SDN-based hybrid vehicular networks.},
+	booktitle = {2018 {IEEE} {Vehicular} {Networking} {Conference} ({VNC})},
+	author = {Toufga, Soufian and Abdellatif, Slim and Owezarski, Philippe and Villemur, Thierry},
+	month = dec,
+	year = {2018},
+	note = {ISSN: 2157-9865},
+	keywords = {Topology, Protocols, Long Term Evolution, Network topology, OFDP, OpenFlow, Scalability, Software Defined Vehicular Network, Switches, Topology discovery service},
+	pages = {1--4},
+	annote = {Por ler
+análise dos problemas de SDVNs
+
+},
+	file = {IEEE Xplore Abstract Record:C\:\\Users\\Utilizador\\Zotero\\storage\\V8UE2T95\\8628349.html:text/html;IEEE Xplore Full Text PDF:C\:\\Users\\Utilizador\\Zotero\\storage\\HXMDRFF4\\Toufga et al. - 2018 - OpenFlow based Topology Discovery Service in Softw.pdf:application/pdf},
+}
+
+@inproceedings{ku_towards_2014,
+	title = {Towards software-defined {VANET}: {Architecture} and services},
+	shorttitle = {Towards software-defined {VANET}},
+	doi = {10.1109/MedHocNet.2014.6849111},
+	abstract = {Vehicular Ad Hoc Networks (VANETs) have in recent years been viewed as one of the enabling technologies to provide a wide variety of services, such as vehicle road safety, enhanced traffic and travel efficiency, and convenience and comfort for passengers and drivers. However, current VANET architectures lack in flexibility and make the deployment of services/protocols in large-scale a hard task. In this paper, we demonstrate how Software-Defined Networking (SDN), an emerging network paradigm, can be used to provide the flexibility and programmability to networks and introduces new services and features to today's VANETs. We take the concept of SDN, which has mainly been designed for wired infrastructures, especially in the data center space, and propose SDN-based VANET architecture and its operational mode to adapt SDN to VANET environments. We also discuss benefits of a Software-Defined VANET and the services that can be provided. We demonstrate in simulation the feasibility of a Software-Defined VANET by comparing SDN-based routing with traditional MANET/VANET routing protocols. We also show in simulation fallback mechanisms that must be provided to apply the SDN concept into mobile wireless scenarios, and demonstrate one of the possible services that can be provided by a Software-Defined VANET.},
+	booktitle = {2014 13th {Annual} {Mediterranean} {Ad} {Hoc} {Networking} {Workshop} ({MED}-{HOC}-{NET})},
+	author = {Ku, Ian and Lu, You and Gerla, Mario and Gomes, Rafael L. and Ongaro, Francesco and Cerqueira, Eduardo},
+	month = jun,
+	year = {2014},
+	keywords = {Computer architecture, Control systems, Vehicular ad hoc networks, Software-Defined Networking, VANET, Vehicles, Wireless communication, wireless networks, Wireless sensor networks},
+	pages = {103--110},
+	annote = {por ler
+
+},
+	file = {IEEE Xplore Abstract Record:C\:\\Users\\Utilizador\\Zotero\\storage\\WQUGEHY5\\6849111.html:text/html;IEEE Xplore Full Text PDF:C\:\\Users\\Utilizador\\Zotero\\storage\\HTEQHVTI\\Ku et al. - 2014 - Towards software-defined VANET Architecture and s.pdf:application/pdf},
+}
+
+@article{ben_jaballah_security_2020,
+	title = {Security and design requirements for software-defined {VANETs}},
+	volume = {169},
+	issn = {1389-1286},
+	url = {https://www.sciencedirect.com/science/article/pii/S1389128619306553},
+	doi = {10.1016/j.comnet.2020.107099},
+	abstract = {The evolving of Fifth Generation (5G) networks is becoming more readily available as a significant driver of the growth of new applications and business models. Vehicular Ad hoc Networks (VANETs) and Software Defined Networking (SDN) represent the critical enablers of 5G technology with the development of next-generation intelligent vehicular networks and applications. In recent years, researchers have focused on the integration of SDN and VANET, and looked at different topics related to the architecture, the benefits of software-defined VANET services, and the new functionalities to adapt them. However, the security and robustness of the complete architecture is still questionable and have been largely neglected by the research community. Moreover, the deployment and integration of different entities and several architectural components drive new security threats and vulnerabilities. In this paper, first, we survey the state-of-the-art SDN based Vehicular ad-hoc Network (SDVN) architectures for their networking infrastructure design, functionalities, benefits, and challenges. Then we discuss these architectures against major security threats that violate the key security services such as availability, privacy, authentication, and data integrity. We also discuss different countermeasures for these threats. Finally, we present the lessons learned with the directions of future research work towards provisioning stringent security solutions in new SDVN architectures. To the best of our knowledge, this is the first work that presents a comprehensive survey and security analysis on SDVN architectures, and we believe that it will help researchers to address various challenges (e.g., flexible network management, control and high resource utilization, and scalability) in vehicular communication systems which are required to improve the future Intelligent Transportation Systems (ITS).},
+	urldate = {2023-12-15},
+	journal = {Computer Networks},
+	author = {Ben Jaballah, Wafa and Conti, Mauro and Lal, Chhagan},
+	month = mar,
+	year = {2020},
+	keywords = {5G, Software defined networking, Security, VANETs, Edge/Fog computing, Networking attacks, Wireless channels},
+	pages = {107099},
+	file = {Ben Jaballah et al. - 2020 - Security and design requirements for software-defi.pdf:C\:\\Users\\Utilizador\\Zotero\\storage\\RJLY8DSE\\Ben Jaballah et al. - 2020 - Security and design requirements for software-defi.pdf:application/pdf;ScienceDirect Snapshot:C\:\\Users\\Utilizador\\Zotero\\storage\\XG2UTWWN\\S1389128619306553.html:text/html},
+}
+
+@inproceedings{smida_efficient_2020,
+	title = {Efficient {SDN} {Controller} for {Safety} {Applications} in {SDN}-{Based} {Vehicular} {Networks}: {POX}, {Floodlight}, {ONOS} or {OpenDaylight}?},
+	shorttitle = {Efficient {SDN} {Controller} for {Safety} {Applications} in {SDN}-{Based} {Vehicular} {Networks}},
+	url = {https://ieeexplore.ieee.org/abstract/document/9306095},
+	doi = {10.1109/ComNet47917.2020.9306095},
+	abstract = {Thanks to its open programmability and logically centralized control, the software-defined networking (SDN) paradigm presents new potentials for communication and networking management in vehicular networks and promises improved performances. The variety of applications delivered on the road like safety, traffic efficiency and infotainment, in addition to the diversity of developed SDN controllers, triggered the challenge to determine which controller can act better in which service. In this paper we conduct a performance comparison of four open source controllers (POX, Floodlight, ONOS and OpenDaylight) in terms of e2e delay in the context of safety applications in variable vehicular density environment. Experimental study done with advanced tools such as Iperf and Mininet-wifi indicates that ODL is the best in this context.},
+	urldate = {2024-02-19},
+	booktitle = {2020 {IEEE} {Eighth} {International} {Conference} on {Communications} and {Networking} ({ComNet})},
+	author = {Smida, Karima and Tounsi, Hajer and Frikha, Mounir and Song, Ye-Qiong},
+	month = oct,
+	year = {2020},
+	note = {ISSN: 2473-7585},
+	keywords = {Software, Topology, VANET, Safety, Throughput, Delays, Floodlight, Linux, Mininet-wifi, ONOS, OpenDaylight, POX, Software Defined Networking (SDN), Tools},
+	pages = {1--6},
+	file = {IEEE Xplore Abstract Record:C\:\\Users\\Utilizador\\Zotero\\storage\\RFNUGGPD\\9306095.html:text/html;IEEE Xplore Full Text PDF:C\:\\Users\\Utilizador\\Zotero\\storage\\UPZNVRV2\\Smida et al. - 2020 - Efficient SDN Controller for Safety Applications i.pdf:application/pdf},
+}
+
+@article{sarpong_potential_2023,
+	title = {The potential of {SDNs} and multihoming in {VANETs}: {A} {Comprehensive} {Survey}},
+	abstract = {The escalating growth of vehicles has amplified the complexity of Vehicle Ad-hoc Networks (VANETs), necessitating innovative strategies to combat communication delays and disruptions. In this study, we covered a literature review from 2009 to 2023 where we present a comprehensive exploration of solutions by integrating Software-Defined Networking (SDN), Programming Protocol-independent Packet Processors (P4), and Service Function Chaining (SFC). Our research addresses the core challenges of VANETs, emphasizing the specific problem of communication delays.},
+	language = {en},
+	author = {Sarpong, Richmond and Sousa, Bruno and Araujo, Filipe},
+	month = nov,
+	year = {2023},
+	file = {Sarpong et al. - The potential of SDNs and multihoming in VANETs A.pdf:C\:\\Users\\Utilizador\\Zotero\\storage\\VW3Z5UMK\\Sarpong et al. - The potential of SDNs and multihoming in VANETs A.pdf:application/pdf},
 }

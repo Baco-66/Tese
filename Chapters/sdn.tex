@@ -8,9 +8,8 @@
 
 \typeout{NT FILE sdn.tex}%
 
-\chapter[Software Defined Networking]{\acrlong{sdn}} % (fold)
+\chapter[Software Defined Networking]{\glsxtrlong{sdn}} % (fold)
 \label{cha:sdn}
-
 
 % introduction
 \gls{sdn} is a networking paradigm that simplifies network management and promotes innovation through software-based approaches, rather than traditional hardware-based configurations. \gls{sdn} has the potential to shape the future of the Internet and is therefore often referred to as a "radical new idea in networking"~\cite{nunes_survey_2014}. 
@@ -19,9 +18,7 @@
 
 In 2011, the \gls{onf}~\cite{noauthor_open_nodate} consortium was founded with support from major players in the technology industry, including Google, Facebook, and Microsoft. \gls{onf} develops open standards for \gls{sdn} technologies to promote the \gls{sdn} vision. It is currently the leading consortium in this field.  
 
-The information in this paper on \gls{sdn} is largely supported by the book "Software-Defined Networks: A Systems Approach"\cite{peterson_software-defined_2021}, authored by leading researchers in the field and cited by the \gls{onf} itself.
-
-Before delving deeper into this topic, it is worth emphasizing that \gls{sdn} is an approach to networking, rather than a point solution, so while some of the most important and widely adopted technologies will be mentioned in this chapter, they should be viewed as an attempt to achieve the \gls{sdn} vision.
+The information in this paper on \gls{sdn} is largely supported by the book "Software-Defined Networks: A Systems Approach"\cite{peterson_software-defined_2021}, authored by leading researchers in the field and cited by the \gls{onf} itself. Before delving deeper into this topic, it is worth emphasizing that \gls{sdn} is an approach to networking, rather than a point solution, so while some of the most important and widely adopted technologies will be mentioned in this chapter, they should be viewed as an attempt to achieve the \gls{sdn} vision.
 
 
 % SDN definition
@@ -60,11 +57,10 @@ To sum up, and as can be seen in Figure \ref{fig:sdn_vs_legacy}, \gls{sdn} requi
 
 \begin{figure}
 	\centering
-	\includegraphics{Chapters/Figures/SDNs/sdn_vs_legacy.png}
-	\caption{Traditional network view Vs \gls{sdn} Network view}
+	\includegraphics[width=0.8\textwidth]{Chapters/Figures/SDNs/sdn_vs_legacy.png}
+	\caption{Traditional network view Vs \gls{sdn} Network view\cite{alowa_scalable_2020}}
 	\label{fig:sdn_vs_legacy}
 \end{figure}
-%\cite{object_scalable_nodate}
 
 As a consequence from these principles, an \gls{sdn} switch can function as any traditional Internet device, such as a router, switch, firewall, network address translator, or even a combination of these. 
 
@@ -88,7 +84,7 @@ In reality, \gls{sdn} implementations may mean more or less than the original de
 
 From this, and from the fact that \gls{sdn} is a disruptive technology, hybrid solutions that aim to harness some of the \gls{sdn} benefits while maintaining the status quo in the industry have appeared\cite{peterson_software-defined_2021}. These solutions mainly appear as attempts from manufacturers to maintain their established business models. 
 
-Lastly, it should also be noted phase 1 \gls{sdn} was largely impelled forward by Openflow, while phase 2 is marked by the development of \gls{p4}. Both these technologies will be further discussed in Section \ref{}.
+Lastly, it should also be noted phase 1 \gls{sdn} was largely impelled forward by Openflow, while phase 2 is marked by the development of \gls{p4}. Both these technologies will be further discussed in Section \ref{sec:sdn_arch}.
 
 
 % Advantages of SDN
@@ -99,13 +95,13 @@ The Internet currently faces numerous challenges, ranging from expensive, comple
 This section explores the benefits of \gls{sdn} to demonstrate its usefulness and explain its motivations. As this thesis will not delve into the \gls{sdn} disadvantages, it is important to keep in mind that \gls{sdn} is not a universal solution for all networking issues. For example, in high performance networks, where each millisecond in packet processing is precious, the benefits of \gls{sdn} might not be worth its small drawbacks, as a vertically integrated device is theoretically faster\cite{nunes_survey_2014}. 
 
 % Network innovation
-
+\subsection{Network innovation}
 % Internet ossification
 New ideas in networking have had increasingly less impact in the real world. This phenomenon is commonly referred to as "Internet ossification" and it means that the Internet has become static, like a fossil\cite{nunes_survey_2014}. Most researchers consider this to be the greatest challenge to networking in the last three decades.
 
 Today's networks are dominated by proprietary equipment. The distributed nature of the Internet already introduces a great deal of complexity, but these components must also support an extensive set of features while maintaining network flexibility, dynamicity, performance, and efficiency\cite{feamster_road_2013}. This results in extremely complex network systems that require a tremendous amount of effort from network engineers while being extremely dispendious.
 
-This status quo causes new networking features to require a long and arduous process with immense implementation, experimentation, and deployment problems. Current networking devices and their maintenance also doesn't come cheap, with long monetary returns for manufacturers in investment cycles. These facts hamper innovation by inducing network developers to delay the introduction of new network features until they are widely requested. \cite{bifulco_survey_2018}\cite{kreutz_software-defined_2015}
+This status quo causes new networking features to require a long and arduous process with immense implementation, experimentation, and deployment problems. Current networking devices and their maintenance also doesn't come cheap, with long monetary returns for manufacturers in investment cycles. These facts hamper innovation by inducing network developers to delay the introduction of new network features until they are widely requested\cite{bifulco_survey_2018}\cite{kreutz_software-defined_2015}. 
 
 Another important factor is the reluctance to test new ideas for fear of disrupting existing traffic. The internet has a massive deployment base and has long been considered as critical infrastructure\cite{nunes_survey_2014}, so network ideas are not tested for fear of disrupting current services. Consequently, experimentation scenarios are rarely possible and conducted in simplistic scenarios, which diminishes confidence in their results\cite{xia_survey_2015}. Realistic testing scenarios are necessary to gain the confidence needed for widespread acceptance\cite{mckeown_openflow_2008}.
 
@@ -123,6 +119,7 @@ Through network programmability, \gls{sdn} enables the development of new ideas 
 Lastly, the programmable controller also benefits from a network-wide view and control, meaning it can instantly and seamlessly deploy new network applications, such as protocols or policies, across the entire network with minimal network downtime. This ability to easily update devices enables devices to be incrementally tested and refined as feedback is received. In traditional networks, these processes required the installation of expensive hardware and manual updates to individual devices. \cite{xia_survey_2015}
 
 % cheaper networks
+\subsection{Network cost}
 Routing devices are extremely costly to purchase and maintain, especially given a handful of companies have tight control over this market. The complexity of the devices prevents new competitors from entering, which is the main reason for this dominance. \gls{sdn} promotes a more affordable alternative to these traditional devices through its open source approach, which allows any hardware device to be used as a networking device, commoditizing networking hardware. \cite{nunes_survey_2014}
 
 In an attempt to address the lack of functionality in current network devices, traditional networks are filled with a myriad of specialized components and middleboxes performing a variety of different functions\cite{feamster_road_2013}\cite{kreutz_software-defined_2015}, further driving up network costs. Examples of these middleboxes include firewalls, load balancers, network access controllers, and network address translators \cite{nunes_survey_2014}. In \gls{sdn}, these devices are replaced by software programs which are implemented by the network controller as network-wide policies, thus reducing network costs.
@@ -130,7 +127,7 @@ In an attempt to address the lack of functionality in current network devices, t
 \gls{sdn} can also reduce costs by optimizing energy consumption. In large-scale network scenarios, such as data centers, the cost of energy consumption from networking equipment may seem small, but it still constitutes a significant expense. \gls{sdn} allows networks to dynamically power on and off devices based on expected network traffic, reducing energy consumption and costs\cite{nunes_survey_2014}.
 
 % Higher network control 
-
+\subsection{Network control}
 % Complex networking environments
 Today's computer networks are often too large, complex, and heterogeneous for conventional methods of configuration, optimization, and troubleshooting to be effective\cite{xia_survey_2015}\cite{kreutz_software-defined_2015}. Network management becomes very difficult due to this complexity, which in turn hinders efforts to optimize network performance.
 
@@ -160,13 +157,14 @@ Implementing automated network management is another major \gls{sdn} use case\ci
 
 % SDN Architecture
 \section[SDN architecture]{\gls{sdn} architecture} % (fold)
+\label{sec:sdn_arch}
 
     % intro
 The \gls{sdn} architecture divides networks into abstracted layers, inspired by computer systems, each with its own unique purpose\cite{kreutz_software-defined_2015}. It consists of three main layers: the data plane, the control plane, and the application plane. These layers are linked by the Southbound API, and the Northbound API. Variations of this \gls{sdn} view are numerous and will be explained when relevant.
 
 \begin{figure}
 	\centering
-	\includegraphics{Chapters/Figures/SDNs/LAYERS.png}
+	\includegraphics[width=0.8\textwidth]{Chapters/Figures/SDNs/LAYERS.png}
 	\caption{Layered view of \gls{sdn} Architecture\cite{latif_comprehensive_2020}}
 	\label{fig:sdn_layers}
 \end{figure}
@@ -178,7 +176,7 @@ When surveying the \gls{sdn} architecture, it is best to approach it and each of
 
 
 % data plane or infrastructure layer
-\subsubsection{Data plane} % (fold)
+\subsection{Data plane} % (fold)
 
 % Definition
 The data plane is the first and the lowest layer of the \gls{sdn} architecture and is made up of networking infrastructure which in traditional networks are switches, routers and any other middlebox appliance. These distributed forwarding devices are interconnected with each other through traditional means like wireless radio channels or wired cables. Unlike in traditional networks, however, these devices don't have the autonomy to make networking decisions and instead follow the instructions given by the controller\cite{kreutz_software-defined_2015}. 
@@ -188,7 +186,7 @@ This last property means that in \gls{sdn}, all network equipment is referred to
 The data plane is responsible for receiving, processing and forwarding packets based on rules set by the controller, implementing the packet processing policies defined by the control plane\cite{mckeown_openflow_2008}  \cite{xia_survey_2015}. These devices may also gather and store network status information, including network topology, traffic statistics, and network utilization, to later transmit to upper layers\cite{xia_survey_2015}. This data can then be used to verify network behavior, monitor network performance and handle failures, all of which improve overall network health\cite{bifulco_survey_2018}.
 
 % Programmability
-
+\subsubsection{Data plane programmability}
 % what does it mean
 \gls{sdn} switches can be divided into two categories based on whether they are programmable or static\cite{peterson_software-defined_2021}. This classification is driven by changes not only in behavior, but also in hardware. Static devices use fixed-function chips that process headers based on fixed protocols that cannot be changed. Programmable devices, on the other hand, use programmable chips for dynamic processing. 
 
@@ -196,7 +194,7 @@ The programming of data plane devices is a relatively recent development, which 
 
 \begin{figure}
 	\centering
-	\includegraphics{Chapters/Figures/SDNs/sdn_evolution.png}
+	\includegraphics[width=0.8\textwidth]{Chapters/Figures/SDNs/sdn_evolution.png}
 	\caption{Evolution of \gls{sdn}\cite{liatifis_advancing_2023}}
 	\label{fig:sdn_evolution}
 \end{figure}
@@ -208,16 +206,15 @@ Most importantly, data plane programming can unlock complete control over networ
 The main benefit of data plane programmability is therefore its increased flexibility\cite{bifulco_survey_2018}. This feature allows for the optimization of packet processing functions to meet specific use cases or requirements, tailoring the data plane to the network's specific requirements. Additionally, it facilitates the deployment of brand new network protocols. 
 
 % Motivation (a.k.a OpenFlow’s problem)
-The concept of data plane programming emerged in response to an issue found with then standard \gls{sdn} solutions. \gls{sdn}'s ambitious goals naturally lead to initial approaches falling short. The first phase of \gls{sdn} is defined by the southbound API OpenFlow. The soundbound API is an interoperable interface that is used by the control plane to communicate routing decisions to devices, dictating how the control plane communicates with switches\cite{li_protocol_2017}. There are several other southbound APIs available, with OpenFlow being the most popular in this first phase. OpenFlow is a protocol-dependent API that defines a specific set of headers for controllers to use in defining rules in the data plane. 
+The concept of data plane programming emerged in response to an issue found with then standard \gls{sdn} solutions. \gls{sdn}'s ambitious goals naturally lead to initial approaches falling short. The first phase of \gls{sdn} is defined by the Southbound API OpenFlow. The soundbound API is an interoperable interface that is used by the control plane to communicate routing decisions to devices, dictating how the control plane communicates with switches\cite{li_protocol_2017}. There are several other Southbound APIs available, with OpenFlow being the most popular in this first phase. OpenFlow is a protocol-dependent API that defines a specific set of headers for controllers to use in defining rules in the data plane. 
 
-As OpenFlow evolved, researchers realized that its static nature was extremely limiting\cite{bosshart_p4_2014}\cite{hauser_survey_2021}\cite{li_protocol_2017}. Protocol-dependent southbound APIs assume a specific data plane functionality that cannot be altered. When working with OpenFlow, network policies must adhere to the existing matching fields and actions of OpenFlow, which undermines the controller's power over the protocols used on the network.  
+As OpenFlow evolved, researchers realized that its static nature was extremely limiting\cite{bosshart_p4_2014}\cite{hauser_survey_2021}\cite{li_protocol_2017}. Protocol-dependent Southbound APIs assume a specific data plane functionality that cannot be altered. When working with OpenFlow, network policies must adhere to the existing matching fields and actions of OpenFlow, which undermines the controller's power over the protocols used on the network.  
 
 To work around its static nature, and as a necessity to support many different protocols, the number of actions and matching fields increased with each version of OpenFlow, which has a price in complexity. The first version of OpenFlow standardized 12 matching fields and 10 actions. As new versions were released, this number skyrocketed to 44 matching fields and 19 actions in version 1.5 \cite{li_protocol_2017}\cite{bosshart_p4_2014}, as can be seen on Table \ref{tb:openflow_version_fields}. This remedy can be thought of as a band-aid solution, as it increases complexity without solving the underlying problem of inflexibility.
 
-% Please add the following required packages to your document preamble:
-% \usepackage[table,xcdraw]{xcolor}
-% Beamer presentation requires \usepackage{colortbl} instead of \usepackage[table,xcdraw]{xcolor}
+
 \begin{table}[]
+	\centering
     \begin{tabular}{|c|c|l|}
     \hline
     \rowcolor[HTML]{EFEFEF} 
@@ -234,14 +231,13 @@ To work around its static nature, and as a necessity to support many different p
     \label{tb:openflow_version_fields}
 \end{table}
 
-
 Another important issue to consider is the reactive nature of definition of these headers. OpenFlow solely defines new headers when they become widely requested. Therefore, any new useful header fields must wait for standardization in a new version of OpenFlow before they can be integrated into networks. A proactive and open approach would be more appropriate, as this approach contradicts the \gls{sdn} principle of enabling innovation\cite{li_protocol_2017}. 
 
 OpenFlow attempted to fix this problem in version 1.2 through an OpenFlow Extensible Match, which allows for adding custom matching fields\cite{kreutz_software-defined_2015}. However, the fundamental problem remained and a brand new approach was preferable. Many different technologies aimed to further enhance data plane programmability emerged. This thesis will focus on the most popular, \gls{p4}.
 As final observation, the protocol-dependent nature of OpenFlow also limits the protocols that can be used to standardized ones, meaning the defined matching fields of flow tables are limited to traditional network protocols. 
 
 % P416 
-\acrlong{p4} is a high-level programming language designed to specify switch packet processing pipelines. Similarly to other data plane programming efforts, it aims to generalize the OpenFlow match-action framework and it has emerged as the most popular technology in this race, with strong support from both industry and academia\cite{hauser_survey_2021}.
+\glsxtrlong{p4} is a high-level programming language designed to specify switch packet processing pipelines. Similarly to other data plane programming efforts, it aims to generalize the OpenFlow match-action framework and it has emerged as the most popular technology in this race, with strong support from both industry and academia\cite{hauser_survey_2021}.
 
 The \gls{p4} project began with three main objectives\cite{bosshart_p4_2014}. The first was to enable device reconfigurability, so that the way a switch processes packets could be easily modified even after deployment. The second objective was to promote protocol independence by allowing switches to run any arbitrary protocol. Lastly, to achieve the last two goals while abstracting the underlying hardware, so that \gls{p4} code can run anywhere. 
 
@@ -251,9 +247,10 @@ The \gls{p4} project began with three main objectives\cite{bosshart_p4_2014}. Th
 
 During the initial phase, operators utilize the \gls{p4} language to define the parser and deparser, determine the order of match+action stages, and specify the header fields processed by each stage. For programmable devices, \gls{p4} prescribes the desired behavior in the pipeline, while in fixed-function devices, \gls{p4} merely describes the chip. 
 
-The second step occurs at runtime and consists of populating the configured pipeline with rules. This process is device-independent, with the control plane adding or removing entries in the match+action tables of the switch pipeline using the southbound API. This phase determines the usage of defined protocols and the application of policies at a particular moment, such as adding entries to flow tables and associating actions with flows.
+The second step occurs at runtime and consists of populating the configured pipeline with rules. This process is device-independent, with the control plane adding or removing entries in the match+action tables of the switch pipeline using the Southbound API. This phase determines the usage of defined protocols and the application of policies at a particular moment, such as adding entries to flow tables and associating actions with flows.
 
 % Bare Metal Switch Hardware
+\subsubsection{Hardware}
 % Hardware type
 When constructing an \gls{sdn} network, virtually any hardware can be used for the switches, each with its own set of advantages and disadvantages. Following the approach of \cite{xia_survey_2015}, hardware can be classified into three categories: general purpose computers, vendor specific hardware, and open networking hardware. 
 
@@ -279,7 +276,7 @@ Figure \ref{fig:switch_schematic} presents a high-level schematic of a bare-meta
 
 \begin{figure}
 	\centering
-	\includegraphics{Chapters/Figures/SDNs/switch_schematic.png}
+	\includegraphics[width=0.8\textwidth]{Chapters/Figures/SDNs/switch_schematic.png}
 	\caption{High-Level schematic of a bare-metal switch\cite{peterson_software-defined_2021}}
 	\label{fig:switch_schematic}
 \end{figure}
@@ -292,7 +289,7 @@ To achieve its goal of interoperability between different hardware, \gls{p4} pro
 
 \begin{figure}
 	\centering
-	\includegraphics{Chapters/Figures/SDNs/pipeline_abstraction.png}
+	\includegraphics[width=0.8\textwidth]{Chapters/Figures/SDNs/pipeline_abstraction.png}
 	\caption{Definition of a logical pipeline to provide a pipeline-agnostic view the control plane\cite{peterson_software-defined_2021}}
 	\label{fig:pipeline_abstraction}
 \end{figure}
@@ -301,7 +298,7 @@ To achieve its goal of interoperability between different hardware, \gls{p4} pro
 % data match-action pipeline abstraction
 The logical pipelines can be represented using different abstractions. In figure X, the pipeline is described using the data match-action pipeline. This abstraction describes the packet processing functions of a network device as a pipeline of lookup tables. Each table is responsible for matching specific fields in the packet header and performing an action based on the result\cite{bifulco_survey_2018}\cite{kreutz_software-defined_2015}. Thus, the data match-action abstraction describes the NPU as a sequence of lookup tables. 
 
-Other abstractions exist for describing the switch pipeline, but this is the most popular by far. OpenFlow is largely credited with popularizing the match-action abstraction\cite{bifulco_survey_2018}. However, the original proposal for OpenFlow took advantage of the fact that most routers and switches already contained flow tables used to implement additional network functions such as firewalls, NAT, QoS, and statistics collection, to define a common set of functions and provided an open protocol for programming these flow tables\cite{mckeown_openflow_2008}. This implies that the architecture of the NPU and the southbound API strongly influenced each other.
+Other abstractions exist for describing the switch pipeline, but this is the most popular by far. OpenFlow is largely credited with popularizing the match-action abstraction\cite{bifulco_survey_2018}. However, the original proposal for OpenFlow took advantage of the fact that most routers and switches already contained flow tables used to implement additional network functions such as firewalls, NAT, QoS, and statistics collection, to define a common set of functions and provided an open protocol for programming these flow tables\cite{mckeown_openflow_2008}. This implies that the architecture of the NPU and the Southbound API strongly influenced each other.
 
 This abstraction depicts multiple tables because high speed switches require a multi-stage pipeline for packet processing. It is the optimal approach for packet processing because this process involves checking multiple header fields, and with multiple stages, different stages can perform different tasks simultaneously\cite{peterson_software-defined_2021}. 
 
@@ -310,11 +307,11 @@ There are various \gls{p4} architectures, including \gls{pisa}, \gls{psa}, V1Mod
 
 \gls{pisa} presents a simple representation of the device, so all of these examples can be considered variations of it. The other architectural models follow the same principles with some arbitrary enhancements. The \gls{pisa} model will be discussed as it is the most general. However, it should be noted that the V1Model is currently the most popularly used.
 
-\acrlong{pisa} is a data plane programming model of \gls{p4}. It was introduced in \gls{p4}\_14 and is currently deprecated. It is applied in a variety of ways to the creation of concrete architectures\cite{hauser_survey_2021}. As an example, Figure \ref{fig:pisa_pipeline} gives a high-level overview of this pipeline. 
+\glsxtrlong{pisa} is a data plane programming model of \gls{p4}. It was introduced in \gls{p4}\_14 and is currently deprecated. It is applied in a variety of ways to the creation of concrete architectures\cite{hauser_survey_2021}. As an example, Figure \ref{fig:pisa_pipeline} gives a high-level overview of this pipeline. 
 
 \begin{figure}
 	\centering
-	\includegraphics{Chapters/Figures/SDNs/pisa_pipeline.png}
+	\includegraphics[width=0.8\textwidth]{Chapters/Figures/SDNs/pisa_pipeline.png}
 	\caption{Protocol-Independent Switch Architecture\cite{hauser_survey_2021}}
 	\label{fig:pisa_pipeline}
 \end{figure}
@@ -324,26 +321,28 @@ This architecture depicts three main components. The parser is the first compone
 In practice, when a packet arrives at a switch, after being parsed, the packet headers are compared to the entries in the flow table. If a match is found, the corresponding action is taken, and the packet is processed accordingly. If no match is found, the packet is typically forwarded to the controller for further processing or dropped.
 
 % Software
+\subsubsection{Software}
+
 Each switch must be equipped with a BIOS, which is similar to the firmware found in microprocessors as it provisions and boots a bare-metal switch. The \gls{onie} has emerged as the standard for switch BIOSes\cite{peterson_software-defined_2021}. On top of it, every switch must run a local Switch OS, which is responsible for handling calls from the controller and taking appropriate actions on the switch's internal resources. The most widely used Switch OS is Open Network Linux\cite{noauthor_linux_nodate}, an open-source project based largely on the Debian distribution of Linux and extended to support hardware unique to switches\cite{peterson_software-defined_2021}. Other open source Switch OSes include Stratum\cite{noauthor_stratum_nodate} and SONiC\cite{noauthor_sonic_nodate}. Vendor-provided software development kits for the on-board switching chips are also important. These kits are analogous to device drivers used in traditional operating systems. 
 
 
-% southbound API
-\subsubsection{southbound API} % (fold)
+% Southbound API
+\subsection{Southbound API} % (fold)
 
 % Definition
-The southbound API is the second layer in \gls{sdn}. As introduced in the previous section, the Southbound API is a logical interface that connects the controller with all network elements in the data plane\cite{thyagaturu_software_2016}. It allows the control plane to push configurations to forwarding elements and the switches to push information to \gls{sdn} applications, enabling the controller to have direct control and constant information on the state of the data plane elements. 
+The Southbound API is the second layer in \gls{sdn}. As introduced in the previous section, the Southbound API is a logical interface that connects the controller with all network elements in the data plane\cite{thyagaturu_software_2016}. It allows the control plane to push configurations to forwarding elements and the switches to push information to \gls{sdn} applications, enabling the controller to have direct control and constant information on the state of the data plane elements. 
 This protocol describes the capabilities of the switches, which defines the communication protocol and methods used to exchange data between the data plane and the controller. The interaction between the control plane and the data plane is therefore defined by this protocol\cite{kreutz_software-defined_2015}. 
 
 A well-defined programming interface is crucial for the success of \gls{sdn}, and its standardization offers several advantages for designing and deploying efficient \gls{sdn} solutions\cite{latif_comprehensive_2020} \cite{kreutz_software-defined_2015}. Specifically, it provides flexibility by allowing the control plane to communicate with the data plane through a variety of standardized channels. This enables network operators to choose from a range of controllers and switches, reducing vendor lock-in and expanding their options.
 
-The responsibilities of this interface can be split between Control and Configuration\cite{peterson_software-defined_2021} and usually, protocols only fulfill one of these categories. For a long time, OpenFlow was considered the state of the art for southbound APIs and as testament to that is still the most widely used today\cite{latif_comprehensive_2020}. However, the current state of the art for southbound interfaces is a combination of P4Runtime, gNMI, and gNOI. P4Runtime and OpenFlow are control interfaces, while the gNXI combination of protocols is responsible for device configuration\cite{peterson_software-defined_2021}.
+The responsibilities of this interface can be split between Control and Configuration\cite{peterson_software-defined_2021} and usually, protocols only fulfill one of these categories. For a long time, OpenFlow was considered the state of the art for Southbound APIs and as testament to that is still the most widely used today\cite{latif_comprehensive_2020}. However, the current state of the art for Southbound interfaces is a combination of P4Runtime, gNMI, and gNOI. P4Runtime and OpenFlow are control interfaces, while the gNXI combination of protocols is responsible for device configuration\cite{peterson_software-defined_2021}.
 
-These different types of southbound APIs also have the huge benefit of sheltering the controller and by extension the application running on top of it from the diversity of network devices that may exist in the network. \cite{peterson_software-defined_2021}
+These different types of Southbound APIs also have the huge benefit of sheltering the controller and by extension the application running on top of it from the diversity of network devices that may exist in the network. \cite{peterson_software-defined_2021}
 
 % OpenFlow
 The previous section already touched on the origins of OpenFlow as a means to justify the industry's distancing from it. McKeown et al. proposed OpenFlow\cite{mckeown_openflow_2008} as a means to enable experimentation on campus networks. OpenFlow leveraged the flow tables present in most Ethernet devices, which are used for additional configuration such as firewall setup and subnetting, to allow customization of campus network devices. \cite{xia_survey_2015}
 
-OpenFlow has been the de-facto standard for the southbound interface for a long time\cite{nunes_survey_2014} and remains the most popular southbound API. This is evidenced by the fact that most commercial switches support the OpenFlow API out-of-the-box\cite{kreutz_software-defined_2015}.
+OpenFlow has been the de-facto standard for the Southbound interface for a long time\cite{nunes_survey_2014} and remains the most popular Southbound API. This is evidenced by the fact that most commercial switches support the OpenFlow API out-of-the-box\cite{kreutz_software-defined_2015}.
 
 % P4Runtime 
 Nowadays, Openflow's development has been dropped by \gls{onf} in favor of \gls{p4}, which means it has been replaced with the more open alternative of the P4Runtine. P4Runtime is a surging data plane API\cite{hauser_survey_2021} that is closely coupled with the \gls{p4} programming language. \gls{p4} enables the data plane to be programmed according to network requirements. A static interface would eliminate the advantages of \gls{p4} since the controller would not be able to benefit from the custom programmable policies defined in the data plane. 
@@ -353,7 +352,7 @@ To fully reap the benefits of \gls{p4}, a dynamic communication interface betwee
 % gNXI (OpenConfig)
 The term gNXI refers to the combination of gNMI and gNOI. The role of these two is somewhat blurred, but in general, gNMI handles the persistent state, whilst gNOI is responsible for clearing or setting the ephemeral state. In other words, gNMI is used for switch configuration, defining actions for retrieving or manipulating the state of a device via telemetry or configuration data, while gNOI is used for executing commands on a device, such as rebooting, pinging, and accessing other operational variables on the switch rather than directly changing its configuration\cite{peterson_software-defined_2021}\cite{noauthor_openconfig_nodate}.
 
-In traditional networks, the configuration part of the southbound api has been called the operations, administration, and maintenance interface which is usually accessed in command-line\cite{peterson_software-defined_2021}. The equivalent of gNXI in traditional networks is \gls{snmp}. \gls{sdn} has brought about the possibility for a different approach. \gls{snmp} was originally designed for closed devices and primarily focuses on reading rather than writing onto devices, making it more similar in capabilities to the configuration part of gNXI\cite{peterson_software-defined_2021}.
+In traditional networks, the configuration part of the Southbound api has been called the operations, administration, and maintenance interface which is usually accessed in command-line\cite{peterson_software-defined_2021}. The equivalent of gNXI in traditional networks is \gls{snmp}. \gls{sdn} has brought about the possibility for a different approach. \gls{snmp} was originally designed for closed devices and primarily focuses on reading rather than writing onto devices, making it more similar in capabilities to the configuration part of gNXI\cite{peterson_software-defined_2021}.
 
 The gNMI has three methods. The well-known get and set, similar to their counterparts in \gls{snmp}, are used for reading and writing. The third is the subscribe method, which is used to request a stream of telemetry data\cite{peterson_software-defined_2021}.
 
@@ -364,12 +363,12 @@ The underlying mechanism used by gNOI and by gNMI is exactly the same\cite{peter
 
    
 % control plane or control layer
-\subsubsection{control plane} % (fold)
+\subsection{Control plane} % (fold)
 
 % Definition
 Having outlined the structure of the data plane and its major technological developments, it is now time to move from the individual switch level to the controller network view. The control plane is widely considered the most important component of the \gls{sdn} architecture\cite{xia_survey_2015} because it represents the centralized decision-making authority of the network, acting as the “network brain”\cite{kreutz_software-defined_2015}.
 
-The control plane consists of one or more controllers that oversee, manage, and manipulate the data plane through the southbound API. All forwarding decisions are centralized in the control plane, which is dependent on a global view of the network to make accurate decisions. In this process, device-specific details are abstracted from the control plane\cite{latif_comprehensive_2020}. 
+The control plane consists of one or more controllers that oversee, manage, and manipulate the data plane through the Southbound API. All forwarding decisions are centralized in the control plane, which is dependent on a global view of the network to make accurate decisions. In this process, device-specific details are abstracted from the control plane\cite{latif_comprehensive_2020}. 
 
 % Network operating system 
 Traditional operating systems provide abstractions of the underlying hardware that simplify the use and management of the underlying resources. As a result, it is possible today to build more complex applications faster, more securely, and more efficiently\cite{kreutz_software-defined_2015}. 
@@ -404,36 +403,36 @@ Some researchers propose the concept of an API specifically used for the coordin
 
 \begin{figure}
 	\centering
-	\includegraphics{Chapters/Figures/SDNs/east_west_api.png}
-	\caption{East/westbound interface between distributed controllers\cite{kreutz_software-defined_2015}}
+	\includegraphics[width=0.8\textwidth]{Chapters/Figures/SDNs/east_west_api.png}
+	\caption{East/Westbound interface between distributed controllers\cite{kreutz_software-defined_2015}}
 	\label{fig:east_west}
 \end{figure}
 
 
-A finer distinction can be made between the eastbound and westbound APIs\cite{kreutz_software-defined_2015}. The eastbound API mostly to communication between \gls{sdn} controllers and legacy routers, while the westbound API refers to communication between different \gls{sdn} controllers, whether they are different frameworks or the same in a distributed architecture. 
+A finer distinction can be made between the Eastbound and Westbound APIs\cite{kreutz_software-defined_2015}. The Eastbound API mostly to communication between \gls{sdn} controllers and legacy routers, while the Westbound API refers to communication between different \gls{sdn} controllers, whether they are different frameworks or the same in a distributed architecture. 
 
 
 % Common behaviors of controllers
 Most controllers are licensed as open source, with few having a proprietary license. They are programmed in a large variety of programming languages, with Java and Python being the most used, and some even contain more than one language for better performance. However, most don't receive frequent updates and maintenance, and lack proper documentation\cite{zhu_sdn_2020}. A lot of different controller platforms exist, and the most notable are POX, Floodlight, \gls{odl}, \gls{onos}, and Ryu. 
 
-All controllers can run on any commodity hardware\cite{kreutz_software-defined_2015}. They are designed to be highly modular, with the controller being customized and configured to the given deployment, only having the subset of required modules\cite{peterson_software-defined_2021}. This means that the behavior of most controllers is generally the same, with the only relevant differences being the deployment architecture. Another important point where controller architecture varies is the support for different noth, east, west and southbound APIs, as not all controllers are compatible with all interfaces. 
+All controllers can run on any commodity hardware\cite{kreutz_software-defined_2015}. They are designed to be highly modular, with the controller being customized and configured to the given deployment, only having the subset of required modules\cite{peterson_software-defined_2021}. This means that the behavior of most controllers is generally the same, with the only relevant differences being the deployment architecture. Another important point where controller architecture varies is the support for different noth, east, west and Southbound APIs, as not all controllers are compatible with all interfaces. 
 
-% northbound API
-\subsubsection{Northbound API} % (fold)
+% Northbound API
+\subsection{Northbound API} % (fold)
     % definition
-The northbound API is a logical interface that connects the control and application plane. It is offered to the application developers by the \gls{nos}\cite{kreutz_software-defined_2015} and provides programming abstractions for networks, acting as a bridge between the control and application plane\cite{latif_comprehensive_2020}.
+The Northbound API is a logical interface that connects the control and application plane. It is offered to the application developers by the \gls{nos}\cite{kreutz_software-defined_2015} and provides programming abstractions for networks, acting as a bridge between the control and application plane\cite{latif_comprehensive_2020}.
 
-There is no fixed or widely accepted standard for northbound APIs\cite{kreutz_software-defined_2015}\cite{latif_comprehensive_2020}. The reason for the lack of standardization of this interface is the huge variation of applications and user requirements, that makes the existence of a single interface for all of them very difficult.
+There is no fixed or widely accepted standard for Northbound APIs\cite{kreutz_software-defined_2015}\cite{latif_comprehensive_2020}. The reason for the lack of standardization of this interface is the huge variation of applications and user requirements, that makes the existence of a single interface for all of them very difficult.
 
 There is therefore a large amount of different APIs that can be used depending on the chosen \gls{nos}. The purpose of this large number of different APIs is to sufficiently provide control over all underlying functionalities to the application plane\cite{peterson_software-defined_2021}.
 
-As a northbound interface implementation, programmers and most controllers typically use the REST API\cite{latif_comprehensive_2020}. The gNXI interfaces are also popular, with them corresponding exactly to their counterparts in the southbound API\cite{peterson_software-defined_2021}. 
+As a Northbound interface implementation, programmers and most controllers typically use the REST API\cite{latif_comprehensive_2020}. The gNXI interfaces are also popular, with them corresponding exactly to their counterparts in the Southbound API\cite{peterson_software-defined_2021}. 
         
 
 % management plane or application layer
-\subsubsection{Management plane} % (fold)
+\subsection{Management plane} % (fold)
     % definition
-The application layer is the upper-most layer, sitting above the controller. It consists of network applications designed to meet specific user requirements and, through the northbound API, this layer has easy access to the capabilities of all the lower layers such as the global network view and constant status information, enabling software applications to instruct the network controller on how to implement network control and operation logic\cite{xia_survey_2015}\cite{liatifis_advancing_2023}. 
+The application layer is the upper-most layer, sitting above the controller. It consists of network applications designed to meet specific user requirements and, through the Northbound API, this layer has easy access to the capabilities of all the lower layers such as the global network view and constant status information, enabling software applications to instruct the network controller on how to implement network control and operation logic\cite{xia_survey_2015}\cite{liatifis_advancing_2023}. 
 
 \gls{sdn} applications can accomplish a variety of goals, from adaptive routing and boundless roaming to enhancing network security and many more\cite{xia_survey_2015}. In essence, this layer can request custom control policies for routing, firewalls, load balancers, monitoring, and so on. The controller interprets these policies and determines the actions to be taken by the network devices. The switches then translate the network commands into concrete actions in the forwarding tables\cite{kreutz_software-defined_2015}. 
 
