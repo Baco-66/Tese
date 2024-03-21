@@ -24,7 +24,7 @@ Similarly to traditional wired networks, non-\gls{sdn} systems function reasonab
 The implementation of the \gls{sdn} paradigm in \glspl{vanet} is driven by the desire to bring some of the improvements of \gls{sdn} to \glspl{vanet} to tackle the challenging requirements of \glspl{vanet}. This paradigm has the potential to introduce flexibility, programmability, and centralized control to vehicular networks\cite{bhatia_software_2019}. This section reflects upon the benefits of \gls{sdn} and the characteristics of \glspl{vanet} to extrapolate the benefits and possible challenges that \gls{sdvn} can offer today.
 
 % Mandated Interoperability
-As previously stated in Section X, \glspl{vanet} require high road acceptance for their useful applications to be effective. This implies that all implemented devices must be able to communicate with each other, and to this end the EU has tried to standardize devices to promote interoperability between different vehicle manufacturers.
+As previously stated in Section \ref{sec:Applications_of_VANETs}, \glspl{vanet} require high road acceptance for their useful applications to be effective. This implies that all implemented devices must be able to communicate with each other, and to this end the EU has tried to standardize devices to promote interoperability between different vehicle manufacturers.
 
 In \gls{sdn} networks, operators have complete control over a static network, making it easy to conceal the inner workings of devices from the rest of the Internet and implement them as desired. However, in \gls{sdvn} the same is not possible because a vehicle \gls{its} subsystem must be able to communicate with every single roadside \gls{its} station in order to access infrastructure services deployed in the central \gls{its} subsystem. \gls{sdvn} devices must be compliant with existing regulation and communicate with standardized protocols in order to be interoperable with other devices.
 
@@ -69,7 +69,7 @@ When considering the deployment of \gls{vanet} technology, the cost of infrastru
 The introduction of the \gls{sdn} paradigm does not introduce any new significant security or privacy challenge to \glspl{vanet}. Some researchers\cite{ben_jaballah_security_2020} mention the centralized controller as a new vulnerability that can be exploited, but in reality current \gls{vanet} deployment already relies on services provided by the central \gls{its} subsystem.
 
 % Architecture 
-\section{\gls{sdvn} architecture}
+\section[SDVN architecture]{\gls{sdvn} architecture}
 
 The \gls{sdvn} architecture can be represented based on either of the architectures of the two technologies that define it. Of the two, the most suitable is the architecture of \gls{sdn}. The \gls{vanet} architecture is best represented by the \gls{its} host architecture, which is built on the OSI model. The \gls{sdn} paradigm aims to move the internet away from closed and complex standardized protocols and into open and simple network components. As such, the \gls{sdvn} architecture inherits the format as the general \gls{sdn} architecture, retaining the three layers present in it. 
 
@@ -88,7 +88,8 @@ That being said, there exist many different controller placement distributions p
 Most approaches to controller distribution in the literature\cite{bhatia_software_2019}\cite{cardona_software-defined_2020}\cite{toufga_openflow_2018} converge on a two-tier hierarchical controller. The top-level orchestrator controller, also known as the global or primary controller, is located in a server integrated into the central \gls{its} subsystem. The lower-level controllers, referred to as local or secondary controller instances, are placed closer to vehicles in the roadside \gls{its} subsystem in an effort to improve connectivity and reduce delays. 
 
 	% Application plane
-The application plane remains unchanged. It consists of network applications designed to fulfill certain networking tasks using the capabilities given by the control plane. Some of these include monitoring, \gls{qos}, analytics, recovery, security, routing, load balancing, and management\cite{bhatia_software_2019}. One potential improvement that can be implemented is to allow applications to access special data collected about the ad hoc devices, which can improve some specific applications, particularly routing.
+The application plane remains unchanged. It consists of network applications designed to fulfill certain networking tasks using the capabilities given by the control plane. Some of these include monitoring, \gls{qos}, analytics, recovery, security, routing, load balancing, and management\cite{bhatia_software_2019}. As stated in Section \ref{sec:Applications_of_VANETs}, \gls{vanet} applications can be divided into two main categories, each with different \gls{qos} requirements. The most significant of these, the safety applications, are mostly delay sensitive, while the non-safety applications are more bandwidth intensive\cite{smida_efficient_2020}. 
+
 
 	% Communication interfaces
 All communication APIs have no relevant changes. The only noteworthy detail is that  by having access to both ITS-G5 and C-V2X for communication and control\cite{toufga_openflow_2018}, a controller can has two main communication mediums through which, using the southbound API, it can communicate with \gls{sdn} devices. 

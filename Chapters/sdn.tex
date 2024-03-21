@@ -24,12 +24,13 @@ The information in this paper on \gls{sdn} is largely supported by the book "Sof
 % SDN definition
 \section[SDN definition]{\gls{sdn} definition}
 
-% traditional networks comparison
+	% traditional networks comparison
 Traditional networks have a highly decentralized structure, which was essential for the early Internet to achieve high network resiliency. As a consequence, Internet devices are vertically integrated, meaning the network control logic is directly coupled to the underlying forwarding hardware. This leads to routing decisions being made by complex programs running on each device through the definition of low-level policies\cite{bifulco_survey_2018}. 
 
 For a long time, researchers and developers have acknowledged that changes in the way the Internet works, nominally in its structure, were necessary to simplify and automate network management. These changes came to take place as the technology known as \gls{sdn}, which breaks down the vertical integration of devices\cite{thyagaturu_software_2016}.  
 
  	% main principles
+\subsection[Main principles of SDN]{Main principles of \gls{sdn}}
 \gls{sdn} technology nowadays is rather an umbrella term, as many different researchers have their own nuanced definition arising from different levels of implementation of the same \gls{sdn} vision. Such discrepancies in the \gls{sdn} definition is acknowledge by \cite{peterson_software-defined_2021} and can be visualized in \cite{feamster_road_2013}, \cite{thyagaturu_software_2016}, \cite{nunes_survey_2014}, and \cite{bifulco_survey_2018}.
 The early \gls{sdn} proposal stood on three main principles, which are still relevant to this day and are as such:
 
@@ -64,20 +65,21 @@ To sum up, and as can be seen in Figure \ref{fig:sdn_vs_legacy}, \gls{sdn} requi
 
 As a consequence from these principles, an \gls{sdn} switch can function as any traditional Internet device, such as a router, switch, firewall, network address translator, or even a combination of these. 
 
-% More recent developments
+	% More recent developments
+\subsection{Recent advancements}
 These three principles remain relevant today and form the de facto definition of \gls{sdn}. However, in recent years, new efforts have been made beyond this initial definition to further fulfill \gls{sdn}'s original goal. These efforts aim to increase programmability to the data plane, allowing network operators to fully customize all traffic in the network.
 
-% next gen SDN
+		% next gen SDN
 Some articles refer to these recent efforts as next generation \gls{sdn} \cite{liatifis_advancing_2023}\cite{sofia_shaping_2024}, while predicting further and further coupling of \gls{sdn} with network virtualization.
 
-% Network Virtualization	
+		% Network Virtualization	
 Being one of the first use cases found for \gls{sdn}, Network virtualization traces its roots to the 90's, around the same time the idea of programmable networks was surging\cite{kreutz_software-defined_2015} \cite{feamster_road_2013}.  
 
 Network virtualization enables the creation of network topologies decoupled from the physical topology. This allows multiple virtual networks to share the underlying physical infrastructure, functioning seamlessly over the same physical network\cite{thyagaturu_software_2016}.  The advantage of network virtualization is that it allows each individual virtual network to be simpler than the real network topology, granting increased flexibility. 
 
 Network virtualization and \gls{sdn} are two distinct technologies that do not require each other to exist. However, \gls{sdn} technology enables network virtualization, effectively creating a mutually beneficial relationship between the two that has grown much closer over the years\cite{feamster_road_2013}.
 
-% 2 phase SDN
+		% 2 phase SDN
 Another way to interpret these recent \gls{sdn} developments is to divide efforts into two phases. In the first phase the control plane is centralized and opened for operators, for more network control, and in the second phase the data plane is opened, allowing network operators to better control packet processing in the network. 
 
 In reality, \gls{sdn} implementations may mean more or less than the original definition depending on the involved stakeholder that is deploying the technology, as each network operator has the freedom to fulfill this view however they wish\cite{peterson_software-defined_2021}. 
@@ -126,9 +128,9 @@ In an attempt to address the lack of functionality in current network devices, t
 
 \gls{sdn} can also reduce costs by optimizing energy consumption. In large-scale network scenarios, such as data centers, the cost of energy consumption from networking equipment may seem small, but it still constitutes a significant expense. \gls{sdn} allows networks to dynamically power on and off devices based on expected network traffic, reducing energy consumption and costs\cite{nunes_survey_2014}.
 
-% Higher network control 
+	% Higher network control 
 \subsection{Network control}
-% Complex networking environments
+		% Complex networking environments
 Today's computer networks are often too large, complex, and heterogeneous for conventional methods of configuration, optimization, and troubleshooting to be effective\cite{xia_survey_2015}\cite{kreutz_software-defined_2015}. Network management becomes very difficult due to this complexity, which in turn hinders efforts to optimize network performance.
 
 Network operators are required to configure their networks for a wide range of applications through manual translation of desired high-level policies into low-level commands, while coping with changing network conditions. This task is further complicated by vendor-specific configuration interfaces, which are often complex, limited, and can vary from model to model, even within the same vendor\cite{feamster_road_2013}. 
@@ -137,8 +139,8 @@ Beyond being extremely tedious, manual network configuration is extremely error-
 
 Efforts to improve network performance are also severely limited, with current optimization efforts typically confined to small regions of the network or specific network services, efforts that are further constrained by the lack of global network information\cite{xia_survey_2015}.
 
-% Network management and performance improvements
-In addition to promoting innovation, another major motivation for \gls{sdn} is to shift network control from vendors to operators, and ultimately from operators to users\cite{peterson_software-defined_2021}. In today's Internet, the aforementioned complexity of networks impedes this goal so \gls{sdn} is designed to make networks more flexible, open, and simple to configure.
+		% Network management and performance improvements
+Another major motivation for \gls{sdn} is to shift network control from vendors to operators, and ultimately from operators to users\cite{peterson_software-defined_2021}. In today's Internet, the aforementioned complexity of networks impedes this goal so \gls{sdn} is designed to make networks more flexible, open, and simple to configure.
 
 Networks are made simpler first by breaking down networking into smaller pieces through the abstraction gained from the decoupled control and data planes. This allows network managers to implement the desired network outcome in the control plane without having to deal with complex lower-level instructions.
 
@@ -236,6 +238,7 @@ Another important issue to consider is the reactive nature of definition of thes
 OpenFlow attempted to fix this problem in version 1.2 through an OpenFlow Extensible Match, which allows for adding custom matching fields\cite{kreutz_software-defined_2015}. However, the fundamental problem remained and a brand new approach was preferable. Many different technologies aimed to further enhance data plane programmability emerged. This thesis will focus on the most popular, \gls{p4}.
 As final observation, the protocol-dependent nature of OpenFlow also limits the protocols that can be used to standardized ones, meaning the defined matching fields of flow tables are limited to traditional network protocols. 
 
+\subsubsection[P4]{\glsxtrshort{P4}}
 % P416 
 \glsxtrlong{p4} is a high-level programming language designed to specify switch packet processing pipelines. Similarly to other data plane programming efforts, it aims to generalize the OpenFlow match-action framework and it has emerged as the most popular technology in this race, with strong support from both industry and academia\cite{hauser_survey_2021}.
 
@@ -340,16 +343,19 @@ The responsibilities of this interface can be split between Control and Configur
 These different types of Southbound APIs also have the huge benefit of sheltering the controller and by extension the application running on top of it from the diversity of network devices that may exist in the network. \cite{peterson_software-defined_2021}
 
 % OpenFlow
+\subsubsection{OpenFlow}
 The previous section already touched on the origins of OpenFlow as a means to justify the industry's distancing from it. McKeown et al. proposed OpenFlow\cite{mckeown_openflow_2008} as a means to enable experimentation on campus networks. OpenFlow leveraged the flow tables present in most Ethernet devices, which are used for additional configuration such as firewall setup and subnetting, to allow customization of campus network devices. \cite{xia_survey_2015}
 
 OpenFlow has been the de-facto standard for the Southbound interface for a long time\cite{nunes_survey_2014} and remains the most popular Southbound API. This is evidenced by the fact that most commercial switches support the OpenFlow API out-of-the-box\cite{kreutz_software-defined_2015}.
 
 % P4Runtime 
+\subsubsection{P4Runtime}
 Nowadays, Openflow's development has been dropped by \gls{onf} in favor of \gls{p4}, which means it has been replaced with the more open alternative of the P4Runtine. P4Runtime is a surging data plane API\cite{hauser_survey_2021} that is closely coupled with the \gls{p4} programming language. \gls{p4} enables the data plane to be programmed according to network requirements. A static interface would eliminate the advantages of \gls{p4} since the controller would not be able to benefit from the custom programmable policies defined in the data plane. 
 
 To fully reap the benefits of \gls{p4}, a dynamic communication interface between the controller and the switch is necessary\cite{peterson_software-defined_2021}. To establish this interface, not only must the switch pipeline be known to the controller, but both the switch and the controller must be informed of the P4Runtime contract. P4Runtime is automatically generated along with the client and server-side stubs for the controller and devices, depending on the defined switch architecture\cite{peterson_software-defined_2021}.
 
 % gNXI (OpenConfig)
+\subsubsection{gNXI}
 The term gNXI refers to the combination of gNMI and gNOI. The role of these two is somewhat blurred, but in general, gNMI handles the persistent state, whilst gNOI is responsible for clearing or setting the ephemeral state. In other words, gNMI is used for switch configuration, defining actions for retrieving or manipulating the state of a device via telemetry or configuration data, while gNOI is used for executing commands on a device, such as rebooting, pinging, and accessing other operational variables on the switch rather than directly changing its configuration\cite{peterson_software-defined_2021}\cite{noauthor_openconfig_nodate}.
 
 In traditional networks, the configuration part of the Southbound api has been called the operations, administration, and maintenance interface which is usually accessed in command-line\cite{peterson_software-defined_2021}. The equivalent of gNXI in traditional networks is \gls{snmp}. \gls{sdn} has brought about the possibility for a different approach. \gls{snmp} was originally designed for closed devices and primarily focuses on reading rather than writing onto devices, making it more similar in capabilities to the configuration part of gNXI\cite{peterson_software-defined_2021}.
@@ -378,9 +384,10 @@ In various ways, the \gls{sdn} layers bear deep resemblance to a regular compute
 For this reason, the controller is commonly referred to as the \gls{nos}. This analogy introduces the same abstractions found in computer operating systems to networks\cite{kreutz_software-defined_2015}, and is often used to better illustrate that the control plane is responsible for representing the network as a single system for network applications\cite{nunes_survey_2014}. The terms \gls{nos} and controller can and will be used interchangeably from now on.
 
 		% Responsibilities
+\subsubsection{Controller responsibilities}
 A list of common applications implemented in the \gls{nos} can be collected from different \gls{sdn} deployments and asserted as the base network service functions\cite{kreutz_software-defined_2015}. While such a list cannot be considered de facto obligatory due to the \gls{sdn} root of modularity, it is still relevant to have a comprehensive list for familiarity's sake.
 
-The controller is mainly responsible for topology management, enforcing the desired packet processing policies and performing other necessary functions to manage and regulate the network. \cite{peterson_software-defined_2021}\cite{latif_comprehensive_2020}\cite{bifulco_survey_2018}\cite{kreutz_software-defined_2015}\cite{zhu_sdn_2020}
+The controller is mainly responsible for topology management, enforcing the desired packet processing policies and performing other necessary functions to manage and regulate the network\cite{peterson_software-defined_2021}\cite{latif_comprehensive_2020}\cite{bifulco_survey_2018}\cite{kreutz_software-defined_2015}\cite{zhu_sdn_2020}. 
 
 Topology management requires maintaining an up-to-date network view, which involves link discovery and host tracking.
 The main duty of the controller is to implement the desired packet processing policies. This task involves determining where packets should be forwarded by establishing traffic paths and defining packet flow rules. Furthermore, the controller selects the headers that require modification and installs all of these control commands on each forwarding device.
@@ -388,9 +395,10 @@ The main duty of the controller is to implement the desired packet processing po
 Lastly, the controller is responsible for performing other necessary functions to manage and regulate the network, such as monitoring device health by collecting status information and other important data from switches and performing maintenance procedures on those same switches.
 
 % Control centralization
+\subsubsection{Control centralization}
 Due to its prominent role, the performance of the controller largely influences overall network performance. The biggest criticism of \gls{sdn} stems from the belief that centralizing the control plane will lead to scalability and performance issues. However, most practical results suggest that a single controller is capable of handling a substantial number of new flow requests, and therefore should be capable of managing most small to medium sized networks\cite{nunes_survey_2014}\cite{zhu_sdn_2020}.
 
-In medium to high network scenarios, however, the controller can quickly become overwhelmed. A single physical controller represents a performance bottleneck in the network with added security issues. \cite{zhu_sdn_2020}
+In medium to high network scenarios, however, the controller can quickly become overwhelmed. A single physical controller represents a performance bottleneck in the network with added security issues\cite{zhu_sdn_2020}. 
 
 The architecture's logical centralized controller does not imply the existence of a single physical controller. For optimal performance, scalability, and availability, the network controller must be physically distributed\cite{kreutz_software-defined_2015}. A physically distributed but logically centralized control plane reduces lookup overhead and increases reliability while maintaining a centralized view of the network for applications to write in\cite{nunes_survey_2014}. 
 
@@ -399,6 +407,7 @@ The physical distribution of controllers can be classified into flat or hierarch
 Another important advantage of distributed architecture is that a network controller can function similarly to other services by scaling based on workload to ensure availability and saved resources\cite{peterson_software-defined_2021}. 
 
 % Eastbound and Westbound API interfaces
+\subsubsection{East/Westbound API}
 Some researchers propose the concept of an API specifically used for the coordination of these distributed scenarios\cite{kreutz_software-defined_2015}\cite{xia_survey_2015}\cite{thyagaturu_software_2016}\cite{latif_comprehensive_2020}\cite{zhu_sdn_2020}. This API is called the East/Westbound API and it provides the exchange of information between different instances of the controller in order help maintain a consistent network view. This API has no relevant standards. It is not typically considered a part of the overall \gls{sdn} architecture, although in practice, something similar must always exist in distributed controller scenarios, as can be seen in Figure \ref{fig:east_west}.
 
 \begin{figure}
@@ -413,7 +422,8 @@ A finer distinction can be made between the Eastbound and Westbound APIs\cite{kr
 
 
 % Common behaviors of controllers
-Most controllers are licensed as open source, with few having a proprietary license. They are programmed in a large variety of programming languages, with Java and Python being the most used, and some even contain more than one language for better performance. However, most don't receive frequent updates and maintenance, and lack proper documentation\cite{zhu_sdn_2020}. A lot of different controller platforms exist, and the most notable are POX, Floodlight, \gls{odl}, \gls{onos}, and Ryu. 
+\subsubsection{Notable Controller Platforms}
+Most controllers are licensed as open source, with few having a proprietary license. They are programmed in a large variety of programming languages, with Java and Python being the most used, and some even contain more than one language for better performance. However, most don't receive frequent updates and maintenance, and lack proper documentation\cite{zhu_sdn_2020}. A lot of different controller platforms exist, and the most notable are \gls{pox}, Floodlight, \gls{odl}, \gls{onos}, and Ryu. 
 
 All controllers can run on any commodity hardware\cite{kreutz_software-defined_2015}. They are designed to be highly modular, with the controller being customized and configured to the given deployment, only having the subset of required modules\cite{peterson_software-defined_2021}. This means that the behavior of most controllers is generally the same, with the only relevant differences being the deployment architecture. Another important point where controller architecture varies is the support for different noth, east, west and Southbound APIs, as not all controllers are compatible with all interfaces. 
 

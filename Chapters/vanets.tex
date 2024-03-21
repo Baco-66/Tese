@@ -16,8 +16,8 @@
 The automobile was one of the most revolutionary inventions in human history, for most cities around the world are dependent on cars for the transportation of goods and people and, therefore, the prevalence of vehicles in our daily lives is greater than ever before. Even though it is impossible to predict if future vehicle usage will continue to be as dominant as today, it is reasonable to assume that this technology will never disappear completely. Even today, in cities dominated by alternative modes of transportation, the use of motorized vehicles is still present and, in some cases, a necessity.
 
 It has been a long-time goal for car manufacturers and researchers to bring internet connectivity to automobiles, as the benefits are enormous. The Internet is an extremely powerful technology, not only for the countless services it provides but also for the ability of two endpoints to communicate almost instantly. Moreover, recent improvements to wireless communication technologies not only make this goal more realistic but also even more attractive, as integrating network interfaces with GPS receivers and sensors only increases the potential of allowing cars to communicate with each other~\cite{jakubiak_state_2008}.
-% Definition of vehicular ad hoc networks
 
+% Definition of vehicular ad hoc networks
 The efforts to bring connectivity to automobiles resulted in the emergence of the technology named \gls{vanet}, which is an adaptation of the \gls{manet} technology, specialized for automobiles~\cite{al-sultan_comprehensive_2014}~\cite{liang_vehicular_2015}. In contrast to wired networks, where all devices are connected to the infrastructure at all times to communicate with each other, this technology allows devices to transmit data directly to other devices inside its range, as illustrated in Figure~\ref{fig:ad_hoc}. As a result, networks are generated spontaneously between nodes that are in range of each other, which makes topologies unstable and requires each node in the network to act as both a transmitter and a receiver. 
 
 \begin{figure}[htbp]
@@ -403,7 +403,6 @@ The direct communication mode, also referred to as “Mode 4”, utilizes the sh
 \gls{etsi} initially considered Cellular technologies as possible solutions, and at that time included 2G and 3G as possible access technologies in the initial \gls{its} station reference architecture. As stated earlier, \gls{etsi} centralized the Access Layer of its architecture on the 802.11p-based ITS-G5. Recently, however, reflecting on the efforts of \gls{3gpp}, \gls{5gaa}, and \gls{its} implementation in other countries like China, \gls{etsi} made amendments to existing standards in order to achieve compatibility with \gls{c-v2x} technologies\cite{weber_c-v2x_2019}. This indicates that in the \gls{c-v2x} architecture, the layers above the Access Layer consists of the pre-established standards of different countries, demonstrating significant technological compatibility.
 
 
-
 \subsection[Networking \& Transport Layers]{Networking \& Transport Layers}
 \label{subsec:networking_transport_layers}
 % Introduction
@@ -483,7 +482,6 @@ Throughout the lifespan of the \gls{denm}, a number of techniques are employed t
 \end{figure}
 
 
-
 \subsection[Management Entity]{Management Entity}
 \label{subsec:Security_of_VANETs}
 % Management
@@ -501,6 +499,7 @@ The \gls{its} management entity is responsible for both configuring and operatin
 
 Decentralized congestion control is a cross-layer \gls{its} functionality that is coordinated by the management entity and is one of its most important responsibilities. Its main purpose is to control congestion in the channel by managing the amount of messages exchanged, the transmission power and any other useful parameter. The changes to these parameters, being orchestrated by the management entity, are made based on various information extracted from different layers.
 \cite{festag_cooperative_2014}
+
 
 \subsection[Security Entity]{Security Entity}
 
@@ -580,11 +579,11 @@ Non-safety applications should not interfere with safety applications, and thus 
 \label{sec:vanet_future}
 % Future of VANET technology
 
-Predicting a date for when the full potential of the VANET technology will be unleashed is incredibly difficult but it is a case of when, not if, as the benefits of VANETs remain attractive and a lot of work has already been done. 
+Predicting a date for when the full potential of the VANET technology will be unleashed is incredibly difficult but it is a case of when, not if, as the benefits of \glspl{vanet} remain attractive and a lot of work has already been done. 
 
 Current and future research seeks to update current technologies in use, such as the aforementioned development of 802.11bd \ref{subsec:Access_Layer}. Additionally, efforts are being made to augment this technology with other technologies such as SDN, Edge Computing, and AI to take it to the next level\cite{mahi_review_2022}.
 
-The deployment of VANET infrastructure in Europe is currently underway, with projects such as TEN-T.  In line with the European Green Deal and the renewed focus on the climate crisis, VANETs are expected to help reduce traffic emissions by increasing traffic efficiency. Besides, the goal to reduce traffic fatalities to 0 by 2050 remains a top priority\cite{lu_pan-european_2019}. Figure \ref{fig:EU_strat} provides a comprehensive representation of the plans for VANETs in the EU.
+The deployment of VANET infrastructure in Europe is currently underway, with projects such as TEN-T.  In line with the European Green Deal and the renewed focus on the climate crisis, \glspl{vanet} are expected to help reduce traffic emissions by increasing traffic efficiency. Besides, the goal to reduce traffic fatalities to 0 by 2050 remains a top priority\cite{lu_pan-european_2019}. Figure \ref{fig:EU_strat} provides a comprehensive representation of the plans for \glspl{vanet} in the EU.
 
 \begin{figure}[htbp]
     \centering
