@@ -885,7 +885,7 @@
   % , nonumberlist
   translate=babel,
   acronym,           % add acronyms listing
-  symbols,           % add symbols listing
+  % symbols,           % add symbols listing
   % sanitizesort=false, % allow \gls inside descriptions
   % xindy={language=\@LANG@MAIN@LONG},
   nolong,
@@ -894,15 +894,17 @@
   notree,
   nostyles,
   automake,
+  nomain,  % added by me to supress empty glossaries (worked)
 ]{glossaries-extra}% To create glossaries
 \RequirePackage{NOVAthesisFiles/glossary-xltabular}%
 \setglossarystyle{xltabular}%
 \setabbreviationstyle[acronym]{long-short}%
 \GlsXtrEnablePreLocationTag{\emph{(\small p.~}}{\emph{(\small pp.~}}
 \patchcmd{\@gls@automake@immediate}{-I xindy}{-q -I xindy}{}{}
-% \renewcommand{\gls@automake@makegloss}{makeglossaries -q}%
+\renewcommand{\gls@automake@makegloss}{makeglossaries -q}%
 \renewcommand{\GlsXtrFormatLocationList}[1]{\emph{\small#1)}}
 \renewcommand{\glsnamefont}[1]{\textbf{#1}}%
+
 
 %--------------------------------
 % “Process gnumberlist” option - after glossaries
