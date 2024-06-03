@@ -215,7 +215,7 @@ As OpenFlow evolved, researchers realized that its static nature was extremely l
 To work around its static nature, and as a necessity to support many different protocols, the number of actions and matching fields increased with each version of OpenFlow, which has a price in complexity. The first version of OpenFlow standardized 12 matching fields and 10 actions. As new versions were released, this number skyrocketed to 44 matching fields and 19 actions in version 1.5 \cite{li_protocol_2017}\cite{bosshart_p4_2014}, as can be seen on Table \ref{tb:openflow_version_fields}. This remedy can be thought of as a band-aid solution, as it increases complexity without solving the underlying problem of inflexibility.
 
 
-\begin{table}[]
+\begin{table}[tbp]
 	\centering
     \begin{tabular}{|c|c|l|}
     \hline
