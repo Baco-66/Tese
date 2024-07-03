@@ -1,0 +1,41 @@
+%!TEX root = ../template.tex
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% chapter4.tex
+%% NOVA thesis document file
+%%
+%% Chapter with lots of dummy text
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Related papers}
+\label{cha:related_papers}
+
+% Related Papers
+	% Introduction
+    Emulation is a convenient and cost-effective method for testing VANET solutions. However, due to the complex and unpredictable nature of real-life environments, relying solely on these tools is insufficient\cite{Cardona et al., 2020}. In order to gain a realistic perspective on VANET, it is necessary to implement it in real-world scenarios so the validity of the expected benefits and drawbacks can be tested. The same is true for SDVN. 
+    SDVN is notable for the lack of experimental efforts conducted on actual hardware. In order to enable testing on real scenarios, open-source SDVN tools and frameworks that are compatible with a wide range of hardware are indispensable\cite{Cardona et al., 2020}. This section reviews several related papers that aim to implement VANETs and SDVN in physical hardware using open sourced components, outlining the key details of their approach and architecture. 
+    % VANET
+    \cite{Raviglione et al., 2019} 
+    Raviglione et al. present a demo paper that assembles an open-source platform based on PC Engines' boards and Unex's WNICs. The purpose of this paper is to create a testbed for testing applications that communicate in the vehicular environment. Even though this paper does not attempt to implement SDN principles, it is relevant because it provides all the necessary hardware and software components to implement a vehicular testbed.
+    The authors assembled two boards consisting of the embedded PC Engines APU1D board with an AMD G-series dual-core T40E x86 CPU with 64-bit support and 2 GB DRAM. Communication via 802.11p was achieved using the Unex DHXA-222 mPCIe card as the WNIC. This chip is based on the Atheros AR9462 chipset which is supported by the ath9k Linux driver. To enhance storage and memory performance, a SATA III Transcend MSA370 MCL NAND Flash SSD was installed.
+    The OS used was OpenWrt release 18.06.1 with Linux kernel 4.14.63. The authors made modifications to the ath9k Linux driver in order to utilize the channels of the 5.8/5.9 GHz frequency band in accordance with ITS-G5 standards. These modifications were then integrated into the OpenC2X project, which was subsequently ported to OpenWrt. The paper also reviews some modifications and implementations made in higher layers, but these are not relevant to the problem addressed in this thesis.
+    
+    \cite{Sedar et al., 2021} 
+    Sedar et al. developed and validated an experimental, standards-compliant OBU. Their experimental platform is based on an open-source software implementation of the ETSI C-ITS protocol stack. Its purpose is to facilitate interoperability in communication between various devices and cloud-based services.
+    The OBU was built using general purpose hardware in the form of a generic laptop, running Ubuntu 18.04. To grant cellular connectivity, it was connected to an LTE AirPrime EM7565 modem from Sierra Wireless which was in part connected to the 4G cellular network of Vodafone-Spain. The experimental OBU is also connected to external hardware devices, these being a 4G/5G cellular modem, a GPS/GNSS receiver and a connector to receive information from in-vehicle sensors.
+    The article presents an overview of the current state of open-source software implementations of the ETSI C-ITS protocol stack. It mentions OpenC2X and Vanetza as the two primary implementations. 
+    Although real vehicles were not used in testing, the authors state that their experimental platform can be easily integrated into any vehicle.
+    
+    % SDVN
+    \cite{Secinti et al., 2017}
+    Secinti et al. proposed an architectural model that implements SDN and virtualization principles in order to enable VANET with Wi-Fi access capability. 
+    In this architecture, both the OBU and the RSU are implemented using the same type of hardware and software. Both have been implemented using a Raspberry Pi, with the wireless connectivity being provided by the Realtek 5370 Wi-Fi SoC.
+    These switches are implemented using OpenvSwitch v2.3.90 running on OpenWRT. OpenvSwitch is a software switch implementation that is open source and natively supported by the Linux kernel\cite{https://www.openvswitch.org/}. Finally, the controller is implemented using OpenDaylight and the southbound API used is Openflow.
+    
+    \cite{Rito et al., 2023}
+    Rito et al. present the deployment and experimentation architecture of the Aveiro Tech City Living Lab in Portugal. The implementation involves a diverse range of devices connected through fiber, radio ITSG-5, and cellular links, utilizing various technologies such as SDN, named data networking, and fog computing.
+    Vehicle and roadside stations are implemented using the PC Engines APU2 board equipped with an SSD, an IEEE 802.11a/b/g/n mini-PCIe wireless card and an LTE CAT-1 mini-PCIe or 5G m.2 module. Additionally, an external USB dual-band wireless adapter was also installed. The operating system used is not specified, but it is a linux distribution because in order to enable the european version of 802.11p in it they used the Linux ath9k driver.
+    This paper implements a myriad of different technologies in vehicular infrastructure, one of them being SDN. It is notable that it does not implement SDN in vehicle ITS stations, but only in the backbone of the network. The purpose of this SDN implementation was to use the increased control in the backbone of the vehicular infrastructure and the vehicle information to predict and execute handovers in advance. The authors developed a custom protocol dubbed OBUInfo to provide CAM information to the controller. This provides the controller with location, heading, speed, and vehicle type information, which is useful in predicting future handovers ahead of time.
+    
+    \cite{Sadio et al., 2020}
+    Sadio et al. propose a complete SDVN prototype design. The hardware used for the OBU was a Raspberry Pi 3 with Cortex-A53 × 64 1.2 GHz and SRAM 1 GB. This board has access to WiFi 2.4 GHz 802.11 b/g/n and via a Huawei E8372 LTE USB modem to LTE. The operating system used was Raspbian Stretch Lite. The authors utilized the Python Twink library to transform the devices into OpenFlow switches. This implementation fails to use the standard for communication in the VANET environment, 802.11p.
+    
+    

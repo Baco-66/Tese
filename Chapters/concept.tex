@@ -1,0 +1,24 @@
+%!TEX root = ../template.tex
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% chapter4.tex
+%% NOVA thesis document file
+%%
+%% Chapter with lots of dummy text
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Conceptual Solution}
+\label{cha:conceptual_solution}
+
+% Conceptual Solution
+	% Introduction
+    The comprehensive examination of the two fundamental pillars that constitute SDVN and SDVN itself has provided insights into the potential usefulness of this technology in real-world scenarios, thereby enabling the identification of an optimal practical deployment for this technology. As such, in this section, this ideal view created from the accumulated knowledge presented in this document will be described.
+    Before proceeding to the specifics, it is important to note that this perspective describes some hypothetical optimal objectives for an implementation. Consequently, any practical implementations developed in this thesis will be constrained by the availability and costs of the requisite hardware and the availability and compatibility of the related software, in addition to timing and implementation constraints.
+    % Function
+    In light of the requirement for interoperability, as delineated in section X, an SDN-compatible OBU deployment is only viable in real-world scenarios if it is capable of communicating with ETSI devices. This limitation for implementation is only applicable in real-world deployments, as the devices must comply with, or at the very least be compatible and able to collaborate with, the surrounding protocols in order to be effective. No existing software stack for SDN is compatible with the ITS-G5 protocol stack. Consequently, the most straightforward approach to create a compatible environment is to utilize P4’s capacity to reprogram the packet logic of a network. 
+    The vast majority of research papers on SDVN only implement the first generation of SDN, with the few that delve into P4 and its advantages only doing so on a theoretical level, never providing an implementation platform. To the best of our knowledge, and in accordance with the findings of Sarpong et al. \cite{Sarpong et al., 2023}, no work has been published using P4 as the data plane technology in a SDVN implementation. 
+    It is important to acknowledge that the aforementioned limitation does diminish the freedom introduced by P4. However, it does not entirely negate its advantages, because the ability to modify network protocols enables protocol experimentation, thereby allowing existing protocols to be tested, validated, and optimized with greater ease.
+    From all this, we can conclude the ideal SDVN scenario would have a P4 device mimicking protocol fields of the ETSI defined protocol stack, just with changes to the controller.
+    % Controller placement
+    The controller brings us to the second issue of controller distribution. Section X displays the three different possible locations where the controller can be implemented, but most SDN developments only implement controller instances in the wired infrastructure. Due to the issues touched upon in subsection Y(Mandated Interoperability) and X(Issues with maintaining a global network view) devices must be able to function in tandem with traditional devices and without connection to infrastructure. 
+    Ku et al.\cite{Ku et al., 2014}, although the first, had already raised these issues deserved attention by incorporating recovery mechanisms in their experimental scenario. They used a backup traditional algorithm when the device lost connection with the controller, demonstrating that SDVN must have failure recovery mechanisms to ensure the network works in all scenarios.
+    Ultimately, our research does not aim to find the optimal controller distribution scheme in software-defined vehicular environments, but for the aforementioned reasons, a practical SDVN deployment must contain a local controller able to operate each individual device and take over with something similar to traditional software if the connection to the infrastructure is lost. 
+    
