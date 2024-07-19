@@ -17,34 +17,57 @@ This chapter serves as an introduction to this thesis, providing an overview of 
 \section{Contextualization} % (fold)
 \label{sec:contex}
 
-% The internet is very good
-The Internet is universally acknowledged as one of the most significant technological advancements in human history, with its widespread adoption and the numerous benefits it has brought about having irrevocably transformed the manner in which societies in the 21st century live and communicate. 
+% Internet tem imensos benefícios
+% Aplicar internet em carros mostra muito potencial
+% Nos últimos anos, investigadores têm adaptado a internet para funcionar nestes cenários 
+% Isto faz com que estas adaptações sofram com as mesmas limitações da internet (e daí a sua demora)
+% SDN resolve alguns problemas da net e tem benefícios
+% Trazer esses benefícios para VANETs era top
+% VANETs precisa de ser testada na vida real para ser útil
 
-% The internet is very static and need to grow for portable scenarios
-Despite the Internet's numerous strengths, it is evident that, in its current form, it is not fully capable of satisfying the demands of the modern digital landscape. One such problem relevant to this thesys stems from the fact that our society is becoming increasingly mobile. With the widespread adoption of automobiles, researchers and engineers soon realised that allowing these these vehicles to comunicate with each other could offer major benefits to road security and could even bring quality of life improvements to drivers. % Não é correto dizer que a internet não esta preparada porque já esta basicamente tudo feito para a comunicação funcionar
+
+% The internet is very good
+The Internet is universally acknowledged as one of the most significant technological advancements in human history, with its widespread adoption and the numerous benefits it has brought about having irrevocably transformed the manner in which societies in the 21st century live and communicate.
+
+% The internet is not perfect
+While this impact is indisputable, the exponential growth observed over the past two decades has revealed significant flaws in Internet design. Indeed, in its current state, the Internet is not fully capable of satisfying the demands of the modern digital landscape. 
+
+% There is huge potential in giving internet to vehicles
+One such issue pertinent to this thesis arises from the fact that our society is becoming increasingly mobile. With the advent of widespread automobile use, researchers and engineers were quick to recognize the vast potential advantages of enabling these vehicles to communicate with one another. Such developments have the potential to enhance a number of aspects of modern transportation, from road security to the quality of life for drivers.
+% VANETs needs real life testing
+Given the direct impact of this technology on driver wellbeing, it is crucial that rigorous real-world testing be conducted to guarantee the safety of the general public.
+
+% Researchers have been adapting the internet for the vehicular space for years
+For the past three decades, universities, companies, and governments have been engaged in collaborative efforts to develop the technology known as VANETs, whose objective is to enable vehicles to communicate directly with each other on the road.
+% These adaptations inherit problems of internet design
+This process has made enormous progress in adapting the Internet to vehicular environments. Nevertheless, these solutions retain some of the aforementioned shortcomings inherent in Internet designs.
 
 % What SDN is and why it is good
-A new networking paradigm, software defined networks, promises to offer more innovation, reduced cost, simplify management and improve performance. SDN is poised to address the limitations of the Internet and facilitate further growth.
-
-% SDN helps to solve may of the problems of the internet, and this one could be one of them as well
-As such, in recent years, researchers have turned to this new and exciting field, with SDN promising a solution to many of the challenges faced by the current internet landscape.Therefore, a lot of recent studies have applied SDNs to vehicular networks in order to create better solutions for the future.
-This thesis aims to introduce SDN principles to V2X communication.
+SDN, a new networking paradigm, promises to deliver increased innovation, reduced cost, simplified management, and improved performance.
+% SDN helps to solve may of the problems of the internet
+It thus promises to address the limitations of the Internet and facilitate further growth. In light of this potential, researchers have recently focused their attention on this novel and promising field, treating it as a potential solution to many of the challenges currently faced in the current Internet landscape.
+% SDN’s advantages could help VANETS
+Notably, this has occurred in the domain of VANET, which has led to the creation of the SDVN field. The potential for SDN to enhance the capabilities of this technology has prompted recent studies to apply SDN to vehicular networks with the goal of developing optimized solutions for the future.
 
 % section contex (end)
 
 \section{Motivation} % (fold)
 \label{sec:motivation}
 
-%Assim sendo, existem muitas aplicações e casos de estudo sobre SDNs em redes veiculares. Porem, a sua maioria utiliza simuladores para testar o seu funcionamento, pelo que se nota a necessidade da existência de dispositivos OBUs cite{hardware} cite{rasberypi} para realizar testes mais fidedignos. 
+% SDVNs precisa de testes na vida real e não em simulador para a sua viabilidade ser testada
 
-In recent years, there has been a growing interest in the application of SDN technology in vehicular networks, with a large number of projects in SDVNs being created. Even doe these projects aim to be used in the real world, the large majority of them is restricted to simulation-based testing which reduces the veracity of the results. Therefore, this highlights a pressing need for the availability of real hardware testing platforms, in order to achieve more accurate and reliable results in such a critically important area. The development of a real hardware testing platform for SDVN projects will allow for a more comprehensive evaluation of the technology, which is a step further for this technology to become accepted and used.
+In accordance with the indispensable role that real-world testing plays in the ultimate success of VANET, it is of the utmost importance to conduct comprehensive testing in realistic settings to ensure the successful deployment of SDVN. The majority of SDVN projects are designed for use in the real world, yet they are predominantly subjected to simulation-based testing, which compromises the veracity of the results. This emphasizes the pressing need for the availability of real hardware testing platforms to achieve more accurate and reliable results in this critically important area. 
+
+The development of a functional hardware testing platform utilizing free and open-source software components for SDVN projects represents a substantial advancement in the evolution of both the SDN and VANET fields. This will demonstrate the value of SDN beyond the data center, establishing it as a dominant force in the field while also fostering improvements in VANET.
 
 % section motivation (end)
 
 \section{Objectives} % (fold)
 \label{sec:objectives}
 
-Our main goal in this thesis is to design and assemble a hardware device similar to an OBU, utilizing open-source software where possible. This device must be SND compatible, so its routing tables must be configurable by a local or remote SDN controller. To meet these requirements, the device will run an open-source V2X protocol stack on a Linux-based OS.
+
+
+% Our main goal in this thesis is to design and assemble a hardware device similar to an OBU, utilizing open-source software where possible. This device must be SND compatible, so its routing tables must be configurable by a local or remote SDN controller. To meet these requirements, the device will run an open-source V2X protocol stack on a Linux-based OS.
 
 %Neste trabalho pretende-se dotar um dispositivo OBU real, a correr uma imagem Linux com pilha protocolar V2X open-source, de capacidades SDN. #@# O objetivo é que o referido OBU (a ser fornecido) possa ser configurado por um controlador SDN externo usando um protocolo standard e também open-source, como por exemplo o OpenFlow. Para tal será necessário preparar e configurar devidamente a imagem do software do OBU com suporte SDN, que possa ser testada num cenário real simples (a definir).
 %Adicionalmente será estudada uma nova versão de um OBU com especificação de hardware e de software com vista a novos testes futuros.
