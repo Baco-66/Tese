@@ -257,8 +257,10 @@ The second step occurs at runtime and consists of populating the configured pipe
 % Hardware type
 When constructing an \gls{sdn} network, virtually any hardware can be used for the switches, each with its own set of advantages and disadvantages. Following the approach of \cite{xia_survey_2015}, hardware can be classified into three categories: general purpose computers, vendor specific hardware, and open networking hardware. 
 
+
+
 \begin{enumerate}
-	\item Open network hardware: 
+\item Open network hardware: 
     Open networking hardware refers to switch specific hardware that is based on open standards and can be used with a variety of software. This provides a programmable and vendor-independent solution for building networks. The most appropriate analogy is to compare a switch to a PC built from commodity, off-the-shelf components and just like a PC, it allows for the assembly of a high-performance switch\cite{peterson_software-defined_2021}. 
 
 \item Vendor specific hardware:
@@ -266,7 +268,7 @@ When constructing an \gls{sdn} network, virtually any hardware can be used for t
 
     In fact, there exist networking hardware vendors that offer a variety of \gls{sdn} strategies and solutions. For example, the Open Compute Project takes advantage of existing commodity switching components and offers full architectural specification for switches online \cite{noauthor_open_nodate-1}. Other projects like Indigo\cite{noauthor_indigo_nodate} aim to enable \gls{sdn} features in existing traditional hardware. The use of this solution runs counter to \gls{sdn} visions, representing a step sideways rather than forward.
 
-	\item     General purpose computers:
+\item General purpose computers:
     These are regular computers, not specifically designed for networking, that are used as a platform to implement the data plane by running a software switch that performs packet forwarding functions. Hardware virtualization is used to run virtual switches on standard operating systems running on regular hardware.
 
     The widespread availability of general-purpose hardware makes it inexpensive, and easy to reuse for different tasks. However, this hardware is not only not optimized for networking tasks, but also relies on computer network interface cards, which typically have a limited number of ports and slower speeds.

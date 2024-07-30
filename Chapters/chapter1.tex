@@ -65,6 +65,16 @@ The development of a functional hardware testing platform utilizing free and ope
 \section{Objectives} % (fold)
 \label{sec:objectives}
 
+% Para cumprir essa motivação
+% É preciso criar construir dispositivos de VANETs mas compatíveis com SDN
+
+% Build SDVN device
+This thesis presents a proposal for the design and implementation of a functional SDVN device. In essence, the core objective is to develop a device that can be classified as both a SDN and a VANET device in a single entity. 
+
+% device will be an OBU
+As a further clarification, the device will be designed and assembled to fulfill the role of an OBU and thus be able to communicate in the  vehicular ad hoc space. The device must also conform to the design principles of SDN.
+
+This document will undertake a detailed and thorough analysis of the SDN and VANET fields in order to define the characteristics of this device. Nevertheless, it is possible to establish a preliminary set of guidelines to which the device must adhere even before such an evaluation is conducted. The following two criteria serve as the fundamental basis for the evaluation of the devices in question. First and foremost, the device must be affordable. Secondly, the software components utilized must be open-source, wherever feasible.
 
 
 % Our main goal in this thesis is to design and assemble a hardware device similar to an OBU, utilizing open-source software where possible. This device must be SND compatible, so its routing tables must be configurable by a local or remote SDN controller. To meet these requirements, the device will run an open-source V2X protocol stack on a Linux-based OS.
@@ -100,10 +110,37 @@ The development of a functional hardware testing platform utilizing free and ope
 \section{Methodology} % (fold)
 \label{sec:methodology}
 
+% Introduction
+The methodology employed in this thesis was designed with the objective of assembling the necessary theoretical basis for an assessment of the viability of the SDVN technology as a whole. The selected methodologies are explained and justified in the context of the research objectives.
+
+
+% Primeiro começar por estudar as duas áreas e as suas nuances
+The dissertation will commence with a comprehensive analysis of the SDVN field. In order to achieve the proposed objective of developing an SDN-compatible OBU, it is essential to conduct such research. While a review of the existing software in the SDVN field is undoubtedly important, the goal of the research step of this document is to extensively analyze the SDN and VANET fields.
+
+
+% Estudar SDN, a sua motivação, vantagens e software usado
+In regard to SDN, this research aims to provide a rationale for its integration with VANET. It is therefore essential to present a comprehensive analysis of the underlying motivations, advantages, and fundamental principles that shape this technology.
+
+
+% Estudar VANETs, as suas características e problemas, o ponto em que está esta tecnologia (a.k.a todo o trabalho de implementação que foi feito até agora) e software existente
+Conversely, research on VANET is primarily concerned with defining the characteristics that distinguish this field of study from other ad hoc technologies, thereby establishing a comprehensive understanding of this field. Moreover, it is of critical importance to gain insight into the current state of this technology and to identify the remaining steps required for its widespread adoption. In light of this, this study will primarily focus on investigating the advancements in the field within the European context.
+
+
+% Estudar SDVN e trabalhos existentes de implementação em hardware real
+The research component of this document will be concluded with a review of existing literature, the objective of which is to identify any studies that share similar motivations to this document.
+
+
+% Tentar construir um dispositivo SDN que funcione em ambientes veiculares e seja o máximo open-source possível
+The practical component of this dissertation will begin with a period of rigorous experimentation and familiarization with existing software in the field. Subsequently, a new SDN OBU will be designed and assembled, utilizing upgraded hardware and adhering to the requisite standards for SDN compliance.
+
+
+% Testar o dispositivo em vários cenários reais
+To conclude, a concrete testing scenario will be defined and subsequently executed with the intention of illustrating and validating the aforementioned achievements.
+
 
 % Numa fase inicial, será feita uma exploração sobre o software necessário para o funcionamento de um OBU controlado por um controlador ryu. Posteriormente, será projetado e construido um novo dispositivo OBU com hardware moderno. Por fim, será testado performance e vulnerabilidades de segurança.
 
-Initially, an investigation will be done to find the software required for the implementation of an OBU controlled by a free controller. Subsequently, a new OBU device will be designed and assembled, using modern hardware. Finally, performance and security vulnerabilities will both be tested.
+%Initially, an investigation will be done to find the software required for the implementation of an OBU controlled by a free controller. Subsequently, a new OBU device will be designed and assembled, using modern hardware. Finally, performance and security vulnerabilities will both be tested.
 
 % section methodology (end)
 
