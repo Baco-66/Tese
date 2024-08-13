@@ -255,23 +255,18 @@ The second step occurs at runtime and consists of populating the configured pipe
 % Bare Metal Switch Hardware
 \subsubsection{Hardware}
 % Hardware type
-When constructing an \gls{sdn} network, virtually any hardware can be used for the switches, each with its own set of advantages and disadvantages. Following the approach of \cite{xia_survey_2015}, hardware can be classified into three categories: general purpose computers, vendor specific hardware, and open networking hardware. 
-
+In the creation of \gls{sdn} infrastructure, any available hardware can be considered for use in the switches, with each having its own set of advantages and disadvantages. Following the approach of \cite{xia_survey_2015}, hardware can be classified into three categories: general purpose computers, vendor specific hardware, and open networking hardware. 
 
 
 \begin{enumerate}
 \item Open network hardware: 
-    Open networking hardware refers to switch specific hardware that is based on open standards and can be used with a variety of software. This provides a programmable and vendor-independent solution for building networks. The most appropriate analogy is to compare a switch to a PC built from commodity, off-the-shelf components and just like a PC, it allows for the assembly of a high-performance switch\cite{peterson_software-defined_2021}. 
+    Open networking hardware refers to switch specific hardware that is based on open standards and can be used with a variety of software. This provides a programmable and vendor-independent solution for building networks. The most appropriate analogy is to compare a switch to a PC built from commodity, off-the-shelf components and just like a PC, it allows for the assembly of a high-performance switch\cite{peterson_software-defined_2021} using open source software. For example, the Open Compute Project takes advantage of existing commodity switching components and offers full architectural specification for switches online \cite{noauthor_open_nodate-1}.   
 
 \item Vendor specific hardware:
-    Continuing the analogy with the PC world, in that ecosystem pre-built computers are available for purchase from several vendors, such as Dell or HP. Similarly, bare-metal switch vendors like EdgeCore and Delta offer pre-built switches\cite{peterson_software-defined_2021}. This hardware is specifically designed and manufactured by a particular vendor for networking purposes in \gls{sdn}. 
-
-    In fact, there exist networking hardware vendors that offer a variety of \gls{sdn} strategies and solutions. For example, the Open Compute Project takes advantage of existing commodity switching components and offers full architectural specification for switches online \cite{noauthor_open_nodate-1}. Other projects like Indigo\cite{noauthor_indigo_nodate} aim to enable \gls{sdn} features in existing traditional hardware. The use of this solution runs counter to \gls{sdn} visions, representing a step sideways rather than forward.
+    Continuing the analogy with the PC world, in that ecosystem pre-built computers are available for purchase from several vendors, such as Dell or HP. Similarly, bare-metal switch vendors like EdgeCore and Delta offer pre-built switches\cite{peterson_software-defined_2021}. This hardware is specifically designed and manufactured by a particular vendor for networking purposes in \gls{sdn} and uses proprietary software. Moreover, it is of interest to note that an initiative designated Indigo\cite{noauthor_indigo_nodate} has been established with the objective of facilitating the integration of \gls{sdn} capabilities into conventional hardware.
 
 \item General purpose computers:
-    These are regular computers, not specifically designed for networking, that are used as a platform to implement the data plane by running a software switch that performs packet forwarding functions. Hardware virtualization is used to run virtual switches on standard operating systems running on regular hardware.
-
-    The widespread availability of general-purpose hardware makes it inexpensive, and easy to reuse for different tasks. However, this hardware is not only not optimized for networking tasks, but also relies on computer network interface cards, which typically have a limited number of ports and slower speeds.
+    These are regular computers, not specifically designed for networking, that are used as a platform to implement the data plane by running a software switch that performs packet forwarding functions. Hardware virtualization is used to run virtual switches on standard operating systems running on regular hardware. The widespread availability of general-purpose hardware makes it inexpensive, and easy to reuse for different tasks. However, this hardware is not only not optimized for networking tasks, but also relies on computer network interface cards, which typically have a limited number of ports and slower speeds.
 \end{enumerate}
 
 Both open network and vendor-specific hardware exhibit similar high performance, while using general hardware can result in decreased performance as it is not specialized for networking. General purpose hardware is usually the least expensive, followed by open network hardware, with vendor-specific devices being the most expensive. This price difference can be attributed to the scalability characteristics, ease of use, and performance of each type of solution. All and all, each approach has its benefits and drawbacks, so the best choice should be based on the specific needs and constraints of the target network.
