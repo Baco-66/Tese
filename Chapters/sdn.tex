@@ -208,7 +208,7 @@ Most importantly, data plane programming can unlock complete control over networ
 The main benefit of data plane programmability is therefore its increased flexibility\cite{bifulco_survey_2018}. This feature allows for the optimization of packet processing functions to meet specific use cases or requirements, tailoring the data plane to the network's specific requirements. Additionally, it facilitates the deployment of brand new network protocols. 
 
 % Motivation (a.k.a OpenFlow’s problem)
-The concept of data plane programming emerged in response to an issue found with then standard \gls{sdn} solutions. \gls{sdn}'s ambitious goals naturally lead to initial approaches falling short. The first phase of \gls{sdn} is defined by the Southbound \gls{api} OpenFlow. The soundbound \gls{api} is an interoperable interface that is used by the control plane to communicate routing decisions to devices, dictating how the control plane communicates with switches\cite{li_protocol_2017}. There are several other Southbound \glspl{api} available, with OpenFlow being the most popular in this first phase. OpenFlow is a protocol-dependent \gls{api} that defines a specific set of headers for controllers to use in defining rules in the data plane. 
+The concept of data plane programming emerged in response to an issue found with then standard \gls{sdn} solutions. \gls{sdn}'s ambitious goals naturally lead to initial approaches falling short. The first phase of \gls{sdn} is defined by the Southbound \gls{api} OpenFlow. The soundbound \gls{api} is an interoperable interface that is used by the control plane to communicate routing decisions to devices, dictating how the control plane communicates with switches\cite{li_protocol_2017}. There are several other Southbound \glspl{api} available, with OpenFlow being the most popular in this first phase. OpenFlow is a protocol-dependent \gls{api} that defines a specific set of headers for controllers to use in defining rules in the data plane. Openflow was standardized by \gls{onf}, an organization established with the objective of advancing \gls{sdn}.
 
 As OpenFlow evolved, researchers realized that its static nature was extremely limiting\cite{bosshart_p4_2014}\cite{hauser_survey_2021}\cite{li_protocol_2017}. Protocol-dependent Southbound \glspl{api} assume a specific data plane functionality that cannot be altered. When working with OpenFlow, network policies must adhere to the existing matching fields and actions of OpenFlow, which undermines the controller's power over the protocols used on the network.  
 
@@ -221,13 +221,13 @@ To work around its static nature, and as a necessity to support many different p
     \hline
     \rowcolor[HTML]{EFEFEF} 
     \textbf{Version} & \textbf{Date}                 & \multicolumn{1}{c|}{\cellcolor[HTML]{EFEFEF}\textbf{Header Fields}} \\ \hline
-    OF 1.0 & Dec 2009 & 12 fields (Ethernet, TCP/IPv4)         \\ \hline
-    OF 1.1 & Feb 2011 & 15 fields (MPLS, inter-table metadata) \\ \hline
-    OF 1.2 & Dec 2011 & 36 fields (ARP, ICMP, IPv6, etc.)      \\ \hline
-    OF 1.3 & Jun 2012 & 40 fields                              \\ \hline
-    OF 1.4 & Oct 2013 & 41 fields                              \\ \hline
-    OF 1.5 & Dec 2014 & 44 fields                              \\ \hline
-    OF 1.5           & \multicolumn{1}{l|}{Sep 2016} & Restricted to ONFs members                                          \\ \hline
+    OF 1.0 & Dec 2009 & 12 fields \\ \hline
+    OF 1.1 & Feb 2011 & 15 fields \\ \hline
+    OF 1.2 & Dec 2011 & 36 fields \\ \hline
+    OF 1.3 & Jun 2012 & 40 fields \\ \hline
+    OF 1.4 & Oct 2013 & 41 fields \\ \hline
+    OF 1.5 & Dec 2014 & 44 fields \\ \hline
+    OF 1.6           & \multicolumn{1}{l|}{Sep 2016} & Restricted to \glsps{onf} members                                          \\ \hline
     \end{tabular}
     \caption{Fields recognized by the OpenFlow standard\cite{bosshart_p4_2014}}
     \label{tb:openflow_version_fields}
@@ -272,7 +272,7 @@ In the creation of \gls{sdn} infrastructure, any available hardware can be consi
 Both open network and vendor-specific hardware exhibit similar high performance, while using general hardware can result in decreased performance as it is not specialized for networking. General purpose hardware is usually the least expensive, followed by open network hardware, with vendor-specific devices being the most expensive. This price difference can be attributed to the scalability characteristics, ease of use, and performance of each type of solution. All and all, each approach has its benefits and drawbacks, so the best choice should be based on the specific needs and constraints of the target network.
 
 % Schematic
-Figure \ref{fig:switch_schematic} presents a high-level schematic of a bare-metal switch. This abstraction better represents the open networking approach because Vendor-specific solutions are proprietary and therefore harder to generalize and the general hardware only has a CPU, virtualizing to operate in a similar manner to the depicted.
+Figure \ref{fig:switch_schematic} presents a high-level schematic of a bare-metal switch. This abstraction better represents the open networking approach because Vendor-specific solutions are proprietary and therefore harder to generalize and the general hardware only has a \gls{cpu}, virtualizing to operate in a similar manner to the depicted.
 
 \begin{figure}
 	\centering
@@ -281,7 +281,7 @@ Figure \ref{fig:switch_schematic} presents a high-level schematic of a bare-meta
 	\label{fig:switch_schematic}
 \end{figure}
 
-The diagram depicts three main components. The \gls{npu}, represented as a combination of SRAM-based memory and an ASIC-based forwarding pipeline, is a chip optimized for parsing packet headers and making forwarding decisions. This representation ensures packets are buffered in memory while being processed in the pipeline. A general-purpose processor is connected to and controls the \gls{npu}. This chip runs the software of the switch and deals with the off-switch communications with the control plane. The last component is the device ports, which interconnects devices.
+The diagram depicts three main components. The \gls{npu}, represented as a combination of \gls{sram}-based memory and an application-specific integrated circuit based forwarding pipeline, is a chip optimized for parsing packet headers and making forwarding decisions. This representation ensures packets are buffered in memory while being processed in the pipeline. A general-purpose processor is connected to and controls the \gls{npu}. This chip runs the software of the switch and deals with the off-switch communications with the control plane. The last component is the device ports, which interconnects devices.
 
 % Data plane pipeline abstractions
 % what this abstraction is
@@ -298,7 +298,7 @@ To achieve its goal of interoperability between different hardware, \gls{p4} pro
 % data match-action pipeline abstraction
 The logical pipelines can be represented using different abstractions. In figure X, the pipeline is described using the data match-action pipeline. This abstraction describes the packet processing functions of a network device as a pipeline of lookup tables. Each table is responsible for matching specific fields in the packet header and performing an action based on the result\cite{bifulco_survey_2018}\cite{kreutz_software-defined_2015}. Thus, the data match-action abstraction describes the \gls{npu} as a sequence of lookup tables. 
 
-Other abstractions exist for describing the switch pipeline, but this is the most popular by far. OpenFlow is largely credited with popularizing the match-action abstraction\cite{bifulco_survey_2018}. However, the original proposal for OpenFlow took advantage of the fact that most routers and switches already contained flow tables used to implement additional network functions such as firewalls, NAT, QoS, and statistics collection, to define a common set of functions and provided an open protocol for programming these flow tables\cite{mckeown_openflow_2008}. This implies that the architecture of the \gls{npu} and the Southbound \gls{api} strongly influenced each other.
+Other abstractions exist for describing the switch pipeline, but this is the most popular by far. OpenFlow is largely credited with popularizing the match-action abstraction\cite{bifulco_survey_2018}. However, the original proposal for OpenFlow took advantage of the fact that most routers and switches already contained flow tables used to implement additional network functions such as firewalls, network address translation, quality of service, and statistics collection, to define a common set of functions and provided an open protocol for programming these flow tables\cite{mckeown_openflow_2008}. This implies that the architecture of the \gls{npu} and the Southbound \gls{api} strongly influenced each other.
 
 This abstraction depicts multiple tables because high speed switches require a multi-stage pipeline for packet processing. It is the optimal approach for packet processing because this process involves checking multiple header fields, and with multiple stages, different stages can perform different tasks simultaneously\cite{peterson_software-defined_2021}. 
 
@@ -323,7 +323,7 @@ In practice, when a packet arrives at a switch, after being parsed, the packet h
 % Software
 \subsubsection{Software}
 
-Each switch must be equipped with a \gls{bios}, which is similar to the firmware found in microprocessors as it provisions and boots a bare-metal switch. The \gls{onie} has emerged as the standard for switch \gls{bios}es\cite{peterson_software-defined_2021}. On top of it, every switch must run a local Switch \gls{os}, which is responsible for handling calls from the controller and taking appropriate actions on the switch's internal resources. The most widely used Switch \gls{os} is Open Network Linux\cite{noauthor_linux_nodate}, an open-source project based largely on the Debian distribution of Linux and extended to support hardware unique to switches\cite{peterson_software-defined_2021}. Other open source Switch \glspl{os} include Stratum\cite{noauthor_stratum_nodate} and SONiC\cite{noauthor_sonic_nodate}. Vendor-provided software development kits for the on-board switching chips are also important. These kits are analogous to device drivers used in traditional operating systems. 
+Each switch must be equipped with a \gls{bios}, which is similar to the firmware found in microprocessors as it provisions and boots a bare-metal switch. The Open Network Install Environment has emerged as the standard for switch \gls{bios}es\cite{peterson_software-defined_2021}. On top of it, every switch must run a local Switch \gls{os}, which is responsible for handling calls from the controller and taking appropriate actions on the switch's internal resources. The most widely used Switch \gls{os} is Open Network Linux\cite{noauthor_linux_nodate}, an open-source project based largely on the Debian distribution of Linux and extended to support hardware unique to switches\cite{peterson_software-defined_2021}. Other open source Switch \glspl{os} include Stratum\cite{noauthor_stratum_nodate} and SONiC\cite{noauthor_sonic_nodate}. Vendor-provided software development kits for the on-board switching chips are also important. These kits are analogous to device drivers used in traditional operating systems. 
 
 
 % Southbound API
@@ -434,7 +434,7 @@ There is no fixed or widely accepted standard for Northbound \glspl{api}\cite{kr
 
 There is therefore a large amount of different \glspl{api} that can be used depending on the chosen \gls{nos}. The purpose of this large number of different \glspl{api} is to sufficiently provide control over all underlying functionalities to the application plane\cite{peterson_software-defined_2021}.
 
-As a Northbound interface implementation, programmers and most controllers typically use the REST \gls{api}\cite{latif_comprehensive_2020}. The gNXI interfaces are also popular, with them corresponding exactly to their counterparts in the Southbound \gls{api}\cite{peterson_software-defined_2021}. 
+As a Northbound interface implementation, programmers and most controllers typically use the representational state transfer \gls{api}\cite{latif_comprehensive_2020}. The gNXI interfaces are also popular, with them corresponding exactly to their counterparts in the Southbound \gls{api}\cite{peterson_software-defined_2021}. 
         
 
 % management plane or application layer

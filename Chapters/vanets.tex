@@ -285,13 +285,13 @@ The architecture of an \gls{its} host can be visualized on Figure \ref{fig:its_h
 
 The functionalities described in every layer are not necessarily function to be implemented in every instance of the architecture, as it depends on the specific implementation of the \gls{its} station\cite{etsi_intelligent_2010}.
 
-\subsection[Access Layer]{Access Layer}
-\label{subsec:Access_Layer}
+\subsection[Access layer]{Access layer}
+\label{subsec:Access_layer}
 
 % Access layer
-The Access Layer, which is illustrated in the architecture of an \gls{its} host in Figure \ref{fig:its_host}, corresponds to the first two layers of the \gls{osi} model, the \gls{phy} Layer and the \gls{mac} Layer\cite{etsi_intelligent_2020}.
+The Access layer, which is illustrated in the architecture of an \gls{its} host in Figure \ref{fig:its_host}, corresponds to the first two layers of the \gls{osi} model, the Physical layer and the Data link layer\cite{etsi_intelligent_2020}.
 
-Among all the existing Access Layer technologies, the best suited to meet the necessary requirements for use in \glspl{vanet} were the existing wireless access technologies\cite{al-sultan_comprehensive_2014}. These technologies ranged from long range signaling technologies such as Microwave and WiMAX to short range technologies such as Infrared or Bluetooth\cite{anwer_survey_2014}.
+Among all the existing Access layer technologies, the best suited to meet the necessary requirements for use in \glspl{vanet} were the existing wireless access technologies\cite{al-sultan_comprehensive_2014}. These technologies ranged from long range signaling technologies such as Microwave and WiMAX to short range technologies such as Infrared or Bluetooth\cite{anwer_survey_2014}.
 
 Over the years, most of these technologies have been studied and tested as possible solutions for use in \gls{vanet} communications, and in most cases they were deemed unsuitable for the \gls{vanet} environment. For instance, short-range communication protocols such as the examples above were discarded due to lack of range, throughput, and reliability and as a result, medium and long range communications took center stage.
 
@@ -308,7 +308,7 @@ The \gls{ieee} 802.11 family of standards, an Access layer technology, was consi
 
 Despite these significant advantages, the existing \gls{ieee} 802.11 standards were not able to meet all the requirements imposed by the unique characteristics of \glspl{vanet}, necessitating the creation of a new variant that would be better suited for such scenarios. Thus, 802.11p was created as an adaptation of the existing 802.11 standards. Given its American origin and contribution to the development of \gls{v2x} communication technologies, it is important to mention that \gls{ieee} 802.11p was conceived in the context of \gls{wave}\cite{jiang_ieee_2008}. The \gls{eu}, while initially open to many different access technologies, eventually converged on a \gls{ieee} 802.11p based solution dubbed \gls{its}-G5.
 
-\gls{ieee}'s main motivation behind the development of \gls{ieee} 802.11p was to enable effective communication capable of handling the rapidly changing environments of \glspl{vanet}\cite{jiang_ieee_2008}, while making the minimum necessary changes to the \gls{ieee} 802.11 \gls{phy} layer. Modifying the \gls{mac} layer is akin to a software update, while a \gls{phy} level amendment would require the design of an entirely new wireless airlink technology\cite{jiang_ieee_2008}, which would be expensive and time consuming. 
+\gls{ieee}'s main motivation behind the development of \gls{ieee} 802.11p was to enable effective communication capable of handling the rapidly changing environments of \glspl{vanet}\cite{jiang_ieee_2008}, while making the minimum necessary changes to the \gls{ieee} 802.11 Physical layer. Modifying the Physical layer is akin to a software update, while a Physical level amendment would require the design of an entirely new wireless airlink technology\cite{jiang_ieee_2008}, which would be expensive and time consuming. 
 
 With this in mind, the \gls{ieee} began work on a variant of the 802.11 standard that would be feasible for \gls{v2x}, capable of operating at speeds up to 200 km/h and ranges up to 1 km\cite{jakubiak_state_2008}. Experimental work began with the full deck of 802.11 technologies\cite{toor_vehicle_2008}, but soon narrowed down to \gls{ieee} 802.11a because it operates at 5 GHz, which is closest to 5.9 GHz, the desired frequency for \gls{its} operations in the \gls{us}. This made it easier to configure devices to operate at the desired frequency\cite{jiang_ieee_2008}.
 
@@ -400,16 +400,16 @@ The direct communication mode, also referred to as “Mode 4”, utilizes the sh
 
 % Place in standards
 
-\gls{etsi} initially considered Cellular technologies as possible solutions, and at that time included 2G and 3G as possible access technologies in the initial \gls{its} station reference architecture. As stated earlier, \gls{etsi} centralized the Access Layer of its architecture on the 802.11p-based \gls{its}-G5. Recently, however, reflecting on the efforts of \gls{3gpp}, \gls{5gaa}, and \gls{its} implementation in other countries like China, \gls{etsi} made amendments to existing standards in order to achieve compatibility with \gls{c-v2x} technologies\cite{weber_c-v2x_2019}. This indicates that in the \gls{c-v2x} architecture, the layers above the Access Layer consists of the pre-established standards of different countries, demonstrating significant technological compatibility.
+\gls{etsi} initially considered Cellular technologies as possible solutions, and at that time included 2G and 3G as possible access technologies in the initial \gls{its} station reference architecture. As stated earlier, \gls{etsi} centralized the Access layer of its architecture on the 802.11p-based \gls{its}-G5. Recently, however, reflecting on the efforts of \gls{3gpp}, \gls{5gaa}, and \gls{its} implementation in other countries like China, \gls{etsi} made amendments to existing standards in order to achieve compatibility with \gls{c-v2x} technologies\cite{weber_c-v2x_2019}. This indicates that in the \gls{c-v2x} architecture, the layers above the Access layer consists of the pre-established standards of different countries, demonstrating significant technological compatibility.
 
 
-\subsection[Networking \& Transport Layers]{Networking \& Transport Layers}
+\subsection[Networking \& Transport layers]{Networking \& Transport layers}
 \label{subsec:networking_transport_layers}
 % Introduction
-The Networking and Transport Layer, as implied by its name, corresponds to the third and fourth layers of the \gls{osi} model.
+The Networking and Transport layer, as implied by its name, corresponds to the third and fourth layers of the \gls{osi} model.
 
 % Routing challenges and opportunities in VANETs
-Layer 3 algorithms commonly deployed in traditional networks are unsuitable for use in \glspl{vanet}\cite{toor_vehicle_2008}, and even existing \glspl{manet} algorithms have proven to be inadequate for use in \glspl{vanet}\cite{liang_vehicular_2015}. The characteristics of \glspl{vanet}, as described in section \ref{sec:VANET_characteristics}, present several unique challenges not only to existing Layer 3 algorithms, but also to Layer 4 protocols, the most important of which are high node mobility and variable node density.
+layer 3 algorithms commonly deployed in traditional networks are unsuitable for use in \glspl{vanet}\cite{toor_vehicle_2008}, and even existing \glspl{manet} algorithms have proven to be inadequate for use in \glspl{vanet}\cite{liang_vehicular_2015}. The characteristics of \glspl{vanet}, as described in section \ref{sec:VANET_characteristics}, present several unique challenges not only to existing layer 3 algorithms, but also to Layer 4 protocols, the most important of which are high node mobility and variable node density.
 
 The high mobility of nodes leads to frequent topology partitions, which results in highly unstable routes. Therefore, pre-determining routes in these conditions is often irrelevant and extremely complicated. Additionally, the algorithm must operate under conditions of both extreme congestion and isolation due to variable node density, further increasing its complexity.
 
@@ -418,7 +418,7 @@ Scholars have recognized the adoption of broadcast as the primary communication 
 Although the challenges presented by these aspects of \glspl{vanet} affect algorithm reliability, researchers have leveraged other characteristics of \glspl{vanet} to develop novel solutions to the aforementioned problems. Besides the lack of power constraints, the predictable mobility of nodes allows algorithms to perform more effective link selection, which facilitates network management and opens opportunities to optimize the flow of information, ultimately improving routing protocols.
 
 % ETSI solution
-In Europe, researchers at \gls{etsi} developed new algorithms and defined new protocols in an attempt to find an adequate solution to the aforementioned challenges while taking advantage of \glspl{vanet} newfound opportunities. As part of its architecture, \gls{etsi} introduced a new Layer 3 protocol called GeoNetworking\cite{etsi_intelligent_2014-1}\cite{etsi_intelligent_2013-1}\cite{etsi_intelligent_2014}\cite{etsi_intelligent_2020-1}\cite{etsi_intelligent_2019}\cite{etsi_intelligent_2014-2}, a new Layer 4 protocol called \gls{btp}\cite{etsi_intelligent_2019} and a sublayer 3 extension called \gls{gn6}\cite{etsi_intelligent_2014-2}.
+In Europe, researchers at \gls{etsi} developed new algorithms and defined new protocols in an attempt to find an adequate solution to the aforementioned challenges while taking advantage of \glspl{vanet} newfound opportunities. As part of its architecture, \gls{etsi} introduced a new layer 3 protocol called GeoNetworking\cite{etsi_intelligent_2014-1}\cite{etsi_intelligent_2013-1}\cite{etsi_intelligent_2014}\cite{etsi_intelligent_2020-1}\cite{etsi_intelligent_2019}\cite{etsi_intelligent_2014-2}, a new layer 4 protocol called \gls{btp}\cite{etsi_intelligent_2019} and a sublayer 3 extension called \gls{gn6}\cite{etsi_intelligent_2014-2}.
 
 % GeoNetworking 
 GeoNetworking is an ad hoc routing protocol that was developed solely for the transmission of safety related messages and therefore it provides the ability to forward packets without the need to exchange any signaling messages beforehand.
@@ -436,12 +436,12 @@ The GeoNetworking protocol was designed to be integrated with the \gls{btp} prot
 \gls{etsi} has established the GeoNetworking extension \gls{gn6} as an alternative to routing packets through \gls{btp}. By using the \gls{gn6} sub-layer, \gls{ipv6} packets can be transmitted over the GeoNetworking protocol without the need to modify the \gls{ipv6} protocol\cite{festag_cooperative_2014}.
 
 
-\subsection[Facilities Layer]{Facilities Layer}
+\subsection[Facilities layer]{Facilities layer}
 \label{subsec:Facilities}
 
 % Facilities layer
 % Introduction 
-The Facilities Layer encompasses layers 5, 6, and 7 of the \gls{osi} model, and its standardization defines application-specific functionalities\cite{festag_standards_2015}. The development of Facility Layer messages is the responsibility of European institutions such as \gls{etsi}, \gls{cen}, and \gls{iso}.
+The Facilities layer encompasses layers 5, 6, and 7 of the \gls{osi} model, and its standardization defines application-specific functionalities\cite{festag_standards_2015}. The development of Facility layer messages is the responsibility of European institutions such as \gls{etsi}, \gls{cen}, and \gls{iso}.
 
 All the messages defined by European standard makers serve safety purposes, and therefore run over the GeoNetworking protocol\cite{festag_standards_2015}. Multiple different messages have been defined over the years\cite{festag_cooperative_2014}, which makes it difficult to list them all. However, \glsxtrshortpl{cam} and \glsxtrshortpl{denm} are universally acknowledged as the most significant in the context of \gls{its}.
 
@@ -581,7 +581,7 @@ Non-safety applications should not interfere with safety applications, and thus 
 
 Predicting a date for when the full potential of the \gls{vanet} technology will be unleashed is incredibly difficult but it is a case of when, not if, as the benefits of \glspl{vanet} remain attractive and a lot of work has already been done. 
 
-Current and future research seeks to update current technologies in use, such as the aforementioned development of 802.11bd \ref{subsec:Access_Layer}. Additionally, efforts are being made to augment this technology with other technologies such as \gls{sdn}, Edge Computing, and Artifical Inteligence to take it to the next level\cite{mahi_review_2022}.
+Current and future research seeks to update current technologies in use, such as the aforementioned development of 802.11bd \ref{subsec:Access_layer}. Additionally, efforts are being made to augment this technology with other technologies such as \gls{sdn}, Edge Computing, and Artifical Inteligence to take it to the next level\cite{mahi_review_2022}.
 
 The deployment of \gls{vanet} infrastructure in Europe is currently underway, with projects such as Trans-European Transport Network. In line with the European Green Deal and the renewed focus on the climate crisis, \glspl{vanet} are expected to help reduce traffic emissions by increasing traffic efficiency. Besides, the goal to reduce traffic fatalities to 0 by 2050 remains a top priority\cite{lu_pan-european_2019}. Figure \ref{fig:EU_strat} provides a comprehensive representation of the plans for \glspl{vanet} in the \gls{eu}.
 
