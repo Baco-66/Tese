@@ -22,8 +22,8 @@ This chapter serves as an introduction to this thesis, providing an overview of 
 % Nos últimos anos, investigadores têm adaptado a internet para funcionar nestes cenários 
 % Isto faz com que estas adaptações sofram com as mesmas limitações da internet (e daí a sua demora)
 % SDN resolve alguns problemas da net e tem benefícios
-% Trazer esses benefícios para VANETs era top
-% VANETs precisa de ser testada na vida real para ser útil
+% Trazer esses benefícios para \glspl{vanet} era top
+% \glspl{vanet} precisa de ser testada na vida real para ser útil
 
 
 % The internet is very good
@@ -34,76 +34,44 @@ While this impact is indisputable, the exponential growth observed over the past
 
 % There is huge potential in giving internet to vehicles
 One such issue pertinent to this thesis arises from the fact that our society is becoming increasingly mobile. With the advent of widespread automobile use, researchers and engineers were quick to recognize the vast potential advantages of enabling these vehicles to communicate with one another. Such developments have the potential to enhance a number of aspects of modern transportation, from road security to the quality of life for drivers.
-% VANETs needs real life testing
+% \glspl{vanet} needs real life testing
 Given the direct impact of this technology on driver wellbeing, it is crucial that rigorous real-world testing be conducted to guarantee the safety of the general public.
 
 % Researchers have been adapting the internet for the vehicular space for years
-For the past three decades, universities, companies, and governments have been engaged in collaborative efforts to develop the technology known as VANETs, whose objective is to enable vehicles to communicate directly with each other on the road.
+For the past three decades, universities, companies, and governments have been engaged in collaborative efforts to develop the technology known as \glspl{vanet}, whose objective is to enable vehicles to communicate directly with each other on the road.
 % These adaptations inherit problems of internet design
 This process has made enormous progress in adapting the Internet to vehicular environments. Nevertheless, these solutions retain some of the aforementioned shortcomings inherent in Internet designs.
 
 % What SDN is and why it is good
-SDN, a new networking paradigm, promises to deliver increased innovation, reduced cost, simplified management, and improved performance.
+\gls{sdn}, a new networking paradigm, promises to deliver increased innovation, reduced cost, simplified management, and improved performance.
 % SDN helps to solve may of the problems of the internet
 It thus promises to address the limitations of the Internet and facilitate further growth. In light of this potential, researchers have recently focused their attention on this novel and promising field, treating it as a potential solution to many of the challenges currently faced in the current Internet landscape.
 % SDN’s advantages could help VANETS
-Notably, this has occurred in the domain of VANET, which has led to the creation of the SDVN field. The potential for SDN to enhance the capabilities of this technology has prompted recent studies to apply SDN to vehicular networks with the goal of developing optimized solutions for the future.
+Notably, this has occurred in the domain of \gls{vanet}, which has led to the creation of the \gls{sdvn} field. The potential for \gls{sdn} to enhance the capabilities of this technology has prompted recent studies to apply \gls{sdn} to vehicular networks with the goal of developing optimized solutions for the future.
 
 % section contex (end)
 
 \section{Motivation} % (fold)
 \label{sec:motivation}
 
-% SDVNs precisa de testes na vida real e não em simulador para a sua viabilidade ser testada
+% \gls{sdvn}s precisa de testes na vida real e não em simulador para a sua viabilidade ser testada
 
-In accordance with the indispensable role that real-world testing plays in the ultimate success of VANET, it is of the utmost importance to conduct comprehensive testing in realistic settings to ensure the successful deployment of SDVN. The majority of SDVN projects are designed for use in the real world, yet they are predominantly subjected to simulation-based testing, which compromises the veracity of the results. This emphasizes the pressing need for the availability of real hardware testing platforms to achieve more accurate and reliable results in this critically important area. 
+In accordance with the indispensable role that real-world testing plays in the ultimate success of \gls{vanet}, it is of the utmost importance to conduct comprehensive testing in realistic settings to ensure the successful deployment of \gls{sdvn}. The majority of \gls{sdvn} projects are designed for use in the real world, yet they are predominantly subjected to simulation-based testing, which compromises the veracity of the results. This emphasizes the pressing need for the availability of real hardware testing platforms to achieve more accurate and reliable results in this critically important area. 
 
-The development of a functional hardware testing platform utilizing free and open-source software components for SDVN projects represents a substantial advancement in the evolution of both the SDN and VANET fields. This will demonstrate the value of SDN beyond the data center, establishing it as a dominant force in the field while also fostering improvements in VANET.
+The development of a functional hardware testing platform utilizing free and open-source software components for \gls{sdvn} projects represents a substantial advancement in the evolution of both the \gls{sdn} and \gls{vanet} fields. This will demonstrate the value of \gls{sdn} beyond the data center, establishing it as a dominant force in the field while also fostering improvements in \gls{vanet}.
 
 % section motivation (end)
 
 \section{Objectives} % (fold)
 \label{sec:objectives}
 
-% Para cumprir essa motivação
-% É preciso criar construir dispositivos de VANETs mas compatíveis com SDN
-
 % Build SDVN device
-This thesis presents a proposal for the design and implementation of a functional SDVN device. In essence, the core objective is to develop a device that can be classified as both a SDN and a VANET device in a single entity. 
+This thesis presents a proposal for the design and implementation of a functional \gls{sdvn} device. In essence, the core objective is to develop a device that can be classified as both a \gls{sdn} and a \gls{vanet} device in a single entity. 
 
 % device will be an OBU
-As a further clarification, the device will be designed and assembled to fulfill the role of an OBU and thus be able to communicate in the  vehicular ad hoc space. The device must also conform to the design principles of SDN.
+As a further clarification, the device will be designed and assembled to fulfill the role of an \gls{obu} and thus be able to communicate in the  vehicular ad hoc space. The device must also conform to the design principles of \gls{sdn}.
 
-This document will undertake a detailed and thorough analysis of the SDN and VANET fields in order to define the characteristics of this device. Nevertheless, it is possible to establish a preliminary set of guidelines to which the device must adhere even before such an evaluation is conducted. The following two criteria serve as the fundamental basis for the evaluation of the devices in question. First and foremost, the device must be affordable. Secondly, the software components utilized must be open-source, wherever feasible.
-
-
-% Our main goal in this thesis is to design and assemble a hardware device similar to an OBU, utilizing open-source software where possible. This device must be SND compatible, so its routing tables must be configurable by a local or remote SDN controller. To meet these requirements, the device will run an open-source V2X protocol stack on a Linux-based OS.
-
-%Neste trabalho pretende-se dotar um dispositivo OBU real, a correr uma imagem Linux com pilha protocolar V2X open-source, de capacidades SDN. #@# O objetivo é que o referido OBU (a ser fornecido) possa ser configurado por um controlador SDN externo usando um protocolo standard e também open-source, como por exemplo o OpenFlow. Para tal será necessário preparar e configurar devidamente a imagem do software do OBU com suporte SDN, que possa ser testada num cenário real simples (a definir).
-%Adicionalmente será estudada uma nova versão de um OBU com especificação de hardware e de software com vista a novos testes futuros.
-
-%No final desta dissertação espera-se conseguir um dispositivo OBU real com capacidade de comunicação multi-tecnologia (nomeadamente LTE/4G/5G, Wifi, IEEE 802.11p) e suporte SDN. Adicionalmente, o dispositivo deverá ser testado num cenário experimental de modo a obter resultados reais.
-
-
-% objective is to build an obu
-
-% what is an obu (ja devo dizer isto na descrição das VANETs e SDNVs)
-
-% what are the theoretical objectives it has to achieve 
-    % cheap
-    % SND compatible
-    % open-source
-    %
-
-% what are its requirements
-    % communication is multi-technology compatible
-    %
-
-% objectives divided in two phases: 
-    % program the softawre of a SDVN OBU,
-    % upgrade SDVN OBU software
-    %
-
+This document will undertake a detailed and thorough analysis of the \gls{sdn} and \gls{vanet} fields in order to define the characteristics of this device. Nevertheless, it is possible to establish a preliminary set of guidelines to which the device must adhere even before such an evaluation is conducted. The following two criteria serve as the fundamental basis for the evaluation of the devices in question. First and foremost, the device must be affordable. Secondly, the software components utilized must be open-source, wherever feasible.
 
 % section objectives (end)
 
@@ -111,49 +79,48 @@ This document will undertake a detailed and thorough analysis of the SDN and VAN
 \label{sec:methodology}
 
 % Introduction
-The methodology employed in this thesis was designed with the objective of assembling the necessary theoretical basis for an assessment of the viability of the SDVN technology as a whole. The selected methodologies are explained and justified in the context of the research objectives.
-
+The methodology employed in this thesis was designed with the objective of assembling the necessary theoretical basis for an assessment of the viability of the \gls{sdvn} technology as a whole. The selected methodologies are explained and justified in the context of the research objectives.
 
 % Primeiro começar por estudar as duas áreas e as suas nuances
-The dissertation will commence with a comprehensive analysis of the SDVN field. In order to achieve the proposed objective of developing an SDN-compatible OBU, it is essential to conduct such research. While a review of the existing software in the SDVN field is undoubtedly important, the goal of the research step of this document is to extensively analyze the SDN and VANET fields.
-
+The dissertation will commence with a comprehensive analysis of the \gls{sdvn} field. In order to achieve the proposed objective of developing an \gls{sdn}-compatible \gls{obu}, it is essential to conduct such research. While a review of the existing software in the \gls{sdvn} field is undoubtedly important, the goal of the research step of this document is to extensively analyze the \gls{sdn} and \gls{vanet} fields.
 
 % Estudar SDN, a sua motivação, vantagens e software usado
-In regard to SDN, this research aims to provide a rationale for its integration with VANET. It is therefore essential to present a comprehensive analysis of the underlying motivations, advantages, and fundamental principles that shape this technology.
+In regard to \gls{sdn}, this research aims to provide a rationale for its integration with \gls{vanet}. It is therefore essential to present a comprehensive analysis of the underlying motivations, advantages, and fundamental principles that shape this technology.
 
-
-% Estudar VANETs, as suas características e problemas, o ponto em que está esta tecnologia (a.k.a todo o trabalho de implementação que foi feito até agora) e software existente
-Conversely, research on VANET is primarily concerned with defining the characteristics that distinguish this field of study from other ad hoc technologies, thereby establishing a comprehensive understanding of this field. Moreover, it is of critical importance to gain insight into the current state of this technology and to identify the remaining steps required for its widespread adoption. In light of this, this study will primarily focus on investigating the advancements in the field within the European context.
-
+% Estudar \glspl{vanet}, as suas características e problemas, o ponto em que está esta tecnologia (a.k.a todo o trabalho de implementação que foi feito até agora) e software existente
+Conversely, research on \gls{vanet} is primarily concerned with defining the characteristics that distinguish this field of study from other ad hoc technologies, thereby establishing a comprehensive understanding of this field. Moreover, it is of critical importance to gain insight into the current state of this technology and to identify the remaining steps required for its widespread adoption. In light of this, this study will primarily focus on investigating the advancements in the field within the European context.
 
 % Estudar SDVN e trabalhos existentes de implementação em hardware real
 The research component of this document will be concluded with a review of existing literature, the objective of which is to identify any studies that share similar motivations to this document.
 
-
 % Tentar construir um dispositivo SDN que funcione em ambientes veiculares e seja o máximo open-source possível
-The practical component of this dissertation will begin with a period of rigorous experimentation and familiarization with existing software in the field. Subsequently, a new SDN OBU will be designed and assembled, utilizing upgraded hardware and adhering to the requisite standards for SDN compliance.
-
+The practical component of this dissertation will begin with a period of rigorous experimentation and familiarization with existing software in the field. Subsequently, a new \gls{sdn} \gls{obu} will be designed and assembled, utilizing upgraded hardware and adhering to the requisite standards for \gls{sdn} compliance.
 
 % Testar o dispositivo em vários cenários reais
 To conclude, a concrete testing scenario will be defined and subsequently executed with the intention of illustrating and validating the aforementioned achievements.
 
 
-% Numa fase inicial, será feita uma exploração sobre o software necessário para o funcionamento de um OBU controlado por um controlador ryu. Posteriormente, será projetado e construido um novo dispositivo OBU com hardware moderno. Por fim, será testado performance e vulnerabilidades de segurança.
-
-%Initially, an investigation will be done to find the software required for the implementation of an OBU controlled by a free controller. Subsequently, a new OBU device will be designed and assembled, using modern hardware. Finally, performance and security vulnerabilities will both be tested.
-
 % section methodology (end)
 
-%\section{Main contributions} % (fold) 
-%\label{sec:main_contributions}
+\section{Main contributions} % (fold) 
+\label{sec:main_contributions}
+
+The primary contributions of this thesis are as follows:
+\begin{itemize}
+    \item A comprehensive and insightful analysis of the regulations governing \glspl{vanet}.
+    \item A detailed examination of \gls{sdn} and its underlying motivations and benefits.
+    \item A well-founded and realistic assessment of the potential implications of \gls{sdn} for future developments.
+    \item The creation of a functional \gls{obu} prototype.
+\end{itemize}
+These achievements are significant because our approach to the theoretical foundations of \gls{sdvn} represents a novel and crucial contribution to the field, which is essential for the advancement and future of this technology.
 
 % section main_contributions (end)
 
 \section{Document structure} % (fold)
 \label{sec:document_structure}
 
-Chapter 2 is divided into three main sections. Section 2.1. aims to provide a broad context about vehicular networks, in order to understand the main challenges in this field. In section 2.2., a very detailed overview of SDN is made, with a large emphasis on the data and control plane, to show the power and potential of this technology. Section 2.3. serves to address what are the advantages and shortcomings of using SDN in a vehicular context. 
-In Chapter 3, a state of play is made, where the plan to achieve the goals of this thesis is highlighted. 
+This paper is divided into eight other main chapters. Chapter 2 aims to provide a broad context about vehicular networks, in order to understand the main challenges in this field. In chapter 3, a very detailed overview of \gls{sdn} is made, with a higher emphasis on the data plane, to show the power and potential of this technology. Chapter 4 serves to address what are the advantages and difficulties of using \gls{sdn} in a vehicular context, while also presenting the \gls{sdvn} architecture. In Chapter 5, studies in this field that share a similar objective to the present study are reviewed and analyzed. Chapter 6 presents a critical analysis of the future of \gls{sdvn}. Chapter 7 initiates the implementation phase of this thesis by delineating the design of the prototype in layers and concluding with a description of the hardware that will be utilized. In Chapter 8, the pertinent software and hardware are evaluated, resulting in the completion of the solution prototype. Chapter 9 concludes this document and outlines future work.
+
 
 % section document_structure (end)
 

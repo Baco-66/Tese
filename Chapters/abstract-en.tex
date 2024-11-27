@@ -8,48 +8,22 @@
 
 \typeout{NT FILE abstract-en.tex}%
 
-
-
-Concerning its contents, the abstracts should not exceed one page and may answer the following questions (it is essential to adapt to the usual practices of your scientific area):
-
-\begin{enumerate}
-  \item What is the problem?
-% There exits no software and no hardware for testing SDVNs
-  \item Why is this problem interesting/challenging?
-% SDVN is a new technology that aims to introdice the methodologies of SDN into the vehicular space, thereby bringing its advanteges of acelarating Network innovation, reducing Network cost, simplifying network management and improving Network performance 
-% Its challangeing because there exist no major push to do this, as SDN is a generaly new and disruptive technology that increases freedom there is no motivation for governemtnsd, whih are the driving force and have the decision in vehicular implementation, to increase hardware fredom
-  \item What is the proposed approach/solution/contribution?
-% We propose to assemble an SDN compatible OBU, using as much open and free software as possible, along with affordable and available hardware.
-  \item What results (implications/consequences) from the solution?
-  
-\end{enumerate}
-
 % What's the problem?
-%\noindent In recent years, there has been a growing demand to bring internet connectivity to moving vehicles. However, traditional internet protocols and systems cannot handle the unique challenges posed by this environment. Software Defined Networking (SDN) has emerged as a potential solution, with one of the main barriers to adoption being a lack of real-world testing. To address this gap, this paper presents the development and implementation of an On-Board Unit (OBU) device fully compatible with SDN. The OBU device is designed to address the challenges of providing internet connectivity to moving vehicles and to be compatible with any Software Defined Vehicular Networking (SDVN) scenario required.
-
-% Why is it interesting?
-%Therefore, this paper's objective is to develop an OBU device that is SDN compatible.  
-%There is a huge lack of real hardware to test SDVNs.
-
-% What's the solution?
-%The solution is to build a device using opensouce software and cheap hardware.
-
-% What follows from the solution?
-
-
-
-% What is the problem?
-SDVN is the application of SDN principles to the VANET domain. This area is very recent and is especialy devout of experimental plataforms in using real hardware.
 
 % Why is this problem interesting/challenging?
-This problem is extremly challeging because it necessitates large knoledge of both SDN and VANET areas. There is also no work done that aims to integrate P4 and the second generation of SDN with VANETs, so it is something very new. It is the forefront of SDVN research. 
+% Why is it interesting?
 
-
+% What's the solution?
 % What is the proposed approach/solution/contribution?
-We propose to create an OBU that is SDN compliant, and we also propose to layout a future for the SDVN thechnology.
 
+% What follows from the solution?
 % What results (implications/consequences) from the solution?
-Our solution creates the necessary framework for the creation of a full SDVN invironment, where tests will be possible to be made.
+
+Over the past three decades, there has been a surge in demand for the integration of internet connectivity within the domain of vehicular networks, commonly referred to as \glspl{vanet}. \gls{sdn} represents a novel networking paradigm that promises numerous benefits, the realization of which could potentially enhance \glspl{vanet}. This line of thinking has led to the emergence of \gls{sdvn}, with one of the primary obstacles to its adoption being the lack of experimental platforms utilizing real hardware. This problem represents a significant challenge for \gls{sdvn} research, as it is highly intricate and necessitates a comprehensive grasp of both \gls{sdn} and \gls{vanet} domains. Moreover, there is a dearth of research examining the integration of \gls{p4} and the second generation of \gls{sdn} with \glspl{vanet}. Given the novel nature of this endeavor and the exceptional complexity of these domains, solving this challenge presents a highly intriguing, yet difficult, objective.
+
+This paper aims to address the existing gap in this field of study by presenting the development and implementation of an \gls{obu}/\gls{its} vehicle subsystem that complies fully with the specifications of \gls{sdn}. The proposed prototype is based on affordable and readily available hardware and utilizes open-source software wherever feasible. Additionally, this paper provides a new perspective on the future of the \gls{sdvn} field, based on a comprehensive global analysis. These findings present a potential trajectory for the evolution of \gls{sdvn} technology. This paper presents the development of a prototype comprising a PC Engines apu3d4 that operates the \gls{bmv2} \gls{p4} switch, communicating at 5.9GHz frequencies via the 802.11p standard. This solution establishes the necessary framework for the assembly of a comprehensive \gls{sdvn} environment in which tests may be conducted. 
+
+
 
 
 % Palavras-chave do resumo em Inglês
@@ -57,18 +31,17 @@ Our solution creates the necessary framework for the creation of a full SDVN inv
 % Keyword 1, Keyword 2, Keyword 3, Keyword 4, Keyword 5, Keyword 6, Keyword 7, Keyword 8, Keyword 9
 % \end{keywords}
 \keywords{
-  VANET \and
-  SDN \and
-  ITS \and
-  SDVN \and
-  ETSI \and
-  OBU \and
-  ITS vehicle subsystem \and
+  \glsxtrlong{vanet} \and
+  \glsxtrlong{sdn} \and
+  \glsxtrlong{its} \and
+  \gls{sdvn} \and
+  \glsxtrlong{etsi} \and
+  \glsxtrlong{obu} \and
+  \glsxtrshort{its} vehicle subsystem \and
   802.11p \and
-  OVS \and
-  BMVDOIS \and
-  PQUATRO 
+  \glsxtrlong{ovs} \and
+  \glsxtrlong{bmv2} \and
+  \glsxtrlong{p4} 
 }
-
 
 
