@@ -9,9 +9,23 @@
 \typeout{NT FILE abstract-pt.tex}%
 
 
-Nas últimas três décadas, a procura de integração da conectividade à Internet no domínio das redes veiculares, normalmente designadas por \gls{vanet}, tem vindo a aumentar. \gls{sdn} representa um novo paradigma de rede que promete numerosos benefícios, e cuja concretização pode potencialmente melhorar as \glspl{vanet}. Esta linha de pensamento levou ao aparecimento da \gls{sdvn}, sendo um dos principais obstáculos à sua adoção a falta de plataformas experimentais baseadas em hardware real. Este problema representa um desafio significativo para a investigação em \gls{sdvn}, uma vez que é altamente complexo e exige uma compreensão abrangente dos domínios \gls{sdn} e \gls{vanet}. Além disso, existe uma escassez de investigação que examine a integração da \gls{p4} e da segunda geração de \gls{sdn} com as \glspl{vanet}. Dada a natureza inovadora deste desafio e a complexidade excecional destes dois domínios, a sua resolução constitui um objetivo altamente interessante e ambicioso.
+% Background/Context (1–2 sentences)
+Nas últimas três décadas, tem-se verificado um esforço contínuo para promover a integração da conectividade à Internet no domínio das redes veiculares, habitualmente designadas por \gls{vanet}. \gls{sdn} representa um novo paradigma de rede que promete numerosos benefícios, e cuja concretização pode potencialmente melhorar as \glspl{vanet}. Isto levou ao aparecimento do domínio de \gls{sdvn}.
 
-Este documento tem por objetivo colmatar a lacuna existente neste domínio de estudo, apresentando o desenvolvimento e a implementação de um \gls{obu}/\gls{its} vehicle subsystem que cumpra as especificações de \gls{sdn}. O protótipo proposto baseia-se em hardware acessível e facilmente disponível e utiliza software de código aberto sempre que possível. Além disso, este documento apresenta uma nova perspetiva sobre o futuro do domínio \gls{sdvn}, com base numa análise global abrangente. Estas conclusões apresentam uma potencial trajetória para a evolução da tecnologia \gls{sdvn}. Este artigo apresenta o desenvolvimento de um protótipo constituído por um PC Engines apu3d4 que opera o switch \gls{p4} \gls{bmv2}, comunicando a frequências de 5,9 GHz através da norma 802.11p. Esta solução estabelece as bases necessárias para o desenvolvimento de um ambiente \gls{sdvn} completo no qual podem ser efectuados testes.
+% Research Problem and Objectives (1–2 sentences)
+Um dos principais obstáculos ao desenvolvimento deste domínio é a falta de plataformas experimentais baseadas em hardware real. O desenvolvimento de tais plataformas será, por conseguinte, o objetivo principal deste trabalho.
+
+% Methodology (2–3 sentences)
+As duas componentes principais de SDN, nomeadamente Openflow e P4, foram objeto de avaliação e teste como potenciais tecnologias para a implementação da plataforma de testes, tendo-se concluído que a segunda constitui a melhor solução.
+
+% Results (2–3 sentences)
+Com este trabalho desenvolvendo um sistema de testes \gls{vanet} que cumpra as especificações de \gls{sdn}. % Isto é estranho pprque tem de ser no passado (?)
+
+Neste trabalho, foi desenvolvido e implementado o o componente \gls{obu}/Vehicle \gls{its} sub-system que cumpre as especificações de \gls{sdn}. 
+
+% Conclusions and Contributions (1–2 sentences)
+The tests conducted on \gls{ovs} and \gls{bmv2} served to reinforce the hypothesis that \gls{p4} is the most optimal data plane technology. 
+Ultimately, the research, work, and subsequent findings presented in this thesis provide sufficient evidence to demonstrate that the integration of \gls{sdn} principles in the field of VANETs is a viable and achievable proposition.
 
 
 % Palavras-chave do resumo em Português
@@ -23,11 +37,10 @@ Este documento tem por objetivo colmatar a lacuna existente neste domínio de es
 	Redes definidas por software \and
 	\glsxtrlong{its} \and
 	Redes vehiculares definidas por software \and
-	\glsxtrlong{etsi} \and
 	\glsxtrlong{obu} \and
-	\glsxtrshort{its} vehicle subsystem \and
+	Vehicle \glsxtrshort{its} sub-system \and
 	802.11p \and
-	\glsxtrlong{ovs} \and
+	\glsxtrlong{ovs} \and % Porque tirar estes dois?
 	\glsxtrlong{bmv2} \and
 	\glsxtrlong{p4} 
 }

@@ -29,7 +29,7 @@ The implementation of the \gls{sdn} paradigm in \glspl{vanet} is driven by the d
 
 As previously stated in Section \ref{sec:Applications_of_VANETs}, \glspl{vanet} require high road acceptance for their useful applications to be effective. This implies that all implemented devices must be able to communicate with each other, and to this end the \gls{eu} has tried to standardize devices to promote interoperability between different vehicle manufacturers.
 
-In \gls{sdn} networks, operators have complete control over a static network, making it easy to conceal the inner workings of devices from the rest of the Internet and implement them as desired. However, in \gls{sdvn} the same is not possible because a vehicle \gls{its} subsystem must be able to communicate with every single roadside \gls{its} station in order to access infrastructure services deployed in the central \gls{its} subsystem. \gls{sdvn} devices must be compliant with existing regulation and communicate with standardized protocols in order to be interoperable with other devices.
+In \gls{sdn} networks, operators have complete control over a static network, making it easy to conceal the inner workings of devices from the rest of the Internet and implement them as desired. However, in \gls{sdvn} the same is not possible because a Vehicle \gls{its} sub-system must be able to communicate with every single roadside \gls{its} station in order to access infrastructure services deployed in the Central \gls{its} sub-system. \gls{sdvn} devices must be compliant with existing regulation and communicate with standardized protocols in order to be interoperable with other devices.
 
 % Higher network control 
 Such an emphasis on interoperability undermines the powerful control that \gls{sdn} brings. Network operators and developers can't take full advantage of the freedom this technology provides to implement new algorithms and test them in real-world scenarios. Even the effectiveness of the additional control provided by \gls{p4} is reduced by the inability to change network protocols.
@@ -80,7 +80,7 @@ When considering the deployment of \gls{vanet} technology, the cost of infrastru
 % Security
 \subsection{Network security}
 
-The introduction of the \gls{sdn} paradigm does not introduce any new significant security or privacy challenge to \glspl{vanet}. Some researchers\cite{ben_jaballah_security_2020} mention the centralized controller as a new vulnerability that can be exploited, but in reality current \gls{vanet} deployment already relies on services provided by the central \gls{its} subsystem.
+The introduction of the \gls{sdn} paradigm does not introduce any new significant security or privacy challenge to \glspl{vanet}. Some researchers\cite{ben_jaballah_security_2020} mention the centralized controller as a new vulnerability that can be exploited, but in reality current \gls{vanet} deployment already relies on services provided by the Central \gls{its} sub-system.
 
 % Architecture 
 \section[SDVN architecture]{\gls{sdvn} architecture}
@@ -97,7 +97,7 @@ The \gls{sdvn} architecture can be represented based on either of the architectu
 	% Data plane
 \subsection{Data plane}
 
-In \gls{sdvn}, as in \gls{sdn}, the data plane consists of all forwarding hardware but these components can be divided into two different categories based on whether they are wired or wireless. Mobile hardware refers to the vehicle \gls{its} station, while stationary hardware refers to the routers and switches found in the remaining \gls{its} subsystem. Network intelligence is extracted from all \gls{its} stations, but due to the special characteristics of the mobile nodes all \gls{sdn} enabled devices cannot be treated the same. 
+In \gls{sdvn}, as in \gls{sdn}, the data plane consists of all forwarding hardware but these components can be divided into two different categories based on whether they are wired or wireless. Mobile hardware refers to the vehicle \gls{its} station, while stationary hardware refers to the routers and switches found in the remaining \gls{its} sub-system. Network intelligence is extracted from all \gls{its} stations, but due to the special characteristics of the mobile nodes all \gls{sdn} enabled devices cannot be treated the same. 
 
 	% Control plane
 \subsection{Control plane}
@@ -109,9 +109,9 @@ In \gls{sdvn} controller distribution becomes a central concern. Vehicular netwo
 
 It should be noted that a truly distributed controller, where all instances have global information of the network, seems impossible and even counterproductive. To perform effectively, controllers usually only need information about a specific part of the network, which is in part because some messages are only relevant in the context of that particular section of the network\cite{cardona_software-defined_2020} and the ones that aren't should be directed to the nearest roadside \gls{its} station. The size and the transition between regions is dependent on implementation. 
 
-That being said, there exist many different controller placement distributions proposed in the literature. In practice, the controller can be located in the central, roadside, or vehicle subsystems. Different architectures place the controllers in a combination of these stations, giving them distinct responsibilities and utilizing different methods to distribute intelligence between them.
+That being said, there exist many different controller placement distributions proposed in the literature. In practice, the controller can be located in the Central, Roadside, or Vehicle sub-systems. Different architectures place the controllers in a combination of these stations, giving them distinct responsibilities and utilizing different methods to distribute intelligence between them.
 
-Most approaches to controller distribution in the literature\cite{bhatia_software_2019}\cite{cardona_software-defined_2020}\cite{toufga_openflow_2018} converge on a two-tier hierarchical controller. The top-level orchestrator controller, also known as the global or primary controller, is located in a server integrated into the central \gls{its} subsystem. The lower-level controllers, referred to as local or secondary controller instances, are placed closer to vehicles in the roadside \gls{its} subsystem in an effort to improve connectivity and reduce delays. 
+Most approaches to controller distribution in the literature\cite{bhatia_software_2019}\cite{cardona_software-defined_2020}\cite{toufga_openflow_2018} converge on a two-tier hierarchical controller. The top-level orchestrator controller, also known as the global or primary controller, is located in a server integrated into the Central \gls{its} sub-system. The lower-level controllers, referred to as local or secondary controller instances, are placed closer to vehicles in the Roadside \gls{its} sub-system in an effort to improve connectivity and reduce delays. 
 
 	% Application plane
 \subsection{Application plane}
