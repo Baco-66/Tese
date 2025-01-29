@@ -8,24 +8,28 @@
 
 \typeout{NT FILE abstract-pt.tex}%
 
+Nas últimas três décadas, a procura de integração da conectividade à Internet no domínio das redes veiculares, normalmente designadas por \glsxtrshort{vanet}, tem vindo a aumentar. \glsxtrshort{sdn} representa um novo paradigma de rede que promete numerosos benefícios, e cuja concretização pode potencialmente melhorar as \glsxtrshortpl{vanet}. Uma abordagem promissora consiste na aplicação de \glsxtrshort{sdn} às redes veiculares, designada por \glsxtrshort{sdvn}. No entanto, um dos principais obstáculos à sua utilização é a falta de plataformas experimentais que utilizem hardware real. Este problema representa um desafio significativo para a investigação em \glsxtrshort{sdvn}, uma vez que é altamente complexo e exige uma compreensão abrangente dos domínios \glsxtrshort{sdn} e \glsxtrshort{vanet}. Além disso, a integração da \glsxtrshort{p4} e da segunda geração de \glsxtrshort{sdn} com as \glsxtrshortpl{vanet}, é ainda área pouco explorada, abrindo novas oportunidades de investigação. Dada a natureza inovadora deste desafio e a complexidade destes dois domínios, a sua resolução constitui um objetivo altamente interessante e ambicioso.
+
+Esta dissertação visa contribuir para este domínio de estudo, apresentando o desenvolvimento e a implementação de um \glsxtrshort{obu}/sub-sistema \glsxtrshort{its} veicular que cumpra com as especificações de \glsxtrshort{sdn}. 
+O protótipo proposto baseia-se em hardware acessível e facilmente disponível e utiliza software de código aberto sempre que possível. % um subsistema ITS para os veículos, On-Board Unit (OBU),
+Este é constituído por um sistema embebido PC Engines apu3d4, com placa de comunicação sem fios capaz de operar na banda de 5.9 GHz de acordo com a norma \glsxtrshort{ieee} 802.11p para comunicações \glsxtrshort{v2x}, e integrando um switch \glsxtrshort{p4} \glsxtrshort{bmv2} para suporte deste. O sistema foi testado com sucesso num conjunto de cenários experimentais previamente definidos, cumprindo os requisitos estabelecidos para uso como plataforma de testes em ambientes reais. Esta solução estabelece as bases necessárias para o desenvolvimento de um ambiente \glsxtrshort{sdvn} completo.
+
+
 
 % Background/Context (1–2 sentences)
-Nas últimas três décadas, tem-se verificado um esforço contínuo para promover a integração da conectividade à Internet no domínio das redes veiculares, habitualmente designadas por \gls{vanet}. \gls{sdn} representa um novo paradigma de rede que promete numerosos benefícios, e cuja concretização pode potencialmente melhorar as \glspl{vanet}. Isto levou ao aparecimento do domínio de \gls{sdvn}.
+%Nas últimas três décadas, tem-se verificado um esforço contínuo para promover a integração da conectividade à Internet no domínio das redes veiculares, habitualmente designadas por \gls{vanet}. \gls{sdn} representa um novo paradigma de rede que promete numerosos benefícios, e cuja concretização pode potencialmente melhorar as \glspl{vanet}. Uma abordagem promissora consiste na aplicação das SDN às redes veiculares, designada por \gls{sdvn}. 
 
 % Research Problem and Objectives (1–2 sentences)
-Um dos principais obstáculos ao desenvolvimento deste domínio é a falta de plataformas experimentais baseadas em hardware real. O desenvolvimento de tais plataformas será, por conseguinte, o objetivo principal deste trabalho.
+%No entanto, um dos principais obstáculos ao desenvolvimento deste domínio é a falta de plataformas experimentais que utilizem hardware real. O desenvolvimento de tais plataformas será, por conseguinte, o objetivo principal deste trabalho. Esta plataforma de testes é composta por vários componentes, tendo o presente trabalho como foco o desenvolvimento de um deles.
 
 % Methodology (2–3 sentences)
-As duas componentes principais de SDN, nomeadamente Openflow e P4, foram objeto de avaliação e teste como potenciais tecnologias para a implementação da plataforma de testes, tendo-se concluído que a segunda constitui a melhor solução.
+%As duas vertentes principais de SDN, nomeadamente Openflow e P4, foram objeto de avaliação e teste como potenciais tecnologias para a implementação da plataforma de testes, tendo-se concluído que a segunda constitui a melhor solução.
 
 % Results (2–3 sentences)
-Com este trabalho desenvolvendo um sistema de testes \gls{vanet} que cumpra as especificações de \gls{sdn}. % Isto é estranho pprque tem de ser no passado (?)
-
-Neste trabalho, foi desenvolvido e implementado o o componente \gls{obu}/Vehicle \gls{its} sub-system que cumpre as especificações de \gls{sdn}. 
+%Neste trabalho, o sistema desenvolvido e implementado é semelhante ao componente \gls{obu}/Vehicle \gls{its} sub-system e cumpre as especificações de \gls{sdn}. 
 
 % Conclusions and Contributions (1–2 sentences)
-The tests conducted on \gls{ovs} and \gls{bmv2} served to reinforce the hypothesis that \gls{p4} is the most optimal data plane technology. 
-Ultimately, the research, work, and subsequent findings presented in this thesis provide sufficient evidence to demonstrate that the integration of \gls{sdn} principles in the field of VANETs is a viable and achievable proposition.
+%A conclusão desta investigação e dos testes apresentados nesta tese comprovam que a aplicação dos princípios SDN no domínio das VANET é uma proposta exequível e viável.
 
 
 % Palavras-chave do resumo em Português
@@ -33,15 +37,13 @@ Ultimately, the research, work, and subsequent findings presented in this thesis
 % Palavra-chave 1, Palavra-chave 2, Palavra-chave 3, Palavra-chave 4
 % \end{keywords}
 \keywords{
-	Redes vehiculares \and
+	Redes veiculares \and
 	Redes definidas por software \and
 	\glsxtrlong{its} \and
-	Redes vehiculares definidas por software \and
+	Redes veiculares definidas por software \and
 	\glsxtrlong{obu} \and
-	Vehicle \glsxtrshort{its} sub-system \and
-	802.11p \and
-	\glsxtrlong{ovs} \and % Porque tirar estes dois?
-	\glsxtrlong{bmv2} \and
+	Sub-sistema \glsxtrshort{its} veicular \and
+	\glsxtrshort{ieee} 802.11p \and
 	\glsxtrlong{p4} 
 }
 % to add an extra black line

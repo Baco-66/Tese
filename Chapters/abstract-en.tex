@@ -19,9 +19,22 @@
 % What follows from the solution?
 % What results (implications/consequences) from the solution?
 
-Over the past three decades, there has been a surge in demand for the integration of internet connectivity within the domain of vehicular networks, commonly referred to as \glspl{vanet}. \gls{sdn} represents a novel networking paradigm that promises numerous benefits, the realization of which could potentially enhance \glspl{vanet}. This line of thinking has led to the emergence of \gls{sdvn}, with one of the primary obstacles to its adoption being the lack of experimental platforms utilizing real hardware. This problem represents a significant challenge for \gls{sdvn} research, as it is highly intricate and necessitates a comprehensive grasp of both \gls{sdn} and \gls{vanet} domains. Moreover, there is a dearth of research examining the integration of \gls{p4} and the second generation of \gls{sdn} with \glspl{vanet}. Given the novel nature of this endeavor and the exceptional complexity of these domains, solving this challenge presents a highly intriguing, yet difficult, objective.
+Over the past three decades, there has been a surge in demand for the integration of internet connectivity within the domain of vehicular networks, commonly referred to as \glsxtrshortpl{vanet}. 
+\glsxtrshort{sdn} represents a novel networking paradigm that promises numerous benefits, the realization of which could potentially enhance \glsxtrshortpl{vanet}. 
+A promising approach that has emerged involves the application of \glsxtrshort{sdn} to vehicular networks, a concept referred to as \glsxtrshort{sdvn}. 
+However, one of the main obstacles to its use is the lack of experimental platforms using real hardware.
+This problem represents a significant challenge for \glsxtrshort{sdvn} research, as it is highly intricate and necessitates a comprehensive grasp of both \glsxtrshort{sdn} and \glsxtrshort{vanet} domains. 
+Furthermore, the integration of \glsxtrshort{p4} and the second generation of \glsxtrshort{sdn} with \glsxtrshortpl{vanet} remains an under-explored field, thereby creating new research opportunities. 
+Given the innovative nature of this challenge and the complexity of these two domains, addressing it is a highly interesting and ambitious goal.
 
-This paper aims to address the existing gap in this field of study by presenting the development and implementation of an \gls{obu}/\gls{its} vehicle subsystem that complies fully with the specifications of \gls{sdn}. The proposed prototype is based on affordable and readily available hardware and utilizes open-source software wherever feasible. Additionally, this paper provides a new perspective on the future of the \gls{sdvn} field, based on a comprehensive global analysis. These findings present a potential trajectory for the evolution of \gls{sdvn} technology. This paper presents the development of a prototype comprising a PC Engines apu3d4 that operates the \gls{bmv2} \gls{p4} switch, communicating at 5.9GHz frequencies via the 802.11p standard. This solution establishes the necessary framework for the assembly of a comprehensive \gls{sdvn} environment in which tests may be conducted. 
+This dissertation seeks to make a meaningful contribution to the field by presenting the development and implementation of a vehicle \glsxtrshort{obu}/Vehicle \glsxtrshort{its} sub-system that complies with the specifications of \glsxtrshort{sdn}.
+The proposed prototype is based on affordable and readily available hardware and utilizes open-source software wherever feasible. 
+This system features an embedded PC Engines apu3d4 system, with a wireless communication card capable of operating in the 5.9 GHz band according to the \glsxtrshort{ieee} 802.11p standard for \glsxtrshort{v2x} communications. It also  features a \glsxtrshort{bmv2} switch, which enables support for \glsxtrshort{p4}. 
+The system successfully underwent testing in a series of previously defined experimental scenarios, thereby meeting the requirements established for its use as a test platform in real-world environments. 
+Additionally, this paper provides a new perspective on the future of the \glsxtrshort{sdvn} field, based on a comprehensive global analysis. These findings present a potential trajectory for the evolution of \glsxtrshort{sdvn} technology. This paper presents the development of a prototype comprising a PC Engines apu3d4 that operates the \glsxtrshort{bmv2} \glsxtrshort{p4} switch, communicating at 5.9GHz frequencies via the 802.11p standard. 
+
+
+This solution establishes the necessary framework for the assembly of a comprehensive \glsxtrshort{sdvn} environment. 
 
 
 
@@ -34,13 +47,10 @@ This paper aims to address the existing gap in this field of study by presenting
   \glsxtrlong{vanet} \and
   \glsxtrlong{sdn} \and
   \glsxtrlong{its} \and
-  \gls{sdvn} \and
-  \glsxtrlong{etsi} \and
+  \glsxtrlong{sdvn} \and
   \glsxtrlong{obu} \and
-  \glsxtrshort{its} vehicle subsystem \and
-  802.11p \and
-  \glsxtrlong{ovs} \and
-  \glsxtrlong{bmv2} \and
+  Vehicle \glsxtrshort{its} subsystem \and
+  \glsxtrshort{ieee} 802.11p \and
   \glsxtrlong{p4} 
 }
 

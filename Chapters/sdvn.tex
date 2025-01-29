@@ -12,22 +12,22 @@
 \label{cha:sdvn}
 
 % Introduction
-The \gls{sdn} paradigm has been identified by some researchers and other experts as a powerful and promising tool for addressing some of the challenges posed by \glspl{vanet}\cite{smida_efficient_2020}. As previously discussed, \gls{sdn} is a methodology rather than a specific technology, which allows it to be applied to \glspl{vanet}. This line of thought created a new networking paradigm that is primarily known as \gls{sdvn}, although the term \gls{sdvanet} is also occasionally used.
+The \gls{sdn} paradigm has been identified by some researchers and other experts as a powerful and promising tool for addressing some of the challenges posed by \glspl{vanet}~\cite{smida_efficient_2020}. As previously discussed, \gls{sdn} is a methodology rather than a specific technology, which allows it to be applied to \glspl{vanet}. This line of thought created a new networking paradigm that is primarily known as \gls{sdvn}, although the term \gls{sdvanet} is also occasionally used.
 
-The concept of \gls{sdvn} was first introduced by Ku et al. in \cite{ku_towards_2014}, and since then there have been many different proposals of how to implement the \gls{sdn} principles in \glspl{vanet}. \gls{sdvn} has recently received significant support from researchers, which has resulted in significant technical and architectural advances in \gls{sdn}-enabled vehicular networks\cite{bhatia_software_2019}. 
+The concept of \gls{sdvn} was first introduced by Ku et al. in~\cite{ku_towards_2014}, and since then there have been many different proposals of how to implement the \gls{sdn} principles in \glspl{vanet}. \gls{sdvn} has recently received significant support from researchers, which has resulted in significant technical and architectural advances in \gls{sdn}-enabled vehicular networks~\cite{bhatia_software_2019}. 
 
 Similarly to traditional wired networks, non-\gls{sdn} systems function reasonably well. Therefore, the implementation of \gls{sdn} should not be seen as a solution to make \glspl{vanet} work, but rather as a means to enhance them.
 
 % Benefits/Challenges
 \section{Benefits and Challenges}
 
-The implementation of the \gls{sdn} paradigm in \glspl{vanet} is driven by the desire to bring some of the improvements of \gls{sdn} to \glspl{vanet} to tackle the challenging requirements of \glspl{vanet}. This paradigm has the potential to introduce flexibility, programmability, and centralized control to vehicular networks\cite{bhatia_software_2019}. This section reflects upon the benefits of \gls{sdn} and the characteristics of \glspl{vanet} to extrapolate the benefits and possible challenges that \gls{sdvn} can offer today.
+The implementation of the \gls{sdn} paradigm in \glspl{vanet} is driven by the desire to bring some of the improvements of \gls{sdn} to \glspl{vanet} to tackle the challenging requirements of \glspl{vanet}. This paradigm has the potential to introduce flexibility, programmability, and centralized control to vehicular networks~\cite{bhatia_software_2019}. This section reflects upon the benefits of \gls{sdn} and the characteristics of \glspl{vanet} to extrapolate the benefits and possible challenges that \gls{sdvn} can offer today.
 
 % Mandated Interoperability
 \subsection{Mandated Interoperability}
 \label{subsub:mandated_interoperability}
 
-As previously stated in Section \ref{sec:Applications_of_VANETs}, \glspl{vanet} require high road acceptance for their useful applications to be effective. This implies that all implemented devices must be able to communicate with each other, and to this end the \gls{eu} has tried to standardize devices to promote interoperability between different vehicle manufacturers.
+As previously stated in Section~\ref{sec:Applications_of_VANETs}, \glspl{vanet} require high road acceptance for their useful applications to be effective. This implies that all implemented devices must be able to communicate with each other, and to this end the \gls{eu} has tried to standardize devices to promote interoperability between different vehicle manufacturers.
 
 In \gls{sdn} networks, operators have complete control over a static network, making it easy to conceal the inner workings of devices from the rest of the Internet and implement them as desired. However, in \gls{sdvn} the same is not possible because a Vehicle \gls{its} sub-system must be able to communicate with every single roadside \gls{its} station in order to access infrastructure services deployed in the Central \gls{its} sub-system. \gls{sdvn} devices must be compliant with existing regulation and communicate with standardized protocols in order to be interoperable with other devices.
 
@@ -53,44 +53,44 @@ Even more than in static networks, \gls{sdn} can provide \glspl{vanet} with more
 \begin{description}
     % include \ref{subsec:predicted_mob} refs to all characteristics?
     % High mobility
-    \item[High mobility] In an environment where topology changes occur frequently, it is critical to be capable of adapting to sudden and unexpected events. \gls{sdn} provides flexibility, which allows for more dynamic network configuration, enhancing the network's responsiveness to emergencies and changing requirements, while also enabling it to better adapt to changing conditions and needs\cite{ku_towards_2014}.
+    \item[High mobility] In an environment where topology changes occur frequently, it is critical to be capable of adapting to sudden and unexpected events. \gls{sdn} provides flexibility, which allows for more dynamic network configuration, enhancing the network's responsiveness to emergencies and changing requirements, while also enabling it to better adapt to changing conditions and needs~\cite{ku_towards_2014}.
     % Predictable mobility
     \item[Predictable mobility] \gls{sdvn} can leverage the centralized view of the network, to better exploit the predictable mobility when compared to traditional approaches. The controller can use a vehicle's information to predict future topology changes and set traffic rules accordingly, improving connectivity and overall network performance.  
     % Congestion and scalability issues
-    \item[Congestion and scalability] Network congestion and the variable vehicle density are issues that can be reduced by leveraging the global view of the network to better optimize the available mediums. Centralizing network control increases cooperation, allowing the optimal path to be calculated, which reduces delays and overhead\cite{smida_efficient_2020}. Also, situations of high vehicle density can be more easily predicted and the transmission power levels on vehicles can be jointly adjusted based on future vehicle network density, greatly reducing interference\cite{smida_efficient_2020}. Overall, automated tools promise to make run-time changes to networks based on the unique characteristics of \glspl{vanet}, helping to achieve a better performing network.
+    \item[Congestion and scalability] Network congestion and the variable vehicle density are issues that can be reduced by leveraging the global view of the network to better optimize the available mediums. Centralizing network control increases cooperation, allowing the optimal path to be calculated, which reduces delays and overhead~\cite{smida_efficient_2020}. Also, situations of high vehicle density can be more easily predicted and the transmission power levels on vehicles can be jointly adjusted based on future vehicle network density, greatly reducing interference~\cite{smida_efficient_2020}. Overall, automated tools promise to make run-time changes to networks based on the unique characteristics of \glspl{vanet}, helping to achieve a better performing network.
 \end{description}
 
 % Issues with maintaining a global network view
 \subsection{Issues with maintaining a global network view}
 \label{subsec:issues_with_maintaining_a_global_network_view}
 
-The advantages of centralized control are plentiful, but the establishment of this centralized view in \gls{vanet} is not guaranteed. \glspl{vanet} are based on wireless connectivity, which causes the southbound \gls{api} to suffer from instability and even complete unavailability\cite{cardona_software-defined_2020}. Combined with volatile topologies, this results in increased communication delays in the southbound interface, which can lead to inaccuracies in the controller's view of the network and in the rules established in the switches, casting doubt on the controller's ability to maintain an accurate and up-to-date view of the global topology\cite{ben_jaballah_security_2020}. 
+The advantages of centralized control are plentiful, but the establishment of this centralized view in \gls{vanet} is not guaranteed. \glspl{vanet} are based on wireless connectivity, which causes the southbound \gls{api} to suffer from instability and even complete unavailability~\cite{cardona_software-defined_2020}. Combined with volatile topologies, this results in increased communication delays in the southbound interface, which can lead to inaccuracies in the controller's view of the network and in the rules established in the switches, casting doubt on the controller's ability to maintain an accurate and up-to-date view of the global topology~\cite{ben_jaballah_security_2020}. 
 
 Another major concern introduced with \gls{sdvn} is the management overhead introduced by the southbound \gls{api} required for the controller to manipulate the devices, as switches must be frequently updated to accurately reflect the network's state. This could result in additional traffic and increased network congestion compared to the distributed methods used in traditional networks.
 
-At the same time, it should be noted that it may not be necessary for all instances of the controller to maintain a global view of the entire network. Instead, individual instances of the controller may only need to keep track of a small region of the network, as most messages in \glspl{vanet} are only relevant in their immediate surroundings\cite{sarpong_potential_2023}.
+At the same time, it should be noted that it may not be necessary for all instances of the controller to maintain a global view of the entire network. Instead, individual instances of the controller may only need to keep track of a small region of the network, as most messages in \glspl{vanet} are only relevant in their immediate surroundings~\cite{sarpong_potential_2023}.
 
-In summary, the dynamic state of the network combined with poor controller connectivity presents a major concern in \gls{sdvn}. The process of maintaining an updated view of the global network topology becomes costly and time-consuming due to potential inaccuracies in the updated information\cite{ben_jaballah_security_2020}. To address this issue, it is important to ensure robust protection against loss of connectivity and to guarantee the availability of the control plane, which sometimes requires the integration of other technologies such as fog computing with \gls{sdn}\cite{ben_jaballah_security_2020}.
+In summary, the dynamic state of the network combined with poor controller connectivity presents a major concern in \gls{sdvn}. The process of maintaining an updated view of the global network topology becomes costly and time-consuming due to potential inaccuracies in the updated information~\cite{ben_jaballah_security_2020}. To address this issue, it is important to ensure robust protection against loss of connectivity and to guarantee the availability of the control plane, which sometimes requires the integration of other technologies such as fog computing with \gls{sdn}~\cite{ben_jaballah_security_2020}.
 
 % cheaper networks
 \subsection{Cheaper networks}
 
-When considering the deployment of \gls{vanet} technology, the cost of infrastructure is a major concern, with up to 86\% of the total expected cost being attributed to hardware\cite{asselin-miller_study_2016}. Just as in traditional networks, \gls{sdn} can reduce costs by reducing complexity and increasing modularity while promoting interoperability.
+When considering the deployment of \gls{vanet} technology, the cost of infrastructure is a major concern, with up to 86\% of the total expected cost being attributed to hardware~\cite{asselin-miller_study_2016}. Just as in traditional networks, \gls{sdn} can reduce costs by reducing complexity and increasing modularity while promoting interoperability.
 
 % Security
 \subsection{Network security}
 
-The introduction of the \gls{sdn} paradigm does not introduce any new significant security or privacy challenge to \glspl{vanet}. Some researchers\cite{ben_jaballah_security_2020} mention the centralized controller as a new vulnerability that can be exploited, but in reality current \gls{vanet} deployment already relies on services provided by the Central \gls{its} sub-system.
+The introduction of the \gls{sdn} paradigm does not introduce any new significant security or privacy challenge to \glspl{vanet}. Some researchers~\cite{ben_jaballah_security_2020} mention the centralized controller as a new vulnerability that can be exploited, but in reality current \gls{vanet} deployment already relies on services provided by the Central \gls{its} sub-system.
 
 % Architecture 
 \section[SDVN architecture]{\gls{sdvn} architecture}
 
-The \gls{sdvn} architecture can be represented based on either of the architectures of the two technologies that define it. Of the two, the most suitable is the architecture of \gls{sdn}. The \gls{vanet} architecture is best represented by the \gls{its} host architecture, which is built on the \gls{osi} model. The \gls{sdn} paradigm aims to move the internet away from closed and complex standardized protocols and into open and simple network components. As such, the \gls{sdvn} architecture inherits the format as the general \gls{sdn} architecture, retaining the three layers present in it as can be seen in Figura \ref{fig:sdvn_arciotecture}. 
+The \gls{sdvn} architecture can be represented based on either of the architectures of the two technologies that define it. Of the two, the most suitable is the architecture of \gls{sdn}. The \gls{vanet} architecture is best represented by the \gls{its} host architecture, which is built on the \gls{osi} model. The \gls{sdn} paradigm aims to move the internet away from closed and complex standardized protocols and into open and simple network components. As such, the \gls{sdvn} architecture inherits the format as the general \gls{sdn} architecture, retaining the three layers present in it as can be seen in Figura~\ref{fig:sdvn_arciotecture}. 
 
 \begin{figure}
 	\centering
 	\includegraphics[width=0.8\textwidth]{Chapters/Figures/SDVNs/architecture.png}
-	\caption{Conceptual view of \gls{sdvn} architecture\cite{toufga_towards_2020}}
+	\caption{Conceptual view of \gls{sdvn} architecture~\cite{toufga_towards_2020}}
 	\label{fig:sdvn_arciotecture}
 \end{figure}
 
@@ -103,28 +103,103 @@ In \gls{sdvn}, as in \gls{sdn}, the data plane consists of all forwarding hardwa
 \subsection{Control plane}
 \label{subsec:control_plane}
 
-The control plane remains almost unchanged as the centralized logical intelligence of the network, managing device behavior to achieve desired policies. It remains responsible for communicating the high-level applications defined in the application plane to the devices in the data plane, and for transmitting device information from the data plane to the application plane. The main difference introduced by \gls{sdvn} is a consequence of the need to manage devices in the ad hoc space. Due to the two distinct types of components in the data plane, unique and customized networking applications are required to address the unique nature of each scenario. Managing the wired portion of the network can be considered a simple task because the process is the same as \gls{sdn}, whilst the wireless domain presents unique challenges and requires distinct solutions to manage wireless resources as effectively as wired resources\cite{cardona_software-defined_2020}.
+The control plane remains almost unchanged as the centralized logical intelligence of the network, managing device behavior to achieve desired policies. It remains responsible for communicating the high-level applications defined in the application plane to the devices in the data plane, and for transmitting device information from the data plane to the application plane. The main difference introduced by \gls{sdvn} is a consequence of the need to manage devices in the ad hoc space. Due to the two distinct types of components in the data plane, unique and customized networking applications are required to address the unique nature of each scenario. Managing the wired portion of the network can be considered a simple task because the process is the same as \gls{sdn}, whilst the wireless domain presents unique challenges and requires distinct solutions to manage wireless resources as effectively as wired resources~\cite{cardona_software-defined_2020}.
 
-In \gls{sdvn} controller distribution becomes a central concern. Vehicular networks have immense coverage given that they include all roads, and due to this vast distribution, a single controller cannot handle the traffic of the entire network. Therefore, it is out of the question for scalability and delay reasons\cite{toufga_openflow_2018}. Instead, the control plane must consist of multiple physical controllers efficiently distributed across the network, coordinating their decision-making efforts to handle the high volume of traffic\cite{ben_jaballah_security_2020}. Another important motivation for distributing the control plane is to bring the controller closer to the vehicles to reduce communication delays between the data and control planes\cite{nkenyereye_software-defined_2019}. 
+In \gls{sdvn} controller distribution becomes a central concern. Vehicular networks have immense coverage given that they include all roads, and due to this vast distribution, a single controller cannot handle the traffic of the entire network. Therefore, it is out of the question for scalability and delay reasons~\cite{toufga_openflow_2018}. Instead, the control plane must consist of multiple physical controllers efficiently distributed across the network, coordinating their decision-making efforts to handle the high volume of traffic~\cite{ben_jaballah_security_2020}. Another important motivation for distributing the control plane is to bring the controller closer to the vehicles to reduce communication delays between the data and control planes~\cite{nkenyereye_software-defined_2019}. 
 
-It should be noted that a truly distributed controller, where all instances have global information of the network, seems impossible and even counterproductive. To perform effectively, controllers usually only need information about a specific part of the network, which is in part because some messages are only relevant in the context of that particular section of the network\cite{cardona_software-defined_2020} and the ones that aren't should be directed to the nearest roadside \gls{its} station. The size and the transition between regions is dependent on implementation. 
+It should be noted that a truly distributed controller, where all instances have global information of the network, seems impossible and even counterproductive. To perform effectively, controllers usually only need information about a specific part of the network, which is in part because some messages are only relevant in the context of that particular section of the network~\cite{cardona_software-defined_2020} and the ones that aren't should be directed to the nearest roadside \gls{its} station. The size and the transition between regions is dependent on implementation. 
 
 That being said, there exist many different controller placement distributions proposed in the literature. In practice, the controller can be located in the Central, Roadside, or Vehicle sub-systems. Different architectures place the controllers in a combination of these stations, giving them distinct responsibilities and utilizing different methods to distribute intelligence between them.
 
-Most approaches to controller distribution in the literature\cite{bhatia_software_2019}\cite{cardona_software-defined_2020}\cite{toufga_openflow_2018} converge on a two-tier hierarchical controller. The top-level orchestrator controller, also known as the global or primary controller, is located in a server integrated into the Central \gls{its} sub-system. The lower-level controllers, referred to as local or secondary controller instances, are placed closer to vehicles in the Roadside \gls{its} sub-system in an effort to improve connectivity and reduce delays. 
+Most approaches to controller distribution in the literature~\cite{bhatia_software_2019}~\cite{cardona_software-defined_2020}~\cite{toufga_openflow_2018} converge on a two-tier hierarchical controller. The top-level orchestrator controller, also known as the global or primary controller, is located in a server integrated into the Central \gls{its} sub-system. The lower-level controllers, referred to as local or secondary controller instances, are placed closer to vehicles in the Roadside \gls{its} sub-system in an effort to improve connectivity and reduce delays. 
 
 	% Application plane
 \subsection{Application plane}
 
-The application plane remains unchanged. It consists of network applications designed to fulfill certain networking tasks using the capabilities given by the control plane. Some of these include monitoring, \gls{qos}, analytics, recovery, security, routing, load balancing, and management\cite{bhatia_software_2019}. As stated in Section \ref{sec:Applications_of_VANETs}, \gls{vanet} applications can be divided into two main categories, each with different \gls{qos} requirements. The most significant of these, the safety applications, are mostly delay sensitive, while the non-safety applications are more bandwidth intensive\cite{smida_efficient_2020}. 
+The application plane remains unchanged. It consists of network applications designed to fulfill certain networking tasks using the capabilities given by the control plane. Some of these include monitoring, \gls{qos}, analytics, recovery, security, routing, load balancing, and management~\cite{bhatia_software_2019}. As stated in Section~\ref{sec:Applications_of_VANETs}, \gls{vanet} applications can be divided into two main categories, each with different \gls{qos} requirements. The most significant of these, the safety applications, are mostly delay sensitive, while the non-safety applications are more bandwidth intensive~\cite{smida_efficient_2020}. 
 
 
 	% Communication interfaces
 \subsection{Communication interfaces}
 
-All communication \glspl{api} have no relevant changes. The only noteworthy detail is that  by having access to both \gls{its}-G5 and \gls{c-v2x} for communication and control\cite{toufga_openflow_2018}, a controller can has two main communication mediums through which, using the southbound \gls{api}, it can communicate with \gls{sdn} devices. 
+All communication \glspl{api} have no relevant changes. The only noteworthy detail is that  by having access to both \gls{its}-G5 and \gls{c-v2x} for communication and control~\cite{toufga_openflow_2018}, a controller can has two main communication mediums through which, using the southbound \gls{api}, it can communicate with \gls{sdn} devices. 
+
+% Related Papers
+\section{Related Work}
+\label{sec:related_papers}
+
+% Introduction
+Emulation is a convenient and cost-effective method for testing \gls{vanet} solutions. However, due to the complex and unpredictable nature of real-life environments, relying solely on these tools is insufficient~\cite{cardona_software-defined_2020}. In order to gain a realistic perspective on \gls{vanet}, it is necessary to implement it in real-world scenarios so the validity of the expected benefits and drawbacks can be tested. The same is true for \gls{sdvn}. 
+\gls{sdvn} is notable for the lack of experimental efforts conducted on actual hardware. In order to enable testing on real scenarios, open-source \gls{sdvn} tools and frameworks that are compatible with a wide range of hardware are indispensable~\cite{cardona_software-defined_2020}. This section reviews several related papers that aim to implement \glspl{vanet} and \gls{sdvn} in physical hardware using open sourced components, outlining the key details of their approach and architecture. 
+
+% VANET
+
+Raviglione et al.~\cite{raviglione_open_2019} present a demo paper that assembles an open-source platform based on PC Engines' boards and Unex's \glspl{wnic}. The purpose of this paper is to create a testbed for testing applications that communicate in the vehicular environment. Even though this paper does not attempt to implement \gls{sdn} principles, it is relevant because it provides all the necessary hardware and software components to implement a vehicular testbed.
+The authors assembled two boards consisting of the embedded PC Engines APU1D board with an AMD G-series dual-core T40E x86 \gls{cpu} with 64-bit support and 2 GB \gls{dram}. Communication via \gls{ieee} 802.11p was achieved using the Unex DHXA-222 \gls{mpcie} card as the \gls{wnic}. This chip is based on the Atheros AR9462 chipset which is supported by the ath9k Linux driver. To enhance storage and memory performance, a \gls{sata} III Transcend MSA370 MCL NAND Flash \gls{ssd} was installed.
+The \gls{os} used was OpenWrt release 18.06.1 with Linux kernel 4.14.63. The authors made modifications to the ath9k Linux driver in order to utilize the channels of the 5.8/5.9 GHz frequency band in accordance with \gls{its}-G5 standards. These modifications were then integrated into the OpenC2X project, which was subsequently ported to OpenWrt. The paper also reviews some modifications and implementations made in higher layers, but these are not relevant to the problem addressed in this dissertation.
+
+	
+Sedar et al.~\cite{sedar_standards-compliant_2021} developed and validated an experimental, standards-compliant \gls{obu}. Their experimental platform is based on an open-source software implementation of the \gls{etsi} \gls{its} protocol stack based on OpenC2X. Its purpose is to facilitate interoperability in communication between various devices and cloud-based services.
+The \gls{obu} was built using general purpose hardware in the form of a generic laptop, running Ubuntu 18.04. To grant cellular connectivity, it was connected to an \gls{lte} AirPrime EM7565 modem from Sierra Wireless which was in part connected to the 4G cellular network of Vodafone-Spain. The experimental \gls{obu} is also connected to external hardware devices, these being a 4G/5G cellular modem, a \gls{gps}/global navigation satellite system receiver and a connector to receive information from in-vehicle sensors.
+The article presents an overview of the current state of open-source software implementations of the \gls{etsi} \gls{its} protocol stack. It mentions OpenC2X and Vanetza as the two primary implementations. 
+Although real vehicles were not used in testing, the authors state that their experimental platform can be easily integrated into any vehicle.
+
+% SDVN
+
+Secinti et al.~\cite{secinti_software_2017} proposed an architectural model that implements \gls{sdn} and virtualization principles in order to enable \gls{vanet} with Wi-Fi access capability. 
+In this architecture, both the \gls{obu} and the \gls{rsu} are implemented using the same type of hardware and software. Both have been implemented using a Raspberry Pi, with the wireless connectivity being provided by the Realtek 5370 Wi-Fi SoC.
+These switches are implemented using OpenvSwitch v2.3.90 running on OpenWRT. OpenvSwitch is a software switch implementation that is open-source and natively supported by the Linux kernel~\cite{noauthor_open_nodate-2}. Finally, the controller is implemented using OpenDaylight and the southbound \gls{api} used is Openflow.
 
 
+Rito et al.~\cite{rito_aveiro_2023} present the deployment and experimentation architecture of the Aveiro Tech City Living Lab in Portugal. The implementation involves a diverse range of devices connected through fiber, radio \gls{its}-G5, and cellular links, utilizing various technologies such as \gls{sdn}, named data networking, and fog computing.
+Vehicle and roadside stations are implemented using the PC Engines APU2 board equipped with an \gls{ssd}, an \gls{ieee} 802.11a/b/g/n \gls{mpcie} wireless card and an \gls{lte} CAT-1 \gls{mpcie} or 5G m.2 module. Additionally, an external USB dual-band wireless adapter was also installed. The operating system used is not specified, but it is a linux distribution because in order to enable the European version of \gls{ieee} 802.11p in it they used the Linux ath9k driver.
+This paper implements a myriad of different technologies in vehicular infrastructure, one of them being \gls{sdn}. It is notable that it does not implement \gls{sdn} in vehicle \gls{its} stations, but only in the backbone of the network. The purpose of this \gls{sdn} implementation was to use the increased control in the backbone of the vehicular infrastructure and the vehicle information to predict and execute handovers in advance. The authors developed a custom protocol dubbed OBUInfo to provide \gls{cam} information to the controller. This provides the controller with location, heading, speed, and vehicle type information, which is useful in predicting future handovers ahead of time.
 
 
+Sadio et al.~\cite{sadio_design_2020} propose a complete \gls{sdvn} prototype design. The hardware used for the \gls{obu} was a Raspberry Pi 3 with Cortex-A53 × 64 1.2 GHz and \gls{sram} 1 GB. This board has access to WiFi 2.4 GHz \gls{ieee} 802.11 b/g/n and via a Huawei E8372 \gls{lte} USB modem to \gls{lte}. The operating system used was Raspbian Stretch Lite. The authors utilized the Python Twink library to transform the devices into OpenFlow switches. This implementation fails to use the standard for communication in the \gls{vanet} environment, \gls{ieee} 802.11p.
+\\
+In closing, table~\ref{table:related} provides a concise summary the related works presented in this chapter. Main characteristics analysed are the hardware and software used, technologies and communications protocols supported by the devices, and the key contribution identified on the papers. The table also highlights the ones with SDN support. The devices identified constitute the starting point for the proposed solution to be detailed in next chapters.
+
+\begin{table}[ht]
+	\centering
+	\begin{tabular}{|p{1.5cm}|p{1.7cm}|p{2cm}|p{1.6cm}|p{1.6cm}|p{1.8cm}|p{2.5cm}|}
+	\hline
+	\textbf{Paper Reference} & \textbf{Objective} & \textbf{Hardware Used} & \textbf{Software Used} & \textbf{Commu\-nication Protocol} & \textbf{Imple\-mentation Type} & \textbf{Key Contributions/Notes} \\ \hline
+	
+	Raviglione et al. 2019~\cite{raviglione_open_2019} & Create a vehicular testbed & PC Engines APU1D, Unex DHXA-222 \gls{wnic} & OpenWRT 18.06.1, modified ath9k driver & \gls{ieee} 802.11p & \gls{vanet} & Provided detailed hardware and software to assemble a testbed. \\ \hline
+	
+	Sedar et al. 2021~\cite{sedar_standards-compliant_2021} & Standards-compliant \gls{obu} & Laptop, Sierra Wireless \gls{lte} modem, \gls{gps} receiver & Ubuntu 18.04, open-source \gls{etsi} \gls{its} stack & \gls{lte}, 4G/5G & \gls{vanet} & Used general-purpose hardware, open-source protocol stack. \\ \hline
+	
+	Secinti et al. 2017~\cite{secinti_software_2017} & \gls{sdn}-enabled \gls{vanet} architecture & Raspberry Pi, Realtek 5370 Wi-Fi SoC & OpenWRT, OpenvSwitch v2.3.90, OpenDaylight & Wi-Fi & \gls{sdvn} & Implemented both \gls{obu} and \gls{rsu} using Raspberry Pi with \gls{sdn}. \\ \hline
+	
+	Rito et al. 2023~\cite{rito_aveiro_2023} & Deployment of Aveiro Tech City Living Lab & PC Engines APU2, \gls{mpcie} wireless and \gls{lte} cards & Linux (unspecified), ath9k driver & \gls{ieee} 802.11p, fiber, \gls{lte}, 5G & Hybrid (\gls{sdn} in backbone only) & Custom protocol (OBUInfo) for handover prediction in \gls{sdn} backbone. \\ \hline
+	
+	Sadio et al. 2020~\cite{sadio_design_2020} & Complete \gls{sdvn} prototype & Raspberry Pi 3, Huawei \gls{lte} USB modem & Raspbian Stretch Lite, Python Twink library & Wi-Fi, \gls{lte} & \gls{sdvn} & Used Raspberry Pi for \gls{obu}, non-standard protocol for \gls{vanet} communication. \\ \hline
+	
+	\end{tabular}
+	\caption{Summary of related literature}
+	\label{table:related}
+\end{table}
+	
+\section{Final considerations} % Final considerations
+\label{sec:final_considerations}
+
+% Conceptual Solution
+% Introduction
+The comprehensive examination of the two fundamental pillars that constitute \gls{sdvn} and \gls{sdvn} itself has provided insights into the potential usefulness of this technology in real-world scenarios, thereby enabling the identification of an conceptual practical deployment for this technology. As such, in this section, this conceptual view created from the accumulated knowledge presented in this document will be described.
+Before proceeding to the specifics, it is important to note that this is a theoretical model for an implementation. Consequently, any practical implementations developed in this dissertation will be constrained by the availability and costs of the requisite hardware and the availability and compatibility of the related software, in addition to timing and implementation constraints.    
+
+% Function
+\subsection{The impact of interoperability}
+In light of the requirement for interoperability, as delineated in section~\ref{subsub:mandated_interoperability}, an \gls{sdn}-compatible \gls{obu} deployment is only viable in real-world scenarios if it is capable of communicating with \gls{etsi} conformant devices. This limitation for implementation is only applicable in real-world deployments, as the devices must comply with, or at the very least be compatible and able to collaborate with, the protocols being used in its surrounding in order to be effective. No existing software stack for \gls{sdn} is compatible with the \gls{its}-G5 protocol stack. Consequently, the most straightforward approach to create a compatible environment is to utilize \gls{p4}’s capacity to reprogram the packet logic of a network. 
+The vast majority of research documents on \gls{sdvn} only implement the first generation of \gls{sdn}, with the few that delve into \gls{p4} and its advantages only doing so on a theoretical level, never providing an implementation platform. To the best of our knowledge, and in accordance with the findings of Sarpong et al.~\cite{sarpong_potential_2023}, no work has been published using \gls{p4} as the data plane technology in a \gls{sdvn} implementation. 
+It is essencial to note that interoperability diminishes the freedom introduced by \gls{p4}. However, it does not entirely negate its advantages, because the ability to modify network protocols enables protocol experimentation, thereby allowing existing protocols to be tested, validated, and optimized with greater ease.
+These observations lead us to conclude that the optimal \gls{sdvn} scenario would entail the use of a \gls{p4} device that emulates the protocol fields of the \gls{etsi}-defined protocol stack, modified only to accommodate changes to the controller. The aforementioned conclusion, derived from the collected theoretical evidence, suggests that OpenFlow-based solutions may not be the optimal choice. Nevertheless, in order to corroborate this hypothesis, the necessary practical test will be conducted.
+% Controller placement
+\subsection{Controller placement}
+The controller prompts the second issue of controller placement. Section~\ref{subsec:control_plane} displays the three different possible locations where the controller can be implemented, but most \gls{sdn} developments only implement controller instances in the wired infrastructure. Due to the issues touched upon in subsection~\ref{subsub:mandated_interoperability} and~\ref{subsec:issues_with_maintaining_a_global_network_view} devices must be able to function in tandem with traditional devices and without connection to infrastructure. 
+Ku et al.~\cite{ku_towards_2014} raised deserved attention to these issues by incorporating recovery mechanisms in their experimental scenario. The authors employed a conventional backup algorithm in the event of a device disconnection with the controller, demonstrating that \gls{sdvn} must have failure recovery mechanisms to ensure the network works in all scenarios.
+This work will not explicitly focus on the \gls{sdn} controller or related issues, such as identifying the best placement or distribution scheme for the \gls{sdn} controller. This is because it is essential to examine all sub-systems within the \gls{its} domain in order to achieve meaningful results, and this dissertation will focus on the Vehicle \gls{its} sub-system.
+However, for the aforementioned reasons, it should be considered fundamental for a practical \gls{sdvn} deployment to contain a local controller able to operate each individual device and take over with something similar to traditional software if the connection to the infrastructure is lost. 
+    
 

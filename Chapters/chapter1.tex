@@ -12,9 +12,9 @@
 \label{cha:introduction}
 
 % explain the chapter
-This chapter serves as an introduction to this thesis, providing an overview of its context, motivation, objectives, and methodology.
+This chapter introduces the work presented in this dissertation, beginning with the context and motivation, followed by the main objectives and the methodology used to achieve them. It concludes with a summary of the major contributions and an outline of the document structure.
 
-\section{Contextualization} % (fold)
+\section{Context} % (fold)
 \label{sec:contex}
 
 % Internet tem imensos benefícios
@@ -33,7 +33,7 @@ The Internet is universally acknowledged as one of the most significant technolo
 While this impact is indisputable, the exponential growth observed over the past two decades has revealed significant flaws in Internet design. Indeed, in its current state, the Internet is not fully capable of satisfying the demands of the modern digital landscape. 
 
 % There is huge potential in giving internet to vehicles
-One such issue pertinent to this thesis arises from the fact that our society is becoming increasingly mobile. With the advent of widespread automobile use, researchers and engineers were quick to recognize the vast potential advantages of enabling these vehicles to communicate with one another. Such developments have the potential to enhance a number of aspects of modern transportation, from road security to the quality of life for drivers.
+One such issue pertinent to this work arises from the fact that our society is becoming increasingly mobile. With the advent of widespread automobile use, researchers and engineers were quick to recognize the vast potential advantages of enabling these vehicles to communicate with one another. Such developments have the potential to enhance a number of aspects of modern transportation, from road security to the quality of life for drivers.
 % \glspl{vanet} needs real life testing
 Given the direct impact of this technology on driver wellbeing, it is crucial that rigorous real-world testing be conducted to guarantee the safety of the general public.
 
@@ -56,9 +56,11 @@ Notably, this has occurred in the domain of \gls{vanet}, which has led to the cr
 
 % \gls{sdvn}s precisa de testes na vida real e não em simulador para a sua viabilidade ser testada
 
-In accordance with the indispensable role that real-world testing plays in the ultimate success of \gls{vanet}, it is of the utmost importance to conduct comprehensive testing in realistic settings to ensure the successful deployment of \gls{sdvn}. The majority of \gls{sdvn} projects are designed for use in the real world, yet they are predominantly subjected to simulation-based testing, which compromises the veracity of the results. This emphasizes the pressing need for the availability of real hardware testing platforms to achieve more accurate and reliable results in this critically important area. 
+In accordance with the indispensable role that real-world testing plays in the ultimate success of \gls{vanet}, it is of the utmost importance to conduct comprehensive testing in realistic settings to ensure the successful deployment of \gls{sdvn}. 
 
-The development of a functional hardware testing platform utilizing free and open-source software components for \gls{sdvn} projects represents a substantial advancement in the evolution of both the \gls{sdn} and \gls{vanet} fields. This will demonstrate the value of \gls{sdn} beyond the data center, establishing it as a dominant force in the field while also fostering improvements in \gls{vanet}.
+The majority of \gls{sdvn} projects are designed for use in the real world, yet they are predominantly subjected to simulation-based testing. Although the outcomes of simulations are of great importance, they must undergo a process of confirmation and validation to ensure their reliability. The most effective method for achieving this validation is to compare the simulation results with outcomes derived from relevant, real-world testing environments. This emphasizes the pressing need for the availability of real hardware testing platforms to achieve more accurate and reliable results in this critically important area. 
+
+The development of a functional hardware testing platform, utilizing free and open-source software components for \gls{sdvn} projects, represents a substantial advancement in the evolution of both the \gls{sdn} and \gls{vanet} fields. This may demonstrate the value of \gls{sdn} beyond the data center, establishing it as a dominant force in the field while also fostering improvements in \gls{vanet}.
 
 % section motivation (end)
 
@@ -66,7 +68,7 @@ The development of a functional hardware testing platform utilizing free and ope
 \label{sec:objectives}
 
 % Build SDVN device
-This thesis presents a proposal for the design and implementation of a functional \gls{sdvn} device. In essence, the core objective is to develop a device that can be classified as both a \gls{sdn} and a \gls{vanet} device in a single entity. 
+This dissertation presents a proposal for the design and implementation of a functional \gls{sdvn} device. In essence, the core objective is to develop a device that can be classified as both a \gls{sdn} and a \gls{vanet} device in a single entity. 
 
 % device will be an OBU
 As a further clarification, the device will be designed and assembled to fulfill the role of an \gls{obu} and thus be able to communicate in the  vehicular ad hoc space. The device must also conform to the design principles of \gls{sdn}.
@@ -79,25 +81,25 @@ This document will undertake a detailed and thorough analysis of the \gls{sdn} a
 \label{sec:methodology}
 
 % Introduction
-The methodology employed in this thesis was designed with the objective of assembling the necessary theoretical basis for an assessment of the viability of the \gls{sdvn} technology as a whole. The selected methodologies are explained and justified in the context of the research objectives.
+The methodology employed in this work was designed with the objective of assembling the necessary theoretical basis for an assessment of the viability of the \gls{sdvn} technology as a whole. The selected methodologies are explained and justified in the context of the research objectives.
 
 % Primeiro começar por estudar as duas áreas e as suas nuances
-The dissertation will commence with a comprehensive analysis of the \gls{sdvn} field. In order to achieve the proposed objective of developing an \gls{sdn}-compatible \gls{obu}, it is essential to conduct such research. While a review of the existing software in the \gls{sdvn} field is undoubtedly important, the goal of the research step of this document is to extensively analyze the \gls{sdn} and \gls{vanet} fields.
+The dissertation commences with a comprehensive analysis of the \gls{sdvn} field. In order to achieve the proposed objective of developing an \gls{sdn}-compatible \gls{obu}, it is essential to conduct such research. While a review of the existing software in the \gls{sdvn} field is undoubtedly important, the goal of the research step of this document is to extensively analyze the \gls{sdn} and \gls{vanet} fields.
 
 % Estudar SDN, a sua motivação, vantagens e software usado
 In regard to \gls{sdn}, this research aims to provide a rationale for its integration with \gls{vanet}. It is therefore essential to present a comprehensive analysis of the underlying motivations, advantages, and fundamental principles that shape this technology.
 
 % Estudar \glspl{vanet}, as suas características e problemas, o ponto em que está esta tecnologia (a.k.a todo o trabalho de implementação que foi feito até agora) e software existente
-Conversely, research on \gls{vanet} is primarily concerned with defining the characteristics that distinguish this field of study from other ad hoc technologies, thereby establishing a comprehensive understanding of this field. Moreover, it is of critical importance to gain insight into the current state of this technology and to identify the remaining steps required for its widespread adoption. In light of this, this study will primarily focus on investigating the advancements in the field within the European context.
+Conversely, research on \gls{vanet} is primarily concerned with defining the characteristics that distinguish this field of study from other ad hoc technologies, thereby establishing a comprehensive understanding of this field. Moreover, it is of critical importance to gain insight into the current state of this technology and to identify the remaining steps required for its widespread adoption. In light of this, this study is primarily focused on investigating the advancements in the field within the European context.
 
 % Estudar SDVN e trabalhos existentes de implementação em hardware real
-The research component of this document will be concluded with a review of existing literature, the objective of which is to identify any studies that share similar motivations to this document.
+The research component of this document concludes with a review of existing literature, the objective of which is to identify any studies that share similar motivations to this document.
 
 % Tentar construir um dispositivo SDN que funcione em ambientes veiculares e seja o máximo open-source possível
-The practical component of this dissertation will begin with a period of rigorous experimentation and familiarization with existing software in the field. Subsequently, a new \gls{sdn} \gls{obu} will be designed and assembled, utilizing upgraded hardware and adhering to the requisite standards for \gls{sdn} compliance.
+The practical component of this dissertation is based on with a period of rigorous experimentation and familiarization with existing software in the field. Subsequently, a new \gls{sdn} \gls{obu} is designed and assembled, utilizing upgraded hardware and adhering to the requisite standards for \gls{sdn} compliance.
 
 % Testar o dispositivo em vários cenários reais
-To conclude, a concrete testing scenario will be defined and subsequently executed with the intention of illustrating and validating the aforementioned achievements.
+To conclude, a concrete testing scenario is defined and subsequently executed with the intention of illustrating and validating the aforementioned achievements.
 
 
 % section methodology (end)
@@ -105,21 +107,24 @@ To conclude, a concrete testing scenario will be defined and subsequently execut
 \section{Main contributions} % (fold) 
 \label{sec:main_contributions}
 
-The primary contributions of this thesis are as follows:
+The primary contributions of this dissertation are as follows:
 \begin{itemize}
     \item A comprehensive and insightful analysis of the regulations governing \glspl{vanet}.
     \item A detailed examination of \gls{sdn} and its underlying motivations and benefits.
     \item A well-founded and realistic assessment of the potential implications of \gls{sdn} for future developments.
-    \item The creation of a functional \gls{obu} prototype.
+    \item An evaluation of hardware and software alternatives for a \gls{sdn} capable \gls{obu} prototype.
+    \item Creation of a functional \gls{obu} prototype with \gls{sdn} support.
+    \item The evaluation of the prototye in predefined scenarios.
+
 \end{itemize}
-These achievements are significant because our approach to the theoretical foundations of \gls{sdvn} represents a novel and crucial contribution to the field, which is essential for the advancement and future of this technology.
+These achievements are significant as they demonstrate in practice how it is possible to build and test a \gls{v2x} device with \gls{sdn} and \gls{p4} support, laying the groundwork for new experiments and advancements in the field of \gls{sdvn}.
 
 % section main_contributions (end)
 
 \section{Document structure} % (fold)
 \label{sec:document_structure}
 
-This paper is divided into eight other main chapters. Chapter 2 aims to provide a broad context about vehicular networks, in order to understand the main challenges in this field. In chapter 3, a very detailed overview of \gls{sdn} is made, with a higher emphasis on the data plane, to show the power and potential of this technology. Chapter 4 serves to address what are the advantages and difficulties of using \gls{sdn} in a vehicular context, while also presenting the \gls{sdvn} architecture. In Chapter 5, studies in this field that share a similar objective to the present study are reviewed and analyzed. Chapter 6 presents a critical analysis of the future of \gls{sdvn}. Chapter 7 initiates the implementation phase of this thesis by delineating the design of the prototype in layers and concluding with a description of the hardware that will be utilized. In Chapter 8, the pertinent software and hardware are evaluated, resulting in the completion of the solution prototype. Chapter 9 concludes this document and outlines future work.
+This document is divided into eight other main chapters. Chapter~\ref{cha:vehicular_networks} provides a broad context about vehicular networks, in order to understand the main challenges in this field. In chapter~\ref{cha:sdn}, a very detailed overview of \gls{sdn} is made, with a higher emphasis on the data plane, to show the power and potential of this technology. Chapter~\ref{cha:sdvn} addresses the advantages and difficulties of using \gls{sdn} in a vehicular context, while also presenting the \gls{sdvn} architecture. It also presents the studies in this field that share a similar objective to the present study are reviewed and analyzed. Chapter~\ref{cha:device_design} details the implementation phase of this dissertation by delineating the design of the prototype in layers and concluding with a description of the hardware that will be utilized. In chapter~\ref{cha:software_tests}, the pertinent software and hardware are evaluated, showing that the complete prototype proposed operates as planned. Chapter~\ref{cha:conclusion} concludes this document and outlines future work.
 
 
 % section document_structure (end)
