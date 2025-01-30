@@ -31,11 +31,11 @@ The efforts to bring connectivity to automobiles resulted in the emergence of th
 
 As the Internet was not designed with mobility in mind, most protocols and standards were not developed to support the high-speed scenarios of \gls{vanet}. A tremendous amount of work and research efforts has already been conducted in this area, amounting to decades of research, development, and standardization. However, the development of \gls{vanet} technology began without any major centralized entity to standardize its implementation worldwide, resulting in various architectures emerging simultaneously all around the globe. It is common for different regions of the world to develop different standards for infrastructure-related technologies and these solutions tend to converge as they seek to solve the same problems in the most optimal way. 
 
-The leaders in global research on \glspl{vanet} are considered to be the \gls{us}, Japan, and the \gls{eu}. These regions are noteworthy as they have provided the majority of the technological foundations and advancements in the field. For the sake of clarity and relevance, this document focuses on the European \glspl{vanet} architecture through the discussion of the \gls{c2c} and the \gls{etsi}, two prominent and influential institutions in the field. 
+The leaders in global research on \glspl{vanet} are considered to be the \gls{us}, Japan, and the \gls{eu}. These regions are noteworthy as they have provided the majority of the technological foundations and advancements in the field. For the sake of clarity and relevance, this dissertation focuses on the European \glspl{vanet} architecture through the work done by the \gls{c2c} and the \gls{etsi}, two prominent and influential institutions in the field. 
 
 The \gls{c2c} architecture proposal is designed with a high level of abstraction and is therefore fairly easy to understand. In contrast, the \gls{etsi} standards are significantly more detailed and technical, since they provide the official standard for the \gls{eu}. \gls{etsi} uses the term \gls{its} to refer to \glspl{vanet}, as their efforts to connect vehicles together goes beyond cars and aims to interconnect planes, trains, boats, etc.
 
-There are other conventions in this field, such as the C-ROADS platform~\cite{noauthor_platform_nodate}, which are important for the development of this technology. In fact, several conventions have influenced the \gls{etsi} standards and would be worth discussing. However, in order to avoid overcomplicating the subject, only the \gls{etsi} and \gls{c2c} architectures will be covered.
+There are other conventions in this field, such as the C-ROADS platform~\cite{noauthor_platform_nodate}, which are important for the development of this technology. In fact, several conventions have influenced the \gls{etsi} standards and would be worth discussing. However, to keep this subject more concise and focused, only the \gls{etsi} and \gls{c2c} architectures will be covered.
 
 % Explain what the sections talks about
 %This section begins by delving into the peculiarities of \glspl{vanet}, followed by a review of the main components and domains of this technology. This chapter continues by examining \glspl{vanet} with a communication-oriented vision right before exploring all layer and component in the \glspl{etsi} standardized architecture. Then, \gls{vanet} simulation tools will be explored, concluding with some notes on the future of this technology.
@@ -79,7 +79,7 @@ Another relevant change from \glspl{manet} is the computational capabilities and
 
 \gls{vanet} suffers from an absurdly variable node density. A vehicle can be on a road in a remote location with the nearest internet connection of other vehicle kilometers away from their location, or in the middle of a traffic jam at an intersection surrounded by hundreds of vehicles all trying to communicate within its range.
 
-Congestion scenarios create a bandwidth problem that is exacerbated by the presence of nearby obstacles like other cars and buildings, which common in an urban environment~\cite{toor_vehicle_2008}. Wireless links are significantly more fragile than their wired counterparts because they are subject to fading, noise and interference~\cite{corson_mobile_1999}. This also forces researchers to come up with effective measures for sharing physical media, as another issue of concern is ensuring \gls{qos} measures for critical messages, like road hazard warnings, which presents a core issue~\cite{toor_vehicle_2008}.
+Congestion scenarios create a bandwidth problem that is exacerbated by the presence of nearby obstacles like other cars and buildings, which are common in an urban environment~\cite{toor_vehicle_2008}. Wireless links are significantly more fragile than their wired counterparts because they are subject to fading, noise and interference~\cite{corson_mobile_1999}. This also forces researchers to come up with effective measures for sharing physical media, as another issue of concern is ensuring \gls{qos} measures for critical messages, like road hazard warnings, which presents a core issue~\cite{toor_vehicle_2008}.
  
 Variable network density presents a necessity for the protocols developed to be capable of dealing with any situation thrown at them in the real world.
 
@@ -103,7 +103,7 @@ According to the \gls{c2c} architecture, three main components can be identified
     \begin{figure}[htbp]
     	\centering
     	\includegraphics[width=0.8\textwidth]{Chapters/Figures/VANETs/c2c-cc_RSU_range.png}
-    	\caption{A \gls{rsu} provides Internet connectivity through an \gls{obu}.~\cite{c2c-cc_car_2007}}
+    	\caption{A \gls{rsu} provides Internet connectivity to one \gls{obu} through another \gls{obu}~\cite{c2c-cc_car_2007}.}
     	\label{fig:RSU_range}
     \end{figure}
 
@@ -116,7 +116,7 @@ According to the \gls{c2c} architecture, three main components can be identified
 	\item The term \glsxtrlongpl{au} refers to all the various devices that run a single or a set of applications that connect to the \gls{obu} and harness its wireless capabilities. The \glspl{au} can be physically integrated or permanently wired to the \gls{obu} being an integrated part of the vehicle. These types of \glspl{au} are typically safety-related applications. \glspl{au} can also be wireless devices like laptops or smartphones, wirelessly connecting to an \gls{obu} and utilizing its capabilities for leisure applications.
 
     % Others
-    \item In addition to these three main components, this institution acknowledges the potential presence of other network entities, like public hotspots, instances of a Mobile \gls{ip} infrastructure, application servers, control centers, etc. However, these are not categorized and are therefore outside of the scope of this Consortium.
+    \item In addition to these three main components, this consortium acknowledges the potential presence of other network entities, like public hotspots, instances of a Mobile \gls{ip} infrastructure, application servers, control centers, etc. However, these are not categorized and are therefore outside of the scope of this Consortium.
 
 \end{enumerate}
 
@@ -132,7 +132,7 @@ The functional components described in this architecture follow the layered conc
 
 The most significant component of this architecture is the \gls{its-s} host, since it provides the minimum level of functionality required to run \gls{its} applications. It represents the basic reference architecture for any device wishing to communicate in the \gls{vanet} space, and is present on all \gls{its} sub-systems. This architecture is described in depth in section \ref{sec:vanet_arch} 
 
-In addition, all other components are a variant of the \gls{its-s} host, adding communication capabilities to it. The \gls{its-s} gateway converts messages from the Internet to the \gls{its} domain at layers 5 to 7 of the \gls{osi} model. The \gls{its-s} router converts various \gls{its} protocols at layer 3, and the \gls{its-s} border router performs a similar task, doing the same as the router, but with a more generic network, without management or security awareness. The \gls{its-s} interceptor is a generic term equivalent to any of the previous three components, plus it can represent an implementation-specific connection of the \gls{its} station-internal network to another network.
+In addition, all other components are a variant of the \gls{its-s} host, adding communication capabilities to it. The \gls{its-s} gateway converts messages between Internet and the \gls{its} domain at layers 5 to 7 of the \gls{osi} model. The \gls{its-s} router converts various \gls{its} protocols at layer 3, and the \gls{its-s} border router performs a similar task, doing the same as the router, but with a more generic network, without management or security awareness. The \gls{its-s} interceptor is a generic term equivalent to any of the previous three components, plus it can represent an implementation-specific connection of the \gls{its} station-internal network to another network.
 
 \subsubsection{Sub-systems}
 %Sub-systems
@@ -177,7 +177,7 @@ The border router communicates with any other \gls{its} system via any external 
 The Vehicle \gls{its} sub-system represents the cars, buses, trains, trucks, airplanes, and any other vehicle or means of transportation that can communicate wirelessly in an ad hoc manner and belongs to the \gls{vanet} space. This definition is very similar to the \gls{obu} definition made by the \gls{c2c}, but there are some important minor differences that make it more rigorous.
 
 This sub-system is made up of the Vehicle \gls{its} station and the internal vehicle network, which is connected to a variety of \glspl{ecu}.
-\glspl{ecu} represent any kind of system or application that requires a connection to the Internet or to any other vehicle. Examples of such applications are \gls{gps}, traffic control, road hazard warnings, etc.
+\glspl{ecu} represent any kind of system or application that requires a connection to the Internet or to any other vehicle.
 
 Like all stations, the Vehicle \gls{its} station is made up of an \gls{its} host with two optional \gls{its} interceptors, nominally an \gls{its} gateway and an \gls{its} router. This sub-system is depicted in Figure \ref{fig:vehicle_its}.
 
@@ -262,7 +262,7 @@ Different categories have emerged and evolved throughout the years as they have 
 
     % Vehicle-to-Infrastructure (V2I) communication
 	\item \gls{v2i} communication
-    \gls{v2i} communication refers to ad hoc communication between vehicles and roadside infrastructure. These communications dont encompass all messages that get exchanged between vehicles and the roadside infrastructure, and only include messages whose source and destination are a vehicle and a roadside station.
+    \gls{v2i} communication refers to ad hoc communication between vehicles and roadside infrastructure. These communications do not encompass all messages that get exchanged between vehicles and the roadside infrastructure, and only include messages whose source and destination are a vehicle and a roadside station.
 
     % Vehicle-to-Everything (V2X) communication
 	\item \gls{v2x}
@@ -283,7 +283,7 @@ The architecture of an \gls{its} host can be visualized on Figure \ref{fig:its_h
    	\label{fig:its_host}
 \end{figure}
 
-The functionalities described in every layer are not necessarily function to be implemented in every instance of the architecture, as it depends on the specific implementation of the \gls{its} station~\cite{etsi_intelligent_2010}.
+The functionalities specified in each layer do not necessarily have to be implemented in every instance of the architecture, as it depends on the specific implementation of the \gls{its} station~\cite{etsi_intelligent_2010}.
 
 \subsection[Access layer]{Access layer}
 \label{subsec:Access_layer}
@@ -299,7 +299,7 @@ While unable to fully address the demanding scenarios of \glspl{vanet}, a few of
 
 Today, the \glsxtrshort{ieee} 802.11 WiFi and Cellular technologies are considered as the two primary solutions for \glspl{vanet} worldwide.
 
-\subsubsection[IEEE-based technologies]{\gls{ieee}-based technologies}
+\subsubsection[IEEE-based technologies]{\glsxtrshort{ieee}-based technologies}
 % IEEE standards
 The \gls{ieee} is an American organization dedicated to promoting innovation and technological excellence for the benefit of humanity. Founded in 1963, it is the world's largest professional society of engineers, scientists, and other technical professionals. \glspl{ieee} primary areas of contribution are the electrical, electronic, and computing fields~\cite{noauthor_history_nodate}.
 
@@ -308,7 +308,7 @@ The \gls{ieee} 802.11 family of standards, an Access layer technology, was consi
 
 Despite these significant advantages, the existing \gls{ieee} 802.11 standards were not able to meet all the requirements imposed by the unique characteristics of \glspl{vanet}, necessitating the creation of a new variant that would be better suited for such scenarios. Thus, \gls{ieee} 802.11p was created as an adaptation of the existing \gls{ieee} 802.11 standards. Given its American origin and contribution to the development of \gls{v2x} communication technologies, it is important to mention that \gls{ieee} 802.11p was conceived in the context of \gls{wave}~\cite{jiang_ieee_2008}. The \gls{eu}, while initially open to many different access technologies, eventually converged on a \gls{ieee} 802.11p based solution dubbed \gls{its}-G5.
 
-\gls{ieee}'s main motivation behind the development of \gls{ieee} 802.11p was to enable effective communication capable of handling the rapidly changing environments of \glspl{vanet}~\cite{jiang_ieee_2008}, while making the minimum necessary changes to the \gls{ieee} 802.11 Physical layer. Modifying the Physical layer is akin to a software update, while a Physical level amendment would require the design of an entirely new wireless airlink technology~\cite{jiang_ieee_2008}, which would be expensive and time consuming. 
+\gls{ieee}'s main motivation behind the development of \gls{ieee} 802.11p was to enable effective communication capable of handling the rapidly changing environments of \glspl{vanet}~\cite{jiang_ieee_2008}, while making the minimum necessary changes to the \gls{ieee} 802.11 Physical layer. Modifying the Data Link layer is akin to a software update, while a Physical level amendment would require the design of an entirely new wireless airlink technology~\cite{jiang_ieee_2008}, which would be expensive and time consuming. 
 
 With this in mind, the \gls{ieee} began work on a variant of the \gls{ieee} 802.11 standard that would be feasible for \gls{v2x}, capable of operating at speeds up to 200 km/h and ranges up to 1 km~\cite{jakubiak_state_2008}. Experimental work began with the full deck of \gls{ieee} 802.11 technologies~\cite{toor_vehicle_2008}, but soon narrowed down to \gls{ieee} 802.11a because it operates at 5 GHz, which is closest to 5.9 GHz, the desired frequency for \gls{its} operations in the \gls{us}. This made it easier to configure devices to operate at the desired frequency~\cite{jiang_ieee_2008}.
 
@@ -331,9 +331,9 @@ As a solution, \gls{ieee} 802.11p uses an ad hoc mode called \gls{ocb}. \gls{ocb
 Removing all of these processes makes the network less secure. However, these security vulnerabilities are addressed by other standards in the \gls{its} domain.
 
 % Channels
-In Europe, \gls{etsi} created a solution for the access layer called \gls{its}-G5. It not only defines the technologies and protocols to be used in communications, but also includes the frequency allocated exclusively for \gls{v2v} and \gls{v2i} communications for the whole of the \gls{eu}.~\cite{asselin-miller_study_2016} \gls{its}-G5 uses the existing \gls{ieee} 802.11p standards created for the American \gls{wave}, adapting it for the European region.
+In Europe, \gls{etsi} created a solution for the access layer called \gls{its}-G5. It not only defines the technologies and protocols to be used in communications, but also includes the frequency allocated exclusively for \gls{v2v} and \gls{v2i} communications for the whole of the \gls{eu}~\cite{asselin-miller_study_2016}. \gls{its}-G5 uses the existing \gls{ieee} 802.11p standards created for the American \gls{wave}, adapting it for the European region.
 
-In the \gls{us}, the \gls{fcc} was responsible for the allocation of the frequency from 5.850 to 5.925 in 1999. In 2003, the \gls{fcc} divided the American band into seven non-overlapping 10 MHz channels with a 5 MHz unused band at the lower end. These channels were numbered from 172 to 184. This division also allows for operations in the 20 MHz channels 175 and 181, which are the overlap of two 10 MHz channels~\cite{harri_multi-channel_2015}.
+In the \gls{us}, the \gls{fcc} was responsible for the allocation of the frequency from 5.850 to 5.925 in 1999. In 2003, the \gls{fcc} divided the American band into seven non-overlapping 10 MHz channels with a 5 MHz unused band at the lower end~\ref{fig:WAVE_channels}. These channels were numbered from 172 to 184. This division also allows for operations in the 20 MHz channels 175 and 181, which are the overlap of two 10 MHz channels~\cite{harri_multi-channel_2015}.
 
 \begin{figure}[htbp]
     \centering
@@ -392,7 +392,7 @@ On the other hand, Cellular technologies have several technical and economic adv
 % LTE/5G
 These benefits, along with the renewed support from the industry created from \gls{5gaa}, motivated the \gls{3gpp} to begin studying the feasibility of \gls{lte} technology for supporting \gls{v2x} communications~\cite{gyawali_challenges_2021}. In 2019, \gls{3gpp} began work on \gls{c-v2x} efforts with Release 14, which made great strides in reducing existing drawbacks.
 
-In order to work as a wireless access technology capable of serving all \gls{vanet} test cases, this technology needed to ditch the necessity of using infrastructure and become ad hoc. Therefore, Release 14 established a new mode of communication, called direct communication.~\cite{weber_c-v2x_2019} This resulted in \gls{lte} and 5G supporting two relevant interfaces for communication in \glspl{vanet}, the Uu interface and the PC5 interface.
+In order to work as a wireless access technology capable of serving all \gls{vanet} test cases, this technology needed to ditch the necessity of using infrastructure and become ad hoc. Therefore, Release 14 established a new mode of communication, called direct communication~\cite{weber_c-v2x_2019}. This resulted in \gls{lte} and 5G supporting two relevant interfaces for communication in \glspl{vanet}, the Uu interface and the PC5 interface.
 
 The Uu interface is used for long range communication with cellular infrastructure in the commercial cellular spectrum. It uses existing \gls{lte}'s large coverage to provide vehicles with all kinds of services~\cite{weber_c-v2x_2019}.
 
@@ -413,7 +413,7 @@ layer 3 algorithms commonly deployed in traditional networks are unsuitable for 
 
 The high mobility of nodes leads to frequent topology partitions, which results in highly unstable routes. Therefore, pre-determining routes in these conditions is often irrelevant and extremely complicated. Additionally, the algorithm must operate under conditions of both extreme congestion and isolation due to variable node density, further increasing its complexity.
 
-Scholars have recognized the adoption of broadcast as the primary communication mode as a great solution to mitigate interference in high congestion scenarios. Nevertheless, this approach alone falls short of the desired outcome. For instance, in case of a crash, it is essential to rapidly disseminate security messages as the number of affected vehicles can rapidly rise. However, if every vehicle broadcasts simultaneously, it will lead to channel congestion, making it more difficult for the event to spread~\cite{toor_vehicle_2008}. Therefore, novel approaches are required to curb message duplicates. 
+Reserachers have recognized the adoption of broadcast as the primary communication mode as a great solution to mitigate interference in high congestion scenarios. Nevertheless, this approach alone falls short of the desired outcome. For instance, in case of a crash, it is essential to rapidly disseminate security messages as the number of affected vehicles can rapidly rise. However, if every vehicle broadcasts simultaneously, it will lead to channel congestion, making it more difficult for the event to spread~\cite{toor_vehicle_2008}. Therefore, novel approaches are required to curb message duplicates. 
 
 Although the challenges presented by these aspects of \glspl{vanet} affect algorithm reliability, researchers have leveraged other characteristics of \glspl{vanet} to develop novel solutions to the aforementioned problems. Besides the lack of power constraints, the predictable mobility of nodes allows algorithms to perform more effective link selection, which facilitates network management and opens opportunities to optimize the flow of information, ultimately improving routing protocols.
 
@@ -448,9 +448,9 @@ All the messages defined by European standard makers serve safety purposes, and 
 % CAMs
 A \gls{cam}~\cite{etsi_intelligent_2019-2} is a periodic safety message that contains vital status information about the originating vehicle, with the main goal of enabling other vehicles to take appropriate preemptive measures to avoid potentially dangerous situations~\cite{al-sultan_comprehensive_2014}.
 
-This objective is accomplished by exchanging data, including speed, location, direction, and additional non-safety application data with nearby \gls{its} stations, allowing vehicles to monitor each other's movements.~\cite{festag_standards_2015}.
+This objective is accomplished by exchanging data, including speed, location, direction, and additional non-safety application data with nearby \gls{its} stations, allowing vehicles to monitor each other's movements~\cite{festag_standards_2015}.
 
-\glspl{cam} begin transmitting as soon as the vehicle enters a safety-relevant context, which is considered to be anytime the vehicle is in operation.~\cite{festag_cooperative_2014} The transmission rate of \glspl{cam} is subject to specific rules, including both maximum and minimum transmission times between \glspl{cam}, relevant changes in position, direction, or velocity, and congestion in the wireless channel~\cite{festag_cooperative_2014}.
+\glspl{cam} begin transmitting as soon as the vehicle enters a safety-relevant context, which is considered to be anytime the vehicle is in operation~\cite{festag_cooperative_2014}. The transmission rate of \glspl{cam} is subject to specific rules, including both maximum and minimum transmission times between \glspl{cam}, relevant changes in position, direction, or velocity, and congestion in the wireless channel~\cite{festag_cooperative_2014}.
 
 \gls{cam} fields are shown in figure \ref{fig:cam_structure}. It includes an obligatory \gls{its} \gls{pdu} header, Basic container, and High frequency container, along with optional Low frequency and Special vehicle containers.
 
@@ -472,7 +472,7 @@ As an event-triggered message, \glspl{denm} are considered high-priority message
 
 Throughout the lifespan of the \gls{denm}, a number of techniques are employed to ensure the dissemination of the message in its relevant area. \glspl{denm} are repeated, generally at a lower frequency than \glspl{cam}, with the intent to allow vehicles entering the relevant area to receive said information. Similarly, if the originator ceases to transmit the \gls{denm} message for any reason, another \gls{its} station can replace the originator and continue to transmit the message. \gls{denm} messages can also be canceled by the \gls{its} station that created them~\cite{festag_cooperative_2014}.
 
-\gls{denm} fields can be observed on figure \ref{fig:denm_structure}. The \gls{its} \gls{pdu} header and the management container are mandatory, while the situation, location and a la carte container are all optional. These message fields mainly contain information about the relevance area of the message, the type of event and the time in which the message remains relevant.~\cite{al-sultan_comprehensive_2014}
+\gls{denm} fields can be observed on figure \ref{fig:denm_structure}. The \gls{its} \gls{pdu} header and the management container are mandatory, while the situation, location and a la carte container are all optional. These message fields mainly contain information about the relevance area of the message, the type of event and the time in which the message remains relevant~\cite{al-sultan_comprehensive_2014}.
 
 \begin{figure}[htbp]
     \centering
@@ -549,7 +549,7 @@ The Security Entity provides a plethora of services to ensure security and priva
 
 
 When a car wishes to begin communicating, it must use its canonical credentials given by the manufacturer to request valid enrolment credentials to an enrolment authority. Then, using the enrolment credentials it must request an authorization authority for authorization credentials. These last ones are the ones that will be used for communications, and as such in order to protect a driver's privacy are only valid in a time frame. After these expire, the \gls{its} host must request new authorization credentials to the authorization authority.
-From this example, we can observe that the enrollment authority validates that the vehicle has a valid \gls{its} station and that the authorization authority uses the authorizations given by the enrollment authority to allow the \gls{its} station access to the \gls{its} domain and to utilize a specific type of applications, service or privilege. This process can be observed on Figure \ref{fig:pki}~\cite{etsi_intelligent_2021}.
+From this example, we can observe that the enrollment authority validates that the vehicle has a valid \gls{its} station and that the authorization authority uses the authorizations given by the enrollment authority to allow the \gls{its} station access to the \gls{its} domain and to utilize a specific type of applications, service or privilege. This process can be observed on Figure~\ref{fig:pki}~\cite{etsi_intelligent_2021}.
 
 
 
@@ -568,7 +568,7 @@ Cooperative traffic efficiency applications aim to make road operations more eff
 \glspl{vanet} could also become a crucial step in the journey to fully autonomous vehicles, by exploiting expected advanced cooperation systems to exchange sensor information and status information among vehicles. These future applications also fall under the cooperative traffic efficiency umbrella.
 % Examples
 Some of these envisioned safety \gls{vanet} applications require a certain percentage of road-wide deployment to become useful~\cite{jakubiak_state_2008}. Therefore, \gls{etsi} has defined a basic set of applications to be deployed as \gls{its} systems mature, with the aim of deploying them simultaneously at that time. 
-These applications are commonly referred to as Day 1 applications and aim to provide societal and economic benefits to both the private and public road transportation sectors. Remaining safety applications have been grouped into Day 1.5 deployments, with the goal of improving and extending Day 1 applications. These applications can be further divided into bundles, which can be viewed on\ref{ann:Bundles_services}.
+These applications are commonly referred to as Day 1 applications and aim to provide societal and economic benefits to both the private and public road transportation sectors. Remaining safety applications have been grouped into Day 1.5 deployments, with the goal of improving and extending Day 1 applications. These applications can be further divided into bundles, which can be viewed on Annex~\ref{ann:Bundles_services}.
 % Non-safety applications
 The remaining applications fall under the category of non-safety applications. Such applications, also known as co-operative local services and global internet services, are those designed to enhance the comfort of drivers and passengers by enabling access to internet services from their vehicles~\cite{al-sultan_comprehensive_2014}. Based on this, any application that provides value-added services is considered non-safety applications~\cite{toor_vehicle_2008}.
 All types of entertainment and information-based applications, such as music, movies, podcasts, online games, or instant messaging platforms, are examples of the applications covered under this category. Essentially, any application that is hosted on the World Wide Web and is accessible via the \gls{ip} stack falls into this category.

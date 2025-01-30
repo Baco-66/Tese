@@ -18,7 +18,7 @@
 
 In 2011, the \gls{onf}~\cite{noauthor_open_nodate} consortium was founded with support from major players in the technology industry, including Google, Facebook, and Microsoft. \gls{onf} develops open standards for \gls{sdn} technologies to promote the \gls{sdn} vision. It is currently the leading consortium in this field.  
 
-The information in this document on \gls{sdn} is largely supported by the book "Software-Defined Networks: A Systems Approach"~\cite{peterson_software-defined_2021}, authored by leading researchers in the field and cited by the \gls{onf} itself. Before delving deeper into this topic, it is worth emphasizing that \gls{sdn} is an approach to networking, rather than a point solution, so while some of the most important and widely adopted technologies will be mentioned in this chapter, they should be viewed as an attempt to achieve the \gls{sdn} vision.
+The information in this dissertation on \gls{sdn} is largely supported by the book "Software-Defined Networks: A Systems Approach"~\cite{peterson_software-defined_2021}, authored by leading researchers in the field and cited by the \gls{onf} itself. Before delving deeper into this topic, it is worth emphasizing that \gls{sdn} is an approach to networking, rather than a point solution, so while some of the most important and widely adopted technologies will be mentioned in this chapter, they should be viewed as an attempt to achieve the \gls{sdn} vision.
 
 
 % SDN definition
@@ -31,7 +31,7 @@ For a long time, researchers and developers have acknowledged that changes in th
 
  	% main principles
 \subsection[Main principles of SDN]{Main principles of \gls{sdn}}
-\gls{sdn} technology nowadays is rather an umbrella term, as many different researchers have their own nuanced definition arising from different levels of implementation of the same \gls{sdn} vision. Such discrepancies in the \gls{sdn} definition is acknowledge by~\cite{peterson_software-defined_2021} and can be visualized in~\cite{feamster_road_2013},~\cite{thyagaturu_software_2016},~\cite{nunes_survey_2014}, and~\cite{bifulco_survey_2018}.
+\gls{sdn} technology nowadays is rather an umbrella term, as many different researchers have their own nuanced definition arising from different levels of implementation of the same \gls{sdn} vision. Such discrepancies in the \gls{sdn} definition are acknowledged by~\cite{peterson_software-defined_2021} and can be visualized in~\cite{feamster_road_2013},~\cite{thyagaturu_software_2016},~\cite{nunes_survey_2014}, and~\cite{bifulco_survey_2018}.
 The early \gls{sdn} proposal stood on three main principles, which are still relevant to this day and are as such:
 
 \begin{itemize}
@@ -73,7 +73,7 @@ These three principles remain relevant today and form the de facto definition of
 Some articles refer to these recent efforts as next generation \gls{sdn}~\cite{liatifis_advancing_2023}~\cite{sofia_shaping_2024}, while predicting further and further coupling of \gls{sdn} with network virtualization.
 
 		% Network Virtualization	
-Being one of the first use cases found for \gls{sdn}, Network virtualization traces its roots to the 90's, around the same time the idea of programmable networks was surging~\cite{kreutz_software-defined_2015}~\cite{feamster_road_2013}.  
+Being one of the first use cases found for \gls{sdn}, Network virtualization traces its roots to the 90's, around the same time the idea of programmable networks was emerging~\cite{kreutz_software-defined_2015}~\cite{feamster_road_2013}.  
 
 Network virtualization enables the creation of network topologies decoupled from the physical topology. This allows multiple virtual networks to share the underlying physical infrastructure, functioning seamlessly over the same physical network~\cite{thyagaturu_software_2016}.  The advantage of network virtualization is that it allows each individual virtual network to be simpler than the real network topology, granting increased flexibility. 
 
@@ -122,7 +122,7 @@ Lastly, the programmable controller also benefits from a network-wide view and c
 
 % cheaper networks
 \subsection{Network cost}
-Routing devices are extremely costly to purchase and maintain, especially given a handful of companies have tight control over this market. The complexity of the devices prevents new competitors from entering, which is the main reason for this dominance. \gls{sdn} promotes a more affordable alternative to these traditional devices through its open-source approach, which allows any hardware device to be used as a networking device, commoditizing networking hardware~\cite{nunes_survey_2014}. 
+Routing devices are extremely costly to purchase and maintain, especially given a handful of companies have tight control over this market. The complexity of the devices prevents new competitors from entering, which is the main reason for this dominance. \gls{sdn} promotes a more affordable alternative to these traditional devices through its open-source approach, which allows any compatible hardware device to be used as a networking device, commoditizing networking hardware~\cite{nunes_survey_2014}. 
 
 In an attempt to address the lack of functionality in current network devices, traditional networks are filled with a myriad of specialized components and middleboxes performing a variety of different functions~\cite{feamster_road_2013}~\cite{kreutz_software-defined_2015}, further driving up network costs. Examples of these middleboxes include firewalls, load balancers, network access controllers, and network address translators~\cite{nunes_survey_2014}. In \gls{sdn}, these devices are replaced by software programs which are implemented by the network controller as network-wide policies, thus reducing network costs.
 
@@ -162,7 +162,7 @@ Implementing automated network management is another major \gls{sdn} use case~\c
 \label{sec:sdn_arch}
 
     % intro
-The \gls{sdn} architecture divides networks into abstracted layers, inspired by computer systems, each with its own unique purpose~\cite{kreutz_software-defined_2015}. It consists of three main layers: the data plane, the control plane, and the application plane. These layers are linked by the Southbound \gls{api}, and the Northbound \gls{api}. Variations of this \gls{sdn} view are numerous and will be explained when relevant.
+The \gls{sdn} architecture divides networks into abstracted layers, inspired by computer systems, each with its own unique purpose~\cite{kreutz_software-defined_2015}. It consists of three main layers that are illustrated in Figure~\ref{fig:sdn_layers}: the data plane, the control plane, and the application plane. These layers are linked by the Southbound \gls{api}, and the Northbound \gls{api}. Variations of this \gls{sdn} view are numerous and will be explained when relevant.
 
 \begin{figure}
 	\centering
@@ -235,7 +235,7 @@ To work around its static nature, and as a necessity to support many different p
 
 Another important issue to consider is the reactive nature of definition of these headers. OpenFlow solely defines new headers when they become widely requested. Therefore, any new useful header fields must wait for standardization in a new version of OpenFlow before they can be integrated into networks. A proactive and open approach would be more appropriate, as this approach contradicts the \gls{sdn} principle of enabling innovation~\cite{li_protocol_2017}. 
 
-OpenFlow attempted to fix this problem in version 1.2 through an OpenFlow Extensible Match, which allows for adding custom matching fields~\cite{kreutz_software-defined_2015}. However, the fundamental problem remained and a brand new approach was preferable. Many different technologies aimed to further enhance data plane programmability emerged. This work will focus on the most popular, \gls{p4}.
+OpenFlow attempted to fix this problem in version 1.2 through an OpenFlow Extensible Match, which allows for adding custom matching fields~\cite{kreutz_software-defined_2015}. However, the fundamental problem remained and a brand new approach was preferable. Many different technologies aimed to further enhance data plane programmability emerged. This dissertation will focus on the most popular, \gls{p4}.
 As final observation, the protocol-dependent nature of OpenFlow also limits the protocols that can be used to standardized ones, meaning the defined matching fields of flow tables are limited to traditional network protocols. 
 
 \subsubsection[P4]{\glsxtrshort{p4}}
@@ -257,9 +257,8 @@ The second step occurs at runtime and consists of populating the configured pipe
 % Hardware type
 In the creation of \gls{sdn} infrastructure, any available hardware can be considered for use in the switches, with each having its own set of advantages and disadvantages. Following the approach of~\cite{xia_survey_2015}, hardware can be classified into three categories: general purpose computers, vendor specific hardware, and open networking hardware. 
 
-
 \begin{enumerate}
-\item Open network hardware: 
+\item Open networking hardware: 
     Open networking hardware refers to switch specific hardware that is based on open standards and can be used with a variety of software. This provides a programmable and vendor-independent solution for building networks. The most appropriate analogy is to compare a switch to a \gls{pc} built from commodity, off-the-shelf components. This allows for the assembly of a high-performance switch~\cite{peterson_software-defined_2021} using open-source software. For example, the Open Compute Project takes advantage of existing commodity switching components and offers full architectural specification for switches online~\cite{noauthor_open_nodate-1}.   
 
 \item Vendor specific hardware:
@@ -296,7 +295,7 @@ To achieve its goal of interoperability between different hardware, \gls{p4} pro
 
 
 % data match-action pipeline abstraction
-The logical pipelines can be represented using different abstractions. In Figure\ref{fig:pipeline_abstraction}, the pipeline is described using the data match-action pipeline. This abstraction describes the packet processing functions of a network device as a pipeline of lookup tables. Each table is responsible for matching specific fields in the packet header and performing an action based on the result~\cite{bifulco_survey_2018}~\cite{kreutz_software-defined_2015}. Thus, the data match-action abstraction describes the \gls{npu} as a sequence of lookup tables. 
+The logical pipelines can be represented using different abstractions. In Figure~\ref{fig:pipeline_abstraction}, the pipeline is described using the data match-action pipeline. This abstraction describes the packet processing functions of a network device as a pipeline of lookup tables. Each table is responsible for matching specific fields in the packet header and performing an action based on the result~\cite{bifulco_survey_2018}~\cite{kreutz_software-defined_2015}. Thus, the data match-action abstraction describes the \gls{npu} as a sequence of lookup tables. 
 
 Other abstractions exist for describing the switch pipeline, but this is the most popular by far. OpenFlow is largely credited with popularizing the match-action abstraction~\cite{bifulco_survey_2018}. However, the original proposal for OpenFlow took advantage of the fact that most routers and switches already contained flow tables used to implement additional network functions such as firewalls, network address translation, quality of service, and statistics collection, to define a common set of functions and provided an open protocol for programming these flow tables~\cite{mckeown_openflow_2008}. This implies that the architecture of the \gls{npu} and the Southbound \gls{api} strongly influenced each other.
 
@@ -307,7 +306,7 @@ There are various \gls{p4} architectures, including \gls{pisa}, \gls{psa}, V1Mod
 
 \gls{pisa} presents a simple representation of the device, so all of these examples can be considered variations of it. The other architectural models follow the same principles with some arbitrary enhancements. The \gls{pisa} model will be discussed as it is the most general. However, it should be noted that the V1Model is currently the most popularly used.
 
-\glsxtrlong{pisa} is a data plane programming model of \gls{p4}. It was introduced in \gls{p4}\_14 and is currently deprecated. It is applied in a variety of ways to the creation of concrete architectures~\cite{hauser_survey_2021}. As an example, Figure \ref{fig:pisa_pipeline} gives a high-level overview of this pipeline. 
+\glsxtrlong{pisa} is a data plane programming model of \gls{p4}. It was introduced in \gls{p4}$_{14}$ and is currently deprecated. It is applied in a variety of ways to the creation of concrete architectures~\cite{hauser_survey_2021}. As an example, Figure~\ref{fig:pisa_pipeline} gives a high-level overview of this pipeline. 
 
 \begin{figure}
 	\centering

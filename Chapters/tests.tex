@@ -16,7 +16,7 @@ In this chapter, the selected hardware prototype is tested, in conjunction with 
 
 % Experimental Setup
 \section{Experimental Setup}
-In consideration of the practical implications of the goals of this dissertation, the device must meet the criteria for an \gls{obu}/Vehicle\gls{its} sub-system, in accordance with the \gls{sdn} paradigm. For this, the device must be categorized as both \gls{sdn} and \glspl{vanet}. In practical terms, for a device to be considered \gls{sdn}-compliant, it is necessary to utilize software to emulate the functions of an \gls{sdn} device. Moreover, the minimum requirement for a device to be appropriate for the context of \glspl{vanet} is its capability of establishing connectivity in accordance with the \gls{ieee} 802.11p standard.
+In consideration of the practical implications of the goals of this dissertation, the device must meet the criteria for an \gls{obu}/Vehicle \gls{its} sub-system, in accordance with the \gls{sdn} paradigm. For this, the device must be categorized as both \gls{sdn} and \glspl{vanet}. In practical terms, for a device to be considered \gls{sdn}-compliant, it is necessary to utilize software to emulate the functions of an \gls{sdn} device. Moreover, the minimum requirement for a device to be appropriate for the context of \glspl{vanet} is its capability of establishing connectivity in accordance with the \gls{ieee} 802.11p standard.
 Accordingly, the study employs a three-stage experimental methodology, consisting of installation, integration, and functionality verification. The tests are performed in a series of phases, with each subsequent phase building upon the preceding one and introducing greater degrees of complexity. Their objective is to assess the compatibility of the various elements utilized, namely the hardware, the ath9k patch, and \gls{ovs}/\gls{bmv2}. The success of this endeavor is contingent upon the establishment of a connection between devices, which is conducted using the ping tool.
 The experiments were conducted on the devices described in Section~\ref{sec:box_v1} and~\ref{sec:box_v2} with the assistance of an external device, namely a personal computer. Additionally, a switch and six network cables were employed to facilitate communication between the devices and the personal computer, while omnidirectional antennas operating at 6GHz were utilized to enable communication in the requisite frequency range.
 The software tools utilized in this investigation were as follows:
@@ -88,7 +88,7 @@ Figure~\ref{fig:exp1_phase1_pings} demonstrates the existing interfaces of the t
 \subsection[Testing phase 2: standalone device with OvS and remote ccontroller]{Testing phase 2: standalone device with \gls{ovs} and remote ccontroller}
 Following the success of this initial phase, the decision was made to proceed with the introduction of the remote controller. The controller, which will be utilized for the remainder of the tests, introduced an elevated level of complexity, providing an excellent opportunity to become acquainted with \gls{onos} environments. Consequently, phase two entailed the creation of a Linux-based \gls{vm} utilizing VirtualBox, with the installation of \gls{onos} on this \gls{vm}. \gls{onos} was therefore incorporated into the preceding scenario and connected to \gls{ovs} via OpenFlow.
 
-The setup from this second phase is visualy the same as in the first phase, and can therefore be observed in Figure~\ref{fig:exp1_phase1_setup}. The setup of this phase is diagrammatically represented in Figure~\ref{fig:exp1_phase2_diagram}.
+The setup from this second phase is visualy the same as in the first phase, and can therefore be observed in Figure~\ref{fig:exp1_phase1_setup}. The setup of this phase is diagrammatically represented in Figure~\ref{fig:exp1_phase2_diagram}. When viewed through the lens of \gls{sdn}, the configuration of this phase can be conceptualized as illustrated in Figure~\ref{fig:exp1_phase2_sdn_diagram}.
 
 \begin{figure}
 	\centering
@@ -97,10 +97,6 @@ The setup from this second phase is visualy the same as in the first phase, and 
 	\label{fig:exp1_phase2_diagram}
 \end{figure}
 
-			% Results
-
-When viewed through the lens of \gls{sdn}, the configuration of this phase can be conceptualized as illustrated in Figure~\ref{fig:exp1_phase2_sdn_diagram}.
-
 \begin{figure}
 	\centering
 	\includegraphics[width=0.6\textwidth]{Chapters/Figures/tests/ovs_phase_2/sdn_diagram.PNG}
@@ -108,7 +104,7 @@ When viewed through the lens of \gls{sdn}, the configuration of this phase can b
 	\label{fig:exp1_phase2_sdn_diagram}
 \end{figure}
 
-The configuration of \gls{ovs}, together with showing connectivity between the two \glspl{vrf} is displayed in Figure~\ref{fig:exp1_phase2_pings}.
+The configuration of \gls{ovs}, in conjunction with the demonstration of connectivity between the two \glspl{vrf}, is illustrated in Figure~\ref{fig:exp1_phase2_pings}. This particular \gls{ovs} state is identical to that of the phase 1 of testing.
 
 \begin{figure}
 	\centering
@@ -117,7 +113,8 @@ The configuration of \gls{ovs}, together with showing connectivity between the t
 	\label{fig:exp1_phase2_pings}
 \end{figure}
 
-The list of devices and hosts known to the controller, along with the flows that have been injected into the devices, is presented in Figure~\ref{fig:exp1_phase2_onos}.
+Figure~\ref{fig:exp1_phase2_onos} displays a selection of relevant commands that were executed in the \gls{onos} console.
+This output demonstrates that \gls{onos} is connected to one device operating \gls{ovs} via OpenFlow version 1.3, and has knowledge of two hosts. Furthermore, we observe the flows that have been automatically integrated by the \gls{onos} services, thereby providing the switch with the functionality to forward packets.
 
 \begin{figure}
 	\centering
@@ -167,7 +164,11 @@ When viewed through the lens of \gls{sdn}, the configuration of this phase can b
 	\label{fig:exp1_phase4_sdn_diagram}
 \end{figure}
 
-The configuration of the three instances of \gls{ovs} that are running is Figure~\ref{fig:exp1_phase4_config}.
+
+
+The configuration of the three instances of \gls{ovs} that are running is Figure~\ref{fig:exp1_phase4_config}. This figure presents the configurations of the three instances of OvS installed on each individual device. These three instances of \gls{ovs} are also acknowledged by the controller, as illustrated in Figure~\ref{fig:exp1_phase4_onos}. Once again, these devices are connected to the controller via OpenFlow version 1.3, and the controller is aware of two hosts on the network. 
+Figure~\ref{fig:exp1_phase4_onos_flows} presents the flows that were injected into each device. These flows are identical across all three devices and are consistent with the flows injected in the previous phase, due to the fact that \gls{onos} has precisely the same services activated.
+Connectivity between the two \gls{vrf} is demonstraded in Figure~\ref{fig:exp1_phase4_pings}. It illustrates the connectivity between devices 192.168.137.252 and 192.168.137.253, manifesting through the VFRs with \glspl{ip} 10.10.10.1 and 10.10.10.2.
 
 \begin{figure}
 	\centering
@@ -175,17 +176,6 @@ The configuration of the three instances of \gls{ovs} that are running is Figure
 	\caption{Results from running the commands "ovs-vsctl show" in the devices running \gls{ovs} in phase 3}
 	\label{fig:exp1_phase4_config}
 \end{figure}
-
-Connectivity between the two \gls{vrf} is demonstraded in Figure~\ref{fig:exp1_phase4_pings}. It illustrates the connectivity between devices 192.168.137.252 and 192.168.137.253, manifesting through the VFRs with \glspl{ip} 10.10.10.1 and 10.10.10.2.
-
-\begin{figure}
-	\centering
-	\includegraphics[width=\textwidth]{Chapters/Figures/tests/ovs_phase_4/pings.PNG}
-	\caption{Results from running the commands "ping" in the \gls{vrf} between the two devices on the edge of the network in phase 3}
-	\label{fig:exp1_phase4_pings}
-\end{figure}
-
-The list of devices and hosts known to the controller is shown in Figure~\ref{fig:exp1_phase4_onos}, and the flows that have been injected into the devices are presented in Figure~\ref{fig:exp1_phase4_onos_flows}.
 
 \begin{figure}
 	\centering
@@ -199,6 +189,13 @@ The list of devices and hosts known to the controller is shown in Figure~\ref{fi
 	\includegraphics[width=\textwidth]{Chapters/Figures/tests/ovs_phase_4/onos_flows.PNG}
 	\caption{\gls{onos} console with information relating to the flows of the network in phase 3}
 	\label{fig:exp1_phase4_onos_flows}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{Chapters/Figures/tests/ovs_phase_4/pings.PNG}
+	\caption{Results from running the commands "ping" in the \gls{vrf} between the two devices on the edge of the network in phase 3}
+	\label{fig:exp1_phase4_pings}
 \end{figure}
 
  		% Analysis and Interpretation
@@ -217,15 +214,8 @@ The objective of this experiment is to evaluate the compatibility and practicali
 % Or Testing phase 1: multiple devices with BMv2 and P4
 
 Phase 1 of this experiment will focus on assessing the fundamental operational capabilities of \gls{bmv2}, thereby offering an opportunity for familiarization with this environment. In order to accomplish this goal, the first step is installing \gls{bmv2} on the target devices. It became evident that this process was more intricate than initially anticipated, due to the fact the southbound \gls{api} of \gls{bmv2} is, by default, not P4Runtime, but rather Thrift~\cite{noauthor_apache_nodate}. Following an investigation into the matter, the existence of an option to install supplementary components to \gls{bmv2} was identified, thereby enabling communication via the GRPC-based P4Runtime. The modification was implemented, allowing for the establishment of a connection between the devices and \gls{onos}.
-The second phase of the testing process was a prerequisite for evaluating the functionality of the system. In this networking paradigm, the functionality of the network is contingent upon the code that runs on it. It was thus imperative to obtain a \gls{p4}, and given that the controller is implemented using \gls{onos}, the \gls{p4} code must be accompanied by Java code for the controller. 
 
-At this stage, our intention was to ascertain the functionality of the software, for which a simple \gls{p4}/\gls{onos} application would suffice. Fortunately, \gls{onf}, as part of the Aether Project, offers a practical tutorial to teach the fundamental principles of the next-generation \gls{sdn} architecture. The tutorial was developed for use with Mininet and Stratum, which immediately indicated the necessity for modifications. A more thorough examination of the code revealed the presence of additional issues. It was thus necessary to modify a substantial portion of the code to guarantee its compatibility with the specified environment before it could be utilized. Indeed, a considerable investment of time and effort was necessary to make the program operational. Given these circumstances required programming, it stands to reason to invest our time in developing a more final solution, rather than expending effort on a generic solution. Therefore, the code written is already intended to work in an ad hoc scenario with minimal modifications.
-In order to achieve the desired functionality, it proved indispensable to develop a \gls{p4} code that was tailored for this specific scenario. At the outset of the practical component of the dissertation, the original intention was to develop a solution that more closely resembled the \gls{etsi} protocols. However, the decision was ultimately made not to pursue this approach for two main reasons. It is first necessary to acknowledge the inherent complexity of the \gls{etsi} protocols. The standards under discussion have been developed over the past two decades by the most esteemed engineers in the field. Given the considerable time and resources required, it is neither realistic nor reasonable to view this as a feasible task, particularly in view of the limitations in terms of human resources and time imposed by the context of this master's dissertation. Secondly, the \gls{etsi} norms establish the indispensable presence of the remaining sub-systems as a mandatory condition for attaining the standardized functionality. These circumstances provided the impetus to pursue an alternative and more appropriate course of action. 
-In lieu of attempting to create an exact replica of the \gls{etsi} protocol using \gls{sdn} technology, It was elected as more appropriate to pursue the development of a proof-of-concept solution. This proposed endpoint has the dual objective of validating the compatibility of \gls{p4} with wireless interfaces and \gls{ieee} 802.11p, while simultaneously demonstrating the adaptability of \gls{p4} functional capabilities within these specific contexts. 
-In order to validate the first proposition, the proposed framework will rely on broadcast communication strategies within the wireless domain. The second part will be illustrated through the use of custom headers. While there are numerous potential applications for custom headers, for the purposes of this study, we sought to specify an appropriate research objective. Ultimately, it was determined that the prevention of the perpetual repetition of broadcast messages was a necessary measure to avoid severe network saturation and therefore an appropriate goal. 
-To this end, we created a "marker" system. The markers are unique identifiers generated by the controller and appended to each message transmitted via the wireless interfaces. This strategy guarantees that no message is broadcast twice by the same device. The final solution was developed into a \gls{p4}/\gls{onos} application and the result was published to github~\cite{noauthor_baco-66onos-apps_nodate}.
-
-All programming languages depend on a compiler for their functionality, and \gls{p4} is no exception. Prior to engaging in any coding activities within the \gls{p4} environment, it was indispensable to install the p4c~\cite{noauthor_p4langp4c_nodate}. This step was carried out within the \gls{vm} that hosts the \gls{onos} system. The \gls{onos} system is capable of automatically injecting the \gls{p4} code into the devices, thereby eliminating the need for manual transfer of the file on each occasion.
+The \gls{p4}/\gls{onos} application developed in section \ref{sec:code} was used. \gls{p4} code is compiled by the p4c~\cite{noauthor_p4langp4c_nodate}, the code is automatically injected into the devices by \gls{onos}, thereby eliminating the need for manual transfer of the file on each occasion.
 Once the requisite setup was completed, two \glspl{vrf} were created, one on each device. Subsequently, the aforementioned \gls{vrf} instances were linked to their corresponding devices via the use of virtual interfaces. Thereafter, \gls{bmv2} was initiated, with one virtual and one physical interface allocated to it. Next, \gls{onos} was activated, along with the requisite \gls{onos}/\gls{p4} application and all associated dependencies. At last, the configuration was applied to the controller, thereby informing the controller of the devices and providing it with the necessary information to perform its functions.
 
 The test configuration is illustrated in Figure~\ref{fig:exp2_phase1_setup}, which was also used as the basis for the diagram seen in Figure~\ref{fig:exp2_phase1_diagram}. A description of said diagram is in the following itemized list:
@@ -252,15 +242,48 @@ The test configuration is illustrated in Figure~\ref{fig:exp2_phase1_setup}, whi
 	\label{fig:exp2_phase1_diagram}
 \end{figure}
 
-% Results
+When viewed through the lens of \gls{sdn}, the physical configuration can be conceptualized as illustrated in Figure~\ref{fig:exp2_phase1_sdn_diagram}.
 
-Figure~\ref{fig:exp2_phase1_bmv2} shows \gls{bmv2} running in both devices.
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\textwidth]{Chapters/Figures/tests/bmv2_phase_1/sdn_diagram.PNG}
+	\caption{Diagram that depicts the \gls{sdn} perspective of the setup from the first phase of the experiments with \gls{bmv2} in phase 1}
+	\label{fig:exp2_phase1_sdn_diagram}
+\end{figure}
+
+
+Figure~\ref{fig:exp2_phase1_bmv2} shows \gls{bmv2} running in both devices. It displays the initial debug messages that were transmitted by the program in order to create the P4 tables.
 
 \begin{figure}
 	\centering
 	\includegraphics[width=\textwidth]{Chapters/Figures/tests/bmv2_phase_1/bmv2_running.PNG}
 	\caption{Consoles running \gls{bmv2} on both devices}
 	\label{fig:exp2_phase1_bmv2}
+\end{figure}
+
+The list of devices and hosts known to the controller is shown in Figure~\ref{fig:exp2_phase1_onos}, comprising two devices and two hosts. The devices are interfaced with the controller via P4Runtime. The list of applications activated in \gls{onos} is presented in Figure~\ref{fig:exp2_phase1_onos_apps}. This list includes several applications that have been activated to enable the P4runtime to function with \gls{bmv2}. Furthermore, the final application listed, designated "SDVN Test App", is the \gls{p4}/\gls{onos} application developed for this phase.
+The flows that have been injected into the two devices are illustrated in Figure~\ref{fig:exp2_phase1_onos_flows}, and as expected, these flows are identical on both devices.
+It is also possible to identify the table in which each flow is applied. The flows designated for the "acl\_table" are inserted by \gls{onos} native applications. In contrast, the other three rules, injected into the "l2\_exact\_table", are all inserted by our application. These include a default traffic rule, a broadcast rule and an unicast rule.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{Chapters/Figures/tests/bmv2_phase_1/onos_topology.PNG}
+	\caption{\gls{onos} console with information relating to the devices and hosts of the network in phase 1}
+	\label{fig:exp2_phase1_onos}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{Chapters/Figures/tests/bmv2_phase_1/onos_apps.PNG}
+	\caption{\gls{onos} console with information relating to the applications activated on the controller in phase 1}
+	\label{fig:exp2_phase1_onos_apps}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{Chapters/Figures/tests/bmv2_phase_1/flows.PNG}
+	\caption{\gls{onos} console with information relating to the flows of the network in phase 1}
+	\label{fig:exp2_phase1_onos_flows}
 \end{figure}
 
 Figure~\ref{fig:exp2_phase1_pings} illustrates the connectivity between devices 192.168.137.252 and 192.168.137.253, manifesting through the \glspl{vrf} with \glspl{ip} 10.10.10.1 and 10.10.10.2.
@@ -272,44 +295,12 @@ Figure~\ref{fig:exp2_phase1_pings} illustrates the connectivity between devices 
 	\label{fig:exp2_phase1_pings}
 \end{figure}
 
-When viewed through the lens of \gls{sdn}, the physical configuration can be conceptualized as illustrated in Figure~\ref{fig:exp2_phase1_sdn_diagram}.
-
-\begin{figure}
-	\centering
-	\includegraphics[width=0.7\textwidth]{Chapters/Figures/tests/bmv2_phase_1/sdn_diagram.PNG}
-	\caption{Diagram that depicts the \gls{sdn} perspective of the setup from the first phase of the experiments with \gls{bmv2} in phase 1}
-	\label{fig:exp2_phase1_sdn_diagram}
-\end{figure}
-
-The list of devices and hosts known to the controller is shown in Figure~\ref{fig:exp2_phase1_onos}, and the flows that have been injected into the devices are presented in Figure~\ref{fig:exp2_phase1_onos_flows}. The \gls{p4}/\gls{onos} application made for this phase can be seen in Figure~\ref{fig:exp2_phase1_onos_apps}.
-
-\begin{figure}
-	\centering
-	\includegraphics[width=\textwidth]{Chapters/Figures/tests/bmv2_phase_1/onos_topology.PNG}
-	\caption{\gls{onos} console with information relating to the devices and hosts of the network in phase 1}
-	\label{fig:exp2_phase1_onos}
-\end{figure}
-
-\begin{figure}
-	\centering
-	\includegraphics[width=\textwidth]{Chapters/Figures/tests/bmv2_phase_1/flows.PNG}
-	\caption{\gls{onos} console with information relating to the flows of the network in phase 1}
-	\label{fig:exp2_phase1_onos_flows}
-\end{figure}
-
-\begin{figure}
-	\centering
-	\includegraphics[width=\textwidth]{Chapters/Figures/tests/bmv2_phase_1/onos_apps.PNG}
-	\caption{\gls{onos} console with information relating to the applications activated on the controller in phase 1}
-	\label{fig:exp2_phase1_onos_apps}
-\end{figure}
-
 % Phase 2
 \subsection[Testing phase 2: P4 control over wireless interfaces]{Testing phase 2: \gls{p4} control over wireless interfaces}
 % Testing phase 2: BMv2 and P4 Dataplane Integration for Wireless Communications
 % Testing phase 2: BMv2 Devices with P4 Dataplane over a Wireless Path
 
-Phase two of the experiments with \gls{bmv2} represents a significant advancement over the initial phase, as it introduces the crucial element of wireless communication. Accordingly, the ath9k patch was implemented on the devices to enable communication at the \gls{ieee} 802.11p standard. This can be seen in Figure~\ref{fig:exp2_phase2_wireless}.
+Phase two of the experiments with \gls{bmv2} represents a significant advancement over the initial phase, as it introduces the crucial element of wireless communication. Accordingly, the ath9k patch was implemented on the devices to enable communication at the \gls{ieee} 802.11p standard. Figure~\ref{fig:exp2_phase2_wireless} displays the lists of interfaces on the devices, where it is possible to identify the wireless interfaces called "w1p4s0" on both devices. Furthermore, it demonstrates the connectivity between said devices.
 
 \begin{figure}
 	\centering
@@ -318,7 +309,18 @@ Phase two of the experiments with \gls{bmv2} represents a significant advancemen
 	\label{fig:exp2_phase2_wireless}
 \end{figure}
 
-As a result of this, two changes had to be made. The first of these amendments required the activation of the \gls{bmv2} with the wireless interface. The second consequence required modification of the \gls{p4}/\gls{onos} applications and configuration to accommodate the distinctive characteristics of the wireless antennas.
+As a result of this, two changes had to be made. The first of these amendments required the activation of the \gls{bmv2} with the wireless interface. The second required modification of the \gls{p4}/\gls{onos} applications and configuration to accommodate the distinctive characteristics of the wireless antennas. For any message to be successfully received by a wireless interface, that destination Media Access Control address must either be the address of the interface or the broadcast address. It was thus decided to pursue the latter course of action, which entailed changing the addresses of the messages sent via the wireless interface to the broadcast address. The original address is stored within the packet and inserted when required.
+
+The test configuration is illustrated in Figure~\ref{fig:exp2_phase2_setup}, which was also used as the basis for the diagram seen in Figure~\ref{fig:exp2_phase2_diagram} and described in the following itemized list:
+
+\begin{itemize}
+	\item 192.168.137.1 - This \gls{ip} address identifies the author's personal laptop computer. It serves as the central coordinating hub for the entire network, facilitating the observation and monitoring of all network activity.
+	\item 192.168.137.2 - This address represents a virtual machine that is hosted on the author's laptop via the Oracle VM VirtualBox virtualization platform. The virtual environment is configured with Debian 12 and is primarily intended for the deployment of \gls{onos}.
+	\item 192.168.137.252 - This device corresponds to the version 2 of the devices. The device has a fresh installation of the Ubuntu Server operating system and is running \gls{bmv2} with grpc. Furthermore, the device is equipped with an antenna capable of communicating at frequencies up to 6 GHz and has been applied with the ath9k patch to the WiFi driver, thereby enabling communication using \gls{ieee} 802.11p.
+	\item 192.168.137.253 - This device is virtually identical to the device 192.168.137.252.
+	\item 10.10.10.1 - This \gls{ip} address identifies the virtual interface that has been added to the \gls{vrf} instance created in the 192.168.137.252 device.
+	\item 10.10.10.2 - Identically to the last one, this \gls{ip} address identifies the virtual interface that has been added to the \gls{vrf} instance created in the 192.168.137.253 device.
+\end{itemize}
 
 \begin{figure}
 	\centering
@@ -334,41 +336,6 @@ As a result of this, two changes had to be made. The first of these amendments r
 	\label{fig:exp2_phase2_diagram}
 \end{figure}
 
-
-The test configuration is illustrated in Figure~\ref{fig:exp2_phase2_setup}, which was also used as the basis for the diagram seen in Figure~\ref{fig:exp2_phase2_diagram} and described in the following itemized list:
-
-\begin{itemize}
-	\item 192.168.137.1 - This \gls{ip} address identifies the author's personal laptop computer. It serves as the central coordinating hub for the entire network, facilitating the observation and monitoring of all network activity.
-	\item 192.168.137.2 - This address represents a virtual machine that is hosted on the author's laptop via the Oracle VM VirtualBox virtualization platform. The virtual environment is configured with Debian 12 and is primarily intended for the deployment of \gls{onos}.
-	\item 192.168.137.252 - This device corresponds to the version 2 of the devices. The device has a fresh installation of the Ubuntu Server operating system and is running \gls{bmv2} with grpc. Furthermore, the device is equipped with an antenna capable of communicating at frequencies up to 6 GHz and has been applied with the ath9k patch to the WiFi driver, thereby enabling communication using \gls{ieee} 802.11p.
-	\item 192.168.137.253 - This device is virtually identical to the device 192.168.137.252.
-	\item 10.10.10.1 - This \gls{ip} address identifies the virtual interface that has been added to the \gls{vrf} instance created in the 192.168.137.252 device.
-	\item 10.10.10.2 - Identically to the last one, this \gls{ip} address identifies the virtual interface that has been added to the \gls{vrf} instance created in the 192.168.137.253 device.
-\end{itemize}
-
-% Results
-
-
-Figure~\ref{fig:exp2_phase2_bmv2} shows \gls{bmv2} running in both devices.
-
-\begin{figure}
-	\centering
-	\includegraphics[width=\textwidth]{Chapters/Figures/tests/bmv2_phase_2/bmv2_running.PNG}
-	\caption{Consoles running \gls{bmv2} on both devices in phase 2}
-	\label{fig:exp2_phase2_bmv2}
-\end{figure}
-
-Figure~\ref{fig:exp2_phase2_pings} illustrates the connectivity between devices 192.168.137.252 and 192.168.137.253, manifesting through the VFRs with \glspl{ip} 10.10.10.1 and 10.10.10.2.
-
-\begin{figure}
-	\centering
-	\includegraphics[width=\textwidth]{Chapters/Figures/tests/bmv2_phase_2/pings.PNG}
-	\caption{Results from running the commands "ping" in the \gls{vrf} of the two devices on the network in phase 2}
-	\label{fig:exp2_phase2_pings}
-\end{figure}
-
-In order for communication to be established between the devices, it was necessary to make modifications to the program created in the first phase. For any message to be successfully received by a wireless interface, that destination Media Access Control address must either be the address of the interface or the broadcast address. It was thus decided to pursue the latter course of action, which entailed changing the addresses of the messages sent via the wireless interface to the broadcast address. The original address is stored within the packet and inserted when required.
-
 When viewed through the lens of \gls{sdn}, the physical configuration can be conceptualized as illustrated in Figure~\ref{fig:exp2_phase2_sdn_diagram}.
 
 \begin{figure}
@@ -379,7 +346,17 @@ When viewed through the lens of \gls{sdn}, the physical configuration can be con
 \end{figure}
 
 
-The list of devices and hosts known to the controller is shown in Figure~\ref{fig:exp2_phase2_onos}, and the flows that have been injected into the devices are presented in Figure~\ref{fig:exp2_phase2_onos_flows}.
+Figure~\ref{fig:exp2_phase2_bmv2} demonstrates that the \gls{bmv2} program is operational in both devices, and that the programs have successfully connected to the wireless interfaces.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{Chapters/Figures/tests/bmv2_phase_2/bmv2_running.PNG}
+	\caption{Consoles running \gls{bmv2} on both devices in phase 2}
+	\label{fig:exp2_phase2_bmv2}
+\end{figure}
+
+
+The list of devices and hosts known to the controller is shown in Figure~\ref{fig:exp2_phase2_onos}, and the flows that have been injected into the devices are presented in Figure~\ref{fig:exp2_phase2_onos_flows}. It is evident that both of these are virtually identical to those of the last phase.
 
 \begin{figure}
 	\centering
@@ -395,7 +372,14 @@ The list of devices and hosts known to the controller is shown in Figure~\ref{fi
 	\label{fig:exp2_phase2_onos_flows}
 \end{figure}
 
+Figure~\ref{fig:exp2_phase2_pings} illustrates the connectivity between devices 192.168.137.252 and 192.168.137.253, manifesting through the VFRs with \glspl{ip} 10.10.10.1 and 10.10.10.2.
 
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{Chapters/Figures/tests/bmv2_phase_2/pings.PNG}
+	\caption{Results from running the commands "ping" in the \gls{vrf} of the two devices on the network in phase 2}
+	\label{fig:exp2_phase2_pings}
+\end{figure}
 
 % Analysis and Interpretation
 \subsection{Analysis and Interpretation}
