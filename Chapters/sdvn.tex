@@ -90,7 +90,7 @@ The \gls{sdvn} architecture can be represented based on either of the architectu
 \begin{figure}
 	\centering
 	\includegraphics[width=0.8\textwidth]{Chapters/Figures/SDVNs/architecture.png}
-	\caption{Conceptual view of \gls{sdvn} architecture~\cite{toufga_towards_2020}}
+	\caption{Conceptual view of \glsxtrshort{sdvn} architecture~\cite{toufga_towards_2020}}
 	\label{fig:sdvn_arciotecture}
 \end{figure}
 
@@ -157,10 +157,8 @@ This paper implements a myriad of different technologies in vehicular infrastruc
 
 
 Sadio et al.~\cite{sadio_design_2020} propose a complete \gls{sdvn} prototype design. The hardware used for the \gls{obu} was a Raspberry Pi 3 with Cortex-A53 × 64 1.2 GHz and \gls{sram} 1 GB. This board has access to WiFi 2.4 GHz \gls{ieee} 802.11 b/g/n and via a Huawei E8372 \gls{lte} USB modem to \gls{lte}. The operating system used was Raspbian Stretch Lite. The authors utilized the Python Twink library to transform the devices into OpenFlow switches. This implementation fails to use the standard for communication in the \gls{vanet} environment, \gls{ieee} 802.11p.
-\\
-In closing, table~\ref{table:related} provides a concise summary the related works presented in this chapter. Main characteristics analysed are the hardware and software used, technologies and communications protocols supported by the devices, and the key contribution identified on the papers. The table also highlights the ones with SDN support. The devices identified constitute the starting point for the proposed solution to be detailed in next chapters.
 
-\begin{table}[ht]
+\begin{table}[!htb]
 	\centering
 	\begin{tabular}{|p{1.5cm}|p{1.7cm}|p{2cm}|p{1.6cm}|p{1.6cm}|p{1.8cm}|p{2.5cm}|}
 	\hline
@@ -181,6 +179,9 @@ In closing, table~\ref{table:related} provides a concise summary the related wor
 	\label{table:related}
 \end{table}
 	
+In closing, table~\ref{table:related} provides a concise summary the related works presented in this chapter. Main characteristics analysed are the hardware and software used, technologies and communications protocols supported by the devices, and the key contribution identified on the papers. The table also highlights the ones with SDN support. The devices identified constitute the starting point for the proposed solution to be detailed in next chapters.
+
+
 \section{Final considerations} % Final considerations
 \label{sec:final_considerations}
 
